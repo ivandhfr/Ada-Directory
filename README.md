@@ -1,6 +1,6 @@
 # Ada Directory
 
-**Ada Directory** adalah JOSM Tagging Preset untuk pemetaan OpenStreetMap di Indonesia, dirancang untuk mempercepat tagging sekaligus menjaga konsistensi data — dengan preset
+**Ada Directory** adalah JOSM Tagging Preset untuk pemetaan OpenStreetMap di Indonesia, dirancang untuk mempercepat tagging sekaligus menjaga konsistensi data dengan preset
 yang luas, templat lokal, dan pengisian alamat otomatis.
 
 > [!WARNING]
