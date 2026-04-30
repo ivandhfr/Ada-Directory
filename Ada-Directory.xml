@@ -1,0 +1,2604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0" name="Ada Directory" author="ivandhfr" version="2026.04.2" baselanguage="id-ID" description="Preset Penandaan Indonesia">
+    <!-- +===================================================+ -->
+    <!-- |     THIS PROJECT IS WORK IN PROGRESS              | -->
+    <!-- |     Always double check before uploading to OSM   | -->
+    <!-- +===================================================+ -->
+    <!-- ///////////////////////////////////////////////////// -->
+    <!-- //    START OF CHUNK                               // -->
+    <!-- ///////////////////////////////////////////////////// -->
+    <!-- +===================================================+ -->
+    <!-- |     BASE                                          | -->
+    <!-- +===================================================+ -->
+    <chunk id="bank_base">
+        <reference ref="semua_bangunan" />
+        <key key="amenity" value="bank" />
+        <text key="branch" text="Cabang" />
+        <check key="atm" text="ATM?" />
+        <check key="drive_through" text="Drive-through?" />
+        <reference ref="opsional_general" />
+        <preset_link preset_name="Alamat" />
+    </chunk>
+    <chunk id="dealer_mobil_base">
+        <key key="shop" value="car" />
+        <label text="Tulis {nama dealer} {nama cabang}" />
+        <label text="Contoh: Astra Mampang" />
+        <text key="branch" text="Cabang" />
+        <text key="website" text="Website Cabang" />
+        <combo key="second_hand" text="Mobil Bekas" values=",yes,no,only" display_values=",Ya,Tidak,Hanya Bekas" />
+        <label text="Fasilitas" />
+        <checkgroup columns="4">
+            <check key="service:vehicle:car_repair" text="Perbaikan" />
+            <check key="service:vehicle:inspection" text="Inspeksi" />
+            <check key="service:vehicle:car_parts" text="Suku Cadang" />
+            <check key="service:vehicle:tyres" text="Ban" />
+        </checkgroup>
+        <reference ref="pembayaran" />
+        <reference ref="opsional_general" />
+        <preset_link preset_name="Alamat" />
+    </chunk>
+    <chunk id="cinema_base">
+        <reference ref="semua_bangunan" />
+        <key key="amenity" value="cinema" />
+        <text key="screen" text="Jumlah layar" />
+        <checkgroup columns="2">
+            <check key="cinema:IMAX" text="IMAX" />
+            <check key="cinema:3D" text="3D" />
+            <check key="cinema:dolby_atmos" text="Dolby Atmos" />
+        </checkgroup>
+        <reference ref="pembayaran" />
+        <reference ref="opsional_general" />
+        <preset_link preset_name="Alamat" />
+    </chunk>
+    <chunk id="fast_food_base">
+        <reference ref="semua_bangunan" />
+        <key key="amenity" value="fast_food" />
+        <key key="takeaway" value="yes" />
+        <key key="delivery" value="yes" />
+        <key key="diet:halal" value="only" />
+        <text key="branch" text="Cabang" />
+        <reference ref="pembayaran" />
+        <reference ref="opsional_restoran" />
+        <preset_link preset_name="Alamat" />
+    </chunk>
+    <chunk id="place_of_worship_base">
+        <key key="amenity" value="place_of_worship" />
+        <reference ref="jam_buka" />
+        <preset_link preset_name="Alamat" />
+    </chunk>
+    <chunk id="postal_service_base">
+        <reference ref="semua_bangunan" />
+        <key key="amenity" value="post_office" />
+        <text key="branch" text="Cabang" />
+        <reference ref="pembayaran" />
+        <reference ref="opsional_general" />
+        <preset_link preset_name="Alamat" />
+    </chunk>
+    <chunk id="retail_base">
+        <reference ref="semua_bangunan" />
+        <text key="branch" text="Cabang" />
+        <optional text="Centang di bawah ini hanya jika tidak ada node terpisah!">
+            <checkgroup columns="2">
+                <check key="toilets" text="Toilet" />
+                <check key="atm" text="ATM" />
+            </checkgroup>
+        </optional>
+        <reference ref="pembayaran" />
+        <reference ref="opsional_general" />
+        <preset_link preset_name="Alamat" />
+    </chunk>
+    <chunk id="convenience_store_base">
+        <key key="shop" value="convenience" />
+        <reference ref="retail_base" />
+    </chunk>
+    <chunk id="supermarket_base">
+        <key key="shop" value="supermarket" />
+        <reference ref="retail_base" />
+    </chunk>
+    <chunk id="church_base">
+        <reference ref="semua_bangunan" />
+        <key key="religion" value="christian" />
+        <text key="alt_name" text="Nama Alternatif (jika ada)" />
+        <text key="operator" text="Pengurus" />
+        <text key="service_times" text="Jam Ibadah" />
+        <text key="capacity" text="Kapasitas Jemaat (angka)" />
+        <reference ref="place_of_worship_base" />
+    </chunk>
+    <chunk id="school_base">
+        <check key="landuse" text="Berupa kawasan?" value_on="education" disable_off="true" />
+        <text key="ref" text="Nomor Referensi (NPSN)" />
+        <preset_link preset_name="Alamat" />
+        <link wiki="Key:denomination" text="Informasi Denominasi" />
+        <link wiki="Tag:amenity%3Dschool" text="Informasi lebih lanjut" />
+    </chunk>
+    <chunk id="branch_base">
+        <reference ref="semua_bangunan" />
+        <text key="branch" text="Cabang" />
+    </chunk>
+    <chunk id="optician_base">
+        <reference ref="branch_base" />
+        <key key="shop" value="optician" />
+    </chunk>
+    <chunk id="cosmetics_base">
+        <reference ref="branch_base" />
+        <key key="shop" value="cosmetics" />
+    </chunk>
+    <chunk id="deptstore_base">
+        <reference ref="branch_base" />
+        <key key="shop" value="department_store" />
+    </chunk>
+    <!-- +===================================================+ -->
+    <!-- |     EXTRA                                         | -->
+    <!-- +===================================================+ -->
+    <chunk id="opsional_general">
+        <optional text="Opsional:">
+            <reference ref="jam_buka" />
+            <reference ref="kursi_roda" />
+            <reference ref="sumber_data" />
+        </optional>
+    </chunk>
+    <chunk id="opsional_restoran">
+        <optional text="Opsional:">
+            <reference ref="jam_buka" />
+            <reference ref="internet_merokok" />
+            <check key="toilets" text="Toilet" />
+            <reference ref="kursi_roda" />
+            <reference ref="sumber_data" />
+        </optional>
+    </chunk>
+    <chunk id="school_optional">
+        <optional text="Opsional:">
+            <text key="capacity" text="Kapasitas Siswa" />
+            <text key="min_age" text="Usia Minimum" />
+            <text key="max_age" text="Usia Maksimum" />
+            <combo key="fee" text="Membutuhkan Biaya?" display_values=",Ya,Tidak" values=",yes,no" default="" />
+            <combo key="religion" text="Agama" display_values=",Islam,Kristen,Buddha,Hindu" values=",muslim,christian,buddhist,hindu" default="" />
+            <text key="denomination" text="Denominasi" />
+            <combo key="school:gender" text="Gender" display_values=",Campur,Laki-laki,Perempuan" values=",mixed,boys,girls" default="" />
+            <combo key="pedagogy" text="Filosofi Pendidikan" values=",hybrid,mainstream,outdoor,dalton,freinet,jenaplan,montessori,pikler,reggio_emilia,schörl,sudbury,waldorf" default="" />
+            <reference ref="jam_buka" />
+            <reference ref="kursi_roda" />
+            <text key="wikidata" text="Wikidata (mis. Q123456)" />
+            <reference ref="sumber_data" />
+        </optional>
+    </chunk>
+    <chunk id="laundry_services">
+        <optional text="Layanan:">
+            <checkgroup columns="3">
+                <check key="self_service" text="Self-service" value_on="yes" disable_off="true" />
+                <check key="laundry_service" text="Dilayani Petugas" value_on="yes" disable_off="true" />
+                <check key="dry_cleaning" text="Dry Clean" value_on="yes" disable_off="true" />
+            </checkgroup>
+        </optional>
+    </chunk>
+    <chunk id="internet_merokok">
+        <combo key="internet_access" text="Akses internet" values="yes,wlan,wired,terminal,no" display_values="Ya,WLAN,Kabel,Terminal,Tidak" />
+        <combo key="internet_access:fee" text="Biaya akses internet" values="yes,no" display_values="Ya,Tidak" />
+        <combo key="smoking" text="Merokok" values="yes,dedicated,separated,isolated,outside,no" display_values="Ya,Khusus,Terpisah,Terisolasi,Di luar,Tidak" />
+    </chunk>
+    <chunk id="pengiriman">
+        <combo key="delivery" text="Layanan Pengiriman" editable="false">
+            <list_entry value="yes" display_value="Ya" />
+            <list_entry value="no" display_value="Tidak" />
+            <list_entry value="only" display_value="Hanya Pengiriman" />
+        </combo>
+        <multiselect key="delivery:partner" text="Partner Pengiriman" values="GrabFood;GoFood;ShopeeFood" delimiter=";" use_last_as_default="true" values_sort="false" />
+        <text key="delivery:partner:wikidata" text="Wikidata Partner" value_template="?{ &quot;delivery:partner&quot;=&quot;GrabFood;GoFood&quot; 'Q111178051;Q111181276' | &quot;delivery:partner&quot;=&quot;GoFood;GrabFood&quot; 'Q111181276;Q111178051' | &quot;delivery:partner&quot;=GrabFood 'Q111178051' | &quot;delivery:partner&quot;=GoFood 'Q111181276' | '' }" />
+    </chunk>
+    <chunk id="kursi_roda">
+        <combo key="wheelchair" text="Akses kursi roda" values="yes,no,limited" display_values="Ya,Tidak,Terbatas" default="" />
+    </chunk>
+    <!-- +===================================================+ -->
+    <!-- |     ////                                          | -->
+    <!-- +===================================================+ -->
+    <chunk id="pizza_hut_operator">
+        <key key="brand:wikidata" value="Q191615" />
+        <key key="brand" value="Pizza Hut" />
+        <key key="operator:addr:city" value="Jakarta Selatan" />
+        <key key="operator:addr:country" value="ID" />
+        <key key="operator:addr:housenumber" value="Kav. 1000" />
+        <key key="operator:addr:postcode" value="12870" />
+        <key key="operator:addr:province" value="DKI Jakarta" />
+        <key key="operator:addr:street" value="Jalan Jenderal Gatot Subroto" />
+        <key key="operator:phone" value="+62 21 50966789" />
+        <key key="operator:type" value="private" />
+        <key key="operator:website" value="https://www.sarimelatikencana.co.id" />
+        <key key="operator:wikidata" value="Q96100601" />
+        <key key="operator" value="PT Sarimelati Kencana Tbk" />
+    </chunk>
+    <chunk id="alfamidi_brand">
+        <key key="brand:wikidata" value="Q12471462" />
+        <key key="brand" value="Alfamidi" />
+        <key key="contact:facebook" value="https://www.facebook.com/alfamidiku" />
+        <key key="contact:instagram" value="https://www.instagram.com/alfamidi_ku" />
+        <key key="contact:twitter" value="https://x.com/alfamidi_ku" />
+        <key key="contact:youtube" value="https://www.youtube.com/channel/UC4fbC31FGEHBbV6SERScRTg" />
+        <key key="website" value="https://alfamidiku.com" />
+    </chunk>
+    <chunk id="yogyagroup">
+        <key key="app:apple" value="https://apps.apple.com/id/app/myyogya/id1468672431" />
+        <key key="app:google" value="https://play.google.com/store/apps/details?id=com.yogyagroup.its.myyogya" />
+        <key key="contact:facebook" value="https://www.facebook.com/BelanjaHematYaYogya" />
+        <key key="contact:instagram" value="https://www.instagram.com/info_yogyagroup" />
+        <key key="contact:twitter" value="https://twitter.com/info_yogyagroup" />
+        <key key="contact:youtube" value="https://www.youtube.com/channel/UCTZp9VNfGtiSUtKxckFieiA" />
+        <key key="membership" value="yes" />
+        <key key="operator:website" value="https://www.yogyagroup.com" />
+        <key key="operator:wikidata" value="Q19745361" />
+        <key key="operator" value="Yogya Group" />
+        <key key="website:orders" value="https://www.yogyaonline.co.id" />
+    </chunk>
+    <chunk id="mppagroup">
+        <key key="operator:abbr" value="MPPA" />
+        <key key="operator:website" value="https://mppa.co.id" />
+        <key key="operator:wikidata" value="Q50234229" />
+        <key key="operator" value="PT Matahari Putra Prima Tbk" />
+    </chunk>
+    <!-- +===================================================+ -->
+    <!-- |     ////                                          | -->
+    <!-- +===================================================+ -->
+    <chunk id="sumber_data">
+        <item_separator />
+        <text key="source" text="Sumber data" />
+        <text key="check_date" text="Tanggal pengecekan (Format: YYYY-MM-DD)" />
+        <space />
+        <label text="Isi di bawah ini apabila sumber data berupa survei:" />
+        <text key="survey:date" text="Tanggal survei (Format: YYYY-MM-DD)" />
+    </chunk>
+    <chunk id="pembayaran">
+        <optional text="Metode pembayaran:">
+            <label text="Tunai &amp; Transfer" />
+            <checkgroup columns="4">
+                <check key="payment:cash" text="Tunai" />
+                <check key="payment:bank_transfer" text="Transfer Bank" />
+                <check key="payment:financing" text="Cicilan" />
+            </checkgroup>
+            <space />
+            <label text="Kartu Kredit &amp; Debit" />
+            <checkgroup columns="4">
+                <check key="payment:debit_cards" text="Kartu Debit" />
+                <check key="payment:credit_cards" text="Kartu Kredit" />
+                <check key="payment:contactless" text="Contactless" />
+                <check key="payment:membership_card" text="Kartu Member" />
+                <check key="payment:gpn_debit" text="GPN Debit" />
+                <check key="payment:visa_debit" text="Visa Debit" />
+                <check key="payment:mastercard_debit" text="Mastercard Debit" />
+                <check key="payment:bca_card" text="BCA Card" />
+                <check key="payment:visa" text="Visa Kredit" />
+                <check key="payment:mastercard" text="Mastercard Kredit" />
+                <check key="payment:visa_contactless" text="Visa Contactless" />
+            </checkgroup>
+            <space />
+            <label text="Kartu Prabayar" />
+            <checkgroup columns="4">
+                <check key="payment:ep_mandiri_emoney" text="Mandiri e-Money" />
+                <check key="payment:ep_brizzi" text="BRI Brizzi" />
+                <check key="payment:ep_flazz" text="BCA Flazz" />
+                <check key="payment:ep_tapcash" text="BNI TapCash" />
+                <check key="payment:ep_jakcard" text="DKI JakCard" />
+                <check key="payment:ep_megacash" text="MegaCash" />
+                <check key="payment:ep_nobu_emoney" text="Nobu e-Money" />
+                <check key="payment:ep_bsbcash" text="BSB Cash" />
+            </checkgroup>
+            <space />
+            <label text="QR &amp; Dompet Digital" />
+            <checkgroup columns="4">
+                <check key="payment:gpn_qris" text="QRIS" />
+                <check key="payment:gopay_id" text="GoPay" />
+                <check key="payment:ovo" text="OVO" />
+                <check key="payment:dana" text="DANA" />
+                <check key="payment:shopeepay" text="ShopeePay" />
+                <check key="payment:linkaja" text="LinkAja" />
+                <check key="payment:sakuku" text="Sakuku" />
+                <check key="payment:isaku" text="i.Saku" />
+                <check key="payment:yukk" text="YUKK" />
+                <check key="payment:kaspro" text="KasPro" />
+                <check key="payment:ottopay_id" text="OttoPay" />
+                <check key="payment:bca" text="BCA (Mobile/QRC)" />
+                <check key="payment:my_pertamina_app" text="MyPertamina" />
+                <check key="payment:parkee_app" text="Parkee" />
+                <check key="payment:cashbac" text="Cashbac" />
+                <check key="payment:akulaku" text="Akulaku" />
+                <check key="payment:jak_lingko" text="Jak Lingko App" />
+                <check key="payment:paypal" text="PayPal" />
+            </checkgroup>
+        </optional>
+    </chunk>
+    <chunk id="jam_buka">
+        <combo key="opening_hours" text="Jam operasional" delimiter="|" values="24/7|08:30-12:30,15:30-20:00|Sa-Su 00:00-24:00|Mo-Su 09:00-21:00|Mo-Sa 08:00-18:00|Mo-Fr 09:00-17:00|Mo-Fr 08:30-20:00; Sa,Su 08:00-15:00; PH off|Mo-Fr 08:30-20:00; Tu-Su 08:00-15:00; Sa 08:00-12:00|Mo-Su 08:00-18:00; Apr 10-15 off; Jun 08:00-14:00; Aug off; Dec 25 off|sunrise-sunset|Su 10:00+|week 01-53/2 Fr 09:00-12:00; week 02-52/2 We 09:00-12:00" values_no_i18n="true" values_sort="false" />
+    </chunk>
+    <chunk id="masakan">
+        <multiselect key="cuisine" text="Masakan" values="african;american;arab;argentinian;asian;bagel;balkan;barbecue;bavarian;beef_bowl;brazilian;burger;cake;caribbean;chicken;chinese;coffee_shop;crepe;curry;danish;donut;ethiopian;filipino;fish;fish_and_chips;french;friture;frozen_yogurt;german;georgian;greek;heuriger;hot_dog;ice_cream;indian;indonesian;international;italian;japanese;kebab;korean;lebanese;malaysian;mediterranean;mexican;moroccan;noodle;pancake;pasta;persian;peruvian;pizza;polish;portuguese;ramen;regional;russian;sandwich;sausage;seafood;soba;spanish;steak_house;sushi;tex-mex;tapas;thai;turkish;vietnamese;wings" display_values="African;American;Arab;Argentinian;Asian;Bagel;Balkan;Barbecue;Bavarian;Beef Bowl;Brazilian;Burger;Cake;Caribbean;Chicken;Chinese;Coffee Shop;Crepe;Curry;Danish;Donut;Ethiopian;Filipino;Fish;Fish and Chips;French;Friture;Frozen Yogurt;German;Georgian;Greek;Heuriger;Hot Dog;Ice Cream;Indian;Indonesian;International;Italian;Japanese;Kebab;Korean;Lebanese;Malaysian;Mediterranean;Mexican;Moroccan;Noodle;Pancake;Pasta;Persian;Peruvian;Pizza;Polish;Portuguese;Ramen;Regional;Russian;Sandwich;Sausage;Seafood;Soba;Spanish;Steak House;Sushi;Tex-Mex;Tapas;Thai;Turkish;Vietnamese;Wings" values_searchable="true" values_sort="false" />
+    </chunk>
+    <chunk id="semua_bangunan">
+        <combo key="building" text="Jenis Bangunan" values="yes,allotment_house,annexe,apartments,bakehouse,barn,barracks,beach_hut,boathouse,bridge,bungalow,bunker,cabin,carport,castle,cathedral,chapel,church,civic,clock_tower,college,commercial,conservatory,construction,container,cowshed,detached,digester,dormitory,farm,farm_auxiliary,fire_station,garage,garages,gatehouse,ger,government,grandstand,greenhouse,guardhouse,hangar,hospital,hotel,house,houseboat,hut,industrial,kindergarten,kiosk,kingdom_hall,livestock,military,monastery,mosque,museum,office,outbuilding,pagoda,parking,pavilion,presbytery,public,quonset_hut,religious,residential,retail,riding_hall,roof,ruins,school,semidetached_house,service,shed,ship,shrine,silo,slurry_tank,sports_centre,sports_hall,stable,stadium,static_caravan,stilt_house,storage_tank,sty,supermarket,synagogue,tech_cab,temple,tent,terrace,toilets,tower,train_station,transformer_tower,transportation,tree_house,triumphal_arch,trullo,university,warehouse,water_tower,windmill" display_values="Ya (Umum),Rumah Petak Kebun,Bangunan Tambahan,Apartemen,Rumah Pemanggang,Lumbung,Barak,Kabin Pantai,Rumah Untuk Perahu,Jembatan Tertutup,Bungalo,Bunker,Kabin,Carport,Kastil,Katedral,Kapel,Gereja,Sipil,Menara Jam,Perguruan Tinggi,Komersial,Konservatori,Konstruksi,Kontainer,Kandang Sapi,Terpisah,Bioreaktor,Asrama,Pertanian,Bangunan Pertanian Tambahan,Pemadam Kebakaran,Garasi Tunggal,Garasi Kompleks,Gerbang Kontrol,Ger/Yurt,Pemerintahan,Tribun,Rumah Kaca,Pos Jaga,Hangar,Rumah Sakit,Hotel,Rumah,Rumah Dari Perahu,Gubuk,Industri,Taman Kanak-kanak,Kios,Kingdom Hall,Kandang Ternak,Militer,Biara,Masjid,Museum,Kantor,Bangunan Tambahan,Pagoda,Gedung Parkir,Paviliun,Rumah Imam,Publik,Quonset Hut,Keagamaan (Umum),Residensial,Ritel,Gedung Berkuda,Atap/Kanopi,Reruntuhan,Sekolah,Rumah Semi-Terpisah,Servis,Gudang/Shed,Kapal Permanen,Kuil Kecil,Silo,Tangki Kotoran Ternak,Pusat Olahraga,Gedung Olahraga,Kandang Kuda,Stadion,Karavan Statis,Rumah Panggung,Tangki Penyimpanan,Kandang Babi,Supermarket,Sinagoga,Kabin Teknis,Pura/Vihara,Tenda Permanen,Teras Rumah,Toilet,Menara,Stasiun Kereta,Menara Trafo,Transportasi,Rumah Pohon,Gerbang Kemenangan,Trullo,Universitas,Gudang Besar,Menara Air,Kincir Angin" default="yes" values_searchable="true" match="key" />
+    </chunk>
+    <chunk id="link_contact_address">
+        <preset_link preset_name="Kontak (Skema Umum)" />
+        <preset_link preset_name="Alamat" />
+    </chunk>
+    <chunk id="wikipedia_wikidata">
+        <text key="wikipedia" text="Wikipedia" />
+        <text key="wikidata" text="Wikidata" />
+    </chunk>
+    <!-- ///////////////////////////////////////////////////// -->
+    <!-- //     START OF ITEMS                              // -->
+    <!-- ///////////////////////////////////////////////////// -->
+    <group name="Ada Directory" icon="presets/misc/information/informationoffice.svg">
+        <!-- +===============================================+ -->
+        <!-- |     INFRASTRUKTUR                             | -->
+        <!-- +===============================================+ -->
+        <group name="Infrastruktur" icon="presets/landmark/building.svg">
+            <item name="Panel Surya (Atap PV)" icon="presets/power/solar.svg" type="node,way,closedway,relation">
+                <label text="Solar Photovoltaic Panel" />
+                <space />
+                <key key="power" value="generator" />
+                <key key="generator:source" value="solar" />
+                <key key="generator:method" value="photovoltaic" />
+                <key key="generator:type" value="solar_photovoltaic_panel" />
+                <key key="generator:place" value="roof" />
+                <key key="location" value="roof" />
+                <check key="generator:solar:tracking" text="Mengikuti pergerakan matahari?" default="off" />
+                <space />
+                <text key="generator:output:electricity" text="Output listrik (W)" default="" />
+                <text key="operator" text="Operator" default="" />
+            </item>
+            <item name="Solar Water Heater (Atap)" icon="presets/power/solar_thermal.svg" type="node,way,closedway,relation">
+                <label text="Solar Thermal Collector" />
+                <space />
+                <key key="power" value="generator" />
+                <key key="generator:source" value="solar" />
+                <key key="generator:method" value="thermal" />
+                <key key="generator:type" value="solar_thermal_collector" />
+                <key key="generator:output:hot_water" value="yes" />
+                <key key="generator:place" value="roof" />
+                <key key="location" value="roof" />
+                <key key="generator:solar:tracking" value="no" />
+                <space />
+                <text key="operator" text="Operator" default="" />
+            </item>
+            <item name="Toilet/WC" icon="presets/service/toilets.svg" type="node,closedway" preset_name_label="true">
+                <label text="Centang salah satu:" />
+                <check key="amenity" text="Fasilitas Utama (Standalone amenity=toilets)" value_on="toilets" disable_off="true" />
+                <check key="toilets" text="Fasilitas Tambahan (toilets=yes pada objek lain)" value_on="yes" disable_off="true" />
+                <space />
+                <label text="Akses &amp; Ketersediaan" />
+                <combo key="access" text="Akses" values="yes,customers,centralkey" display_values="Ya,Pelanggan,Kunci Sentral" />
+                <combo key="fee" text="Biaya" values="yes,no" display_values="Ya,Tidak" />
+                <combo key="supervised" text="Diawasi" values="yes,no,interval" display_values="Ya,Tidak,Berkala" />
+                <text key="operator" text="Operator" />
+                <space />
+                <optional text="Jenis Kelamin:">
+                    <check key="gender_segregated" text="Dipisah berdasarkan jenis kelamin" value_on="yes" />
+                    <checkgroup columns="3">
+                        <check key="unisex" text="Campur" value_on="yes" />
+                        <check key="male" text="Pria" value_on="yes" />
+                        <check key="female" text="Wanita" value_on="yes" />
+                    </checkgroup>
+                </optional>
+                <space />
+                <label text="Jenis &amp; Peralatan Toilet" />
+                <multiselect key="toilets:position" text="Jenis toilet" values="seated;squat;urinal" display_values="Duduk;Jongkok;Urinal" values_searchable="true" />
+                <combo key="toilets:disposal" text="Metode Pembuangan" values=",flush,pitlatrine,chemical,bucket,dry_toilet,tank,incineration" display_values=",Siram,Lubang,Kimia,Ember,Toilet Kering,Tangki,Insinerasi" />
+                <multiselect key="toilets:wash" text="Alat Bilas" values=";shower;water_dripper;no" display_values=";Shower;Gayung;Tidak Ada" />
+                <check key="toilets:paper_supplied" text="Tissue Tersedia" value_on="yes" />
+                <space />
+                <label text="Fasilitas Kebersihan" />
+                <checkgroup columns="2">
+                    <check key="toilets:handwashing" text="Fasilitas Cuci Tangan" value_on="yes" />
+                    <check key="handwashing:soap" text="Sabun" value_on="yes" />
+                </checkgroup>
+                <space />
+                <label text="Aksesibilitas &amp; Kebutuhan Khusus" />
+                <combo key="wheelchair" text="Akses Kursi Roda" values="yes,no,limited" display_values="Ya,Tidak,Terbatas" />
+                <combo key="changing_table" text="Meja Ganti Popok" values="yes,no,limited" display_values="Ya,Tidak,Terbatas" />
+                <checkgroup columns="2">
+                    <check key="toilets:ostomy" text="Ramah Ostomi" value_on="yes" />
+                    <check key="drinking_water" text="Air Minum Tersedia" value_on="yes" />
+                </checkgroup>
+            </item>
+            <group name="Bangunan" icon="presets/landmark/building.svg">
+                <item name="Bangunan" icon="presets/landmark/building.svg" type="closedway,multipolygon">
+                    <link wiki="Key:building" />
+                    <label text="Bangunan adalah struktur buatan manusia dengan atap, berdiri secara permanen di satu tempat." />
+                    <space />
+                    <reference ref="semua_bangunan" />
+                    <space />
+                    <text key="name" text="Nama" />
+                    <preset_link preset_name="Nama" text="Nama lanjutan:" />
+                    <space />
+                    <optional text="Detail Bangunan:">
+                        <combo key="building:use" text="Penggunaan Saat Ini" values=",residential,commercial,industrial,retail,office,government,religious,education,civic,healthcare,yes" display_values=",Residensial,Komersial,Industri,Ritel,Kantor,Pemerintahan,Keagamaan,Pendidikan,Sipil,Kesehatan,Ya" default="" />
+                        <text key="building:levels" text="Jumlah Lantai" />
+                        <text key="building:levels:underground" text="Lantai Bawah Tanah" />
+                        <text key="height" text="Tinggi (meter)" />
+                        <combo key="building:architecture" text="Gaya Arsitektur" values="islamic,mamluk,romanesque,gothic,renaissance,mannerism,ottoman,baroque,rococo,empire,moorish_revival,neoclassicism,georgian,victorian,historicism,neo-romanesque,neo-byzantine,neo-gothic,neo-renaissance,tudor_revival,neo-baroque,art_nouveau,eclectic,functionalism,cubism,new_objectivity,art_deco,modern,amsterdam_school,international_style,constructivism,stalinist_neoclassicism,brutalist,postmodern,deconstructivism,high-tech,neo-futurism,contemporary,vernacular,classic_swahili,omani,indian,british_colonial,modernism,hypermodern" display_values="Islam,Mamluk,Romanesque,Gothic,Renaissance,Mannerisme,Ottoman,Baroque,Rococo,Empire,Moorish Revival,Neoklasisme,Georgian,Victoria,Historisisme,Neo-Romanesque,Neo-Byzantine,Neo-Gothic,Neo-Renaissance,Tudor Revival,Neo-Baroque,Art Nouveau,Eklektik,Fungsionalisme,Kubisme,New Objectivity,Art Deco,Modern,Amsterdam School,International Style,Konstruktivisme,Neoklasisme Stalinis,Brutalis,Postmodern,Dekonstruktivisme,High-Tech,Neo-Futurisme,Kontemporer,Vernakular,Klasik Swahili,Omani,India,Kolonial Inggris,Modernisme,Hypermodern" match="key" values_searchable="true" />
+                        <combo key="roof:shape" text="Bentuk Atap" values="flat,skillion,gabled,half-hipped,hipped,pyramidal,gambrel,mansard,dome,onion,round,saltbox,quadruple_saltbox,cone,round_gabled,complex" display_values="Datar,Pelana Miring,Pelana (2 Sisi),Pelana Setengah Limas,Limas (4 Sisi),Piramida,Gambrel,Mansard,Kubah,Kubah Bawang,Bulat,Saltbox,Saltbox Empat,Kerucut,Bulat Berpelana,Kompleks" match="key" values_searchable="true" />
+                        <combo key="roof:material" text="Material Atap" values="roof_tiles,metal,concrete,tar_paper,asbestos,eternit,glass,acrylic_glass,metal_sheet,slate,tin,grass,copper,thatch,gravel,stone,wood,plastic,asphalt,asphalt_shingle,zinc,sandstone,bamboo,palm_leaves,banana_leaves,solar_panels,titanium" display_values="Genteng Keramik,Logam,Beton,Aspal Kertas,Asbes,Eternit,Kaca,Kaca Akrilik,Lembaran Logam,Batu Tulis,Timah,Rumput Hijau,Tembaga,Jerami/Alang-alang,Kerikil,Batu,Kayu,Plastik,Aspal,Sirap Aspal,Seng,Batu Pasir,Bambu,Daun Palem,Daun Pisang,Panel Surya,Titanium" match="key" values_searchable="true" />
+                        <combo key="roof:colour" text="Warna Atap" values="black,blue,brown,gray,green,orange,purple,red,silver,white,yellow,#E96B39" display_values="hitam,biru,coklat,abu-abu,hijau,oranye,ungu,merah,silver,putih,kuning,#E96B39" values_context="color" match="key" />
+                        <combo key="building:material" text="Material Bangunan" values="cement_block,brick,plaster,wood,concrete,metal,steel,stone,glass,mirror,mud,masonry,tin,plastic,timber_framing,sandstone,clay,reed,loam,marble,copper,slate,vinyl,limestone,tiles,pebbledash,metal_plates,bamboo,adobe,rammed_earth,solar_panels,tyres" display_values="Blok Semen,Bata,Plester,Kayu,Beton,Logam,Baja,Batu,Kaca,Cermin,Lumpur,Batu Bata (Umum),Timah,Plastik,Rangka Kayu,Batu Pasir,Tanah Liat,Alang-alang,Lempung,Marmer,Tembaga,Batu Tulis,Vinil,Batu Kapur,Ubin Keramik,Plester Berbatu,Pelat Logam,Bambu,Adobe,Tanah Padat,Panel Surya,Ban" match="key" values_searchable="true" />
+                        <combo key="building:colour" text="Warna Bangunan" values="black,blue,brown,gray,green,orange,purple,red,silver,white,yellow,#CD853F" display_values="hitam,biru,coklat,abu-abu,hijau,oranye,ungu,merah,silver,putih,kuning,#CD853F" values_context="color" match="key" />
+                        <text key="construction_date" text="Tahun Selesai Dibangun" />
+                    </optional>
+                    <space />
+                    <combo key="building" text="Status Bangunan" values="abandoned,disused,ruins" display_values="Ditinggalkan,Tidak Digunakan,Reruntuhan" editable="false" default="" />
+                    <combo key="building:condition" text="Kondisi" values="good,fair,poor,ruins" display_values="Baik,Cukup,Buruk,Reruntuhan" editable="false" default="" />
+                    <space />
+                    <reference ref="kursi_roda" />
+                    <reference ref="sumber_data" />
+                    <text key="fixme" text="Perbaiki (untuk pemeta lain)" />
+                    <text key="note" text="Catatan" />
+                    <preset_link preset_name="Alamat" />
+                </item>
+                <item name="Atap" icon="presets/landmark/building.svg" type="closedway">
+                    <label text="Bangunan yang tidak memiliki dinding. Contoh: kanopi pompa SPBU, kanopi parkir dsb." />
+                    <key key="building" value="roof" />
+                    <key key="layer" value="1" />
+                </item>
+                <item name="Pos Satpam/Security" icon="presets/landmark/building.svg" type="closedway">
+                    <key key="building" value="guardhouse" />
+                </item>
+            </group>
+        </group>
+        <!-- +===============================================+ -->
+        <!-- |     PENDIDIKAN                                | -->
+        <!-- +===============================================+ -->
+        <group name="Pendidikan" icon="presets/education/school.svg">
+            <item name="PAUD/TK (Taman Kanak-Kanak)/RA/Playgroup" description="Khusus kawasan atau titik" icon="presets/education/kindergarten.svg" type="node,closedway,relation">
+                <reference ref="school_base" />
+                <key key="amenity" value="kindergarten" />
+                <key key="isced:level" value="0" />
+                <text key="name" text="Nama TK" />
+                <text key="short_name" text="Singkatan (jika ada)" />
+                <text key="alt_name" text="Nama Alternatif (jika ada)" />
+                <text key="operator" text="Nama Pengurus" />
+                <combo key="operator:type" text="Jenis Pengurus" display_values="Pemerintah,Swasta,Organisasi Keagamaan,Yayasan Militer" values="government,private,religious,military" />
+                <space />
+                <reference ref="school_optional" />
+            </item>
+            <item name="Sekolah (SD/MI;SMP/MTs;SMA/MA/SMK)" description="Khusus kawasan atau titik" icon="presets/education/school.svg" type="node,closedway,relation">
+                <reference ref="school_base" />
+                <key key="amenity" value="school" />
+                <text key="name" text="Nama Sekolah" />
+                <text key="short_name" text="Singkatan (jika ada)" />
+                <text key="alt_name" text="Nama Alternatif (jika ada)" />
+                <multiselect short_descriptions="SD/MI atau setara,SMP/MTs atau setara,SMA/MA/SMK atau setara" key="school:type_idn" text="Tipe Sekolah" display_values="SD/MI;SMP/MTs;SMA/MA/SMK" values="sd;smp;sma" rows="4" values_sort="false" />
+                <multiselect key="isced:level" text="ISCED Level" display_values="SD/MI;SMP/MTs;SMA/MA/SMK" values="1;2;3" rows="4" values_sort="false" />
+                <text key="grades" text="Jenjang Kelas (mis. 1-6)" />
+                <text key="operator" text="Nama Pengurus" />
+                <combo key="operator:type" text="Jenis Pengurus" display_values="Pemerintah,Swasta,Organisasi Keagamaan,Yayasan Militer" values="government,private,religious,military" />
+                <space />
+                <reference ref="school_optional" />
+            </item>
+            <separator />
+            <item name="Sekolah Dasar Negeri (SD Negeri/SDN)" description="Khusus kawasan atau titik" icon="presets/education/school.svg" type="node,closedway,relation">
+                <reference ref="school_base" />
+                <key key="amenity" value="school" />
+                <text key="name" text="Nama Sekolah" default="SD Negeri " />
+                <text key="short_name" text="Singkatan (jika ada)" default="SDN " />
+                <text key="alt_name" text="Nama Alternatif (jika ada)" />
+                <key key="school:type_idn" value="sd" />
+                <key key="isced:level" value="1" />
+                <key key="grades" value="1-6" />
+                <text key="operator" text="Nama Pengurus" />
+                <key key="operator:type" value="government" />
+                <space />
+                <reference ref="school_optional" />
+            </item>
+            <item name="Sekolah Menengah Pertama Negeri (SMP Negeri/SMPN)" description="Khusus kawasan atau titik" icon="presets/education/school.svg" type="node,closedway,relation">
+                <reference ref="school_base" />
+                <key key="amenity" value="school" />
+                <text key="name" text="Nama Sekolah" default="SMP Negeri " />
+                <text key="short_name" text="Singkatan (jika ada)" default="SMPN " />
+                <text key="alt_name" text="Nama Alternatif (jika ada)" />
+                <key key="school:type_idn" value="smp" />
+                <key key="isced:level" value="2" />
+                <key key="grades" value="7-9" />
+                <text key="operator" text="Nama Pengurus" />
+                <key key="operator:type" value="government" />
+                <space />
+                <reference ref="school_optional" />
+            </item>
+            <item name="Sekolah Menengah Atas/Kejuruan Negeri (SMA/K Negeri/SMA/KN)" description="Khusus kawasan atau titik" icon="presets/education/school.svg" type="node,closedway,relation">
+                <reference ref="school_base" />
+                <key key="amenity" value="school" />
+                <text key="name" text="Nama Sekolah" />
+                <text key="short_name" text="Singkatan (jika ada)" default="SMAN " />
+                <text key="alt_name" text="Nama Alternatif (jika ada)" />
+                <key key="school:type_idn" value="sma" />
+                <key key="isced:level" value="3" />
+                <key key="grades" value="10-12" />
+                <text key="operator" text="Nama Pengurus" />
+                <key key="operator:type" value="government" />
+                <space />
+                <reference ref="school_optional" />
+            </item>
+        </group>
+        <!-- ============================================ -->
+        <!-- IBADAH -->
+        <!-- ============================================ -->
+        <group name="Tempat Ibadah" icon="presets/religion/religion.svg">
+            <group name="Islam" icon="presets/religion/muslim.svg">
+                <item name="Musala" icon="presets/religion/muslim.svg" type="node,closedway,multipolygon">
+                    <check key="building" text="Bangunan?" disable_off="true" />
+                    <label text="Tag di bawah hanya untuk keperluan automasi" />
+                    <label text="Harap hapus tag di bawah sebelum uplaod!" />
+                    <text key="hapus ini sebelum upload" text="Nama Spesifik (Contoh: Al Ikhlas)" />
+                    <key key="place_of_worship" value="musalla" />
+                    <key key="religion" value="muslim" />
+                    <text key="name" text="Nama" value_template="Musala {hapus ini sebelum upload}" />
+                    <text key="alt_name" text="Nama Alternatif" value_template="Musalla {hapus ini sebelum upload};Mushala {hapus ini sebelum upload};Mushola {hapus ini sebelum upload};Musola {hapus ini sebelum upload};Musholla {hapus ini sebelum upload}" />
+                    <text key="short_name" text="Singkatan (jika ada)" />
+                    <text key="operator" text="Nama Pengurus" />
+                    <reference ref="place_of_worship_base" />
+                </item>
+            </group>
+            <group name="Kristen" icon="presets/religion/church.svg">
+                <item name="Banua Niha Keriso Protestan (BNKP)" icon="presets/religion/church.svg" type="node,closedway,multipolygon">
+                    <key key="denomination" value="lutheran" />
+                    <key key="name" value="Banua Niha Keriso Protestan" />
+                    <key key="short_name" value="BNKP" />
+                    <key key="wikidata" value="Q12474613" />
+                    <key key="wikipedia" value="id:Banua Niha Keriso Protestan" />
+                    <text key="branch" text="Cabang" />
+                    <reference ref="church_base" />
+                </item>
+                <item name="Gereja Bethel Indonesia (GBI)" icon="presets/religion/church.svg" type="node,closedway,multipolygon">
+                    <key key="denomination" value="pentecostal" />
+                    <key key="name" value="Gereja Bethel Indonesia" />
+                    <key key="short_name" value="GBI" />
+                    <key key="wikidata" value="Q17050244" />
+                    <key key="wikipedia" value="id:Gereja Bethel Indonesia" />
+                    <key key="website" value="https://bppgbi.org" />
+                    <key key="contact:instagram" value="https://www.instagram.com/sinode_gbi" />
+                    <text key="branch" text="Cabang" />
+                    <reference ref="church_base" />
+                </item>
+                <item name="Gereja Kristen Indonesia (GKI)" icon="presets/religion/church.svg" type="node,closedway,multipolygon">
+                    <key key="denomination" value="reformed" />
+                    <key key="name" value="Gereja Kristen Indonesia" />
+                    <key key="short_name" value="GKI" />
+                    <key key="wikidata" value="Q2285800" />
+                    <key key="wikipedia" value="id:Gereja Kristen Indonesia" />
+                    <key key="website" value="https://www.sinodegki.org" />
+                    <key key="contact:instagram" value="https://www.instagram.com/bpmsgki" />
+                    <text key="branch" text="Cabang" />
+                    <reference ref="church_base" />
+                </item>
+                <item name="Gereja Kristen Jawa (GKJ)" icon="presets/religion/church.svg" type="node,closedway,multipolygon">
+                    <key key="denomination" value="reformed" />
+                    <key key="name" value="Gereja Kristen Jawa" />
+                    <key key="short_name" value="GKJ" />
+                    <key key="wikidata" value="Q6165207" />
+                    <key key="wikipedia" value="id:Gereja Kristen Jawa" />
+                    <key key="website" value="https://sinodegkj.or.id" />
+                    <key key="contact:instagram" value="https://www.instagram.com/sinodegkj" />
+                    <text key="branch" text="Cabang" />
+                    <reference ref="church_base" />
+                </item>
+                <item name="Gereja Kristen Pasundan (GKP)" icon="presets/religion/church.svg" type="node,closedway,multipolygon">
+                    <key key="denomination" value="reformed" />
+                    <key key="name" value="Gereja Kristen Pasundan" />
+                    <key key="short_name" value="GKP" />
+                    <key key="wikidata" value="Q16178058" />
+                    <key key="wikipedia" value="id:Gereja Kristen Pasundan" />
+                    <key key="website" value="https://gkp.or.id" />
+                    <key key="contact:instagram" value="https://www.instagram.com/gerejakristenpasundanofficial" />
+                    <text key="branch" text="Cabang" />
+                    <reference ref="church_base" />
+                </item>
+                <item name="Gereja Kristen Protestan Bali (GKPB)" icon="presets/religion/church.svg" type="node,closedway,multipolygon">
+                    <key key="denomination" value="reformed" />
+                    <key key="name" value="Gereja Kristen Protestan Bali" />
+                    <key key="short_name" value="GKPB" />
+                    <key key="wikidata" value="Q12483963" />
+                    <key key="wikipedia" value="id:Gereja Kristen Protestan Bali" />
+                    <key key="website" value="https://balichurchsynod.org" />
+                    <key key="contact:instagram" value="https://www.instagram.com/sinodegkpb" />
+                    <text key="branch" text="Cabang" />
+                    <reference ref="church_base" />
+                </item>
+                <item name="Gereja Kristen Protestan Indonesia (GKPI)" icon="presets/religion/church.svg" type="node,closedway,multipolygon">
+                    <key key="denomination" value="lutheran" />
+                    <key key="name" value="Gereja Kristen Protestan Indonesia" />
+                    <key key="short_name" value="GKPI" />
+                    <key key="wikidata" value="Q12483964" />
+                    <key key="wikipedia" value="id:Gereja Kristen Protestan Indonesia" />
+                    <key key="website" value="https://www.gkpisinode.org" />
+                    <text key="branch" text="Cabang" />
+                    <reference ref="church_base" />
+                </item>
+                <item name="Gereja Masehi Advent Hari Ketujuh (GMAHK)" icon="presets/religion/church.svg" type="node,closedway,multipolygon">
+                    <key key="denomination" value="seventh_day_adventist" />
+                    <key key="name" value="Gereja Masehi Advent Hari Ketujuh" />
+                    <key key="short_name" value="GMAHK" />
+                    <key key="wikidata" value="Q104319" />
+                    <key key="wikipedia" value="id:Gereja Masehi Advent Hari Ketujuh" />
+                    <key key="website" value="https://www.adventist.org" />
+                    <text key="branch" text="Cabang" />
+                    <reference ref="church_base" />
+                </item>
+                <item name="Gereja Masehi Injili di Minahasa (GMIM)" icon="presets/religion/church.svg" type="node,closedway,multipolygon">
+                    <key key="denomination" value="reformed" />
+                    <key key="name" value="Gereja Masehi Injili di Minahasa" />
+                    <key key="short_name" value="GMIM" />
+                    <key key="wikidata" value="Q12483979" />
+                    <key key="wikipedia" value="id:Gereja Masehi Injili di Minahasa" />
+                    <key key="website" value="https://gmim.or.id" />
+                    <key key="contact:instagram" value="https://www.instagram.com/multimediagmim" />
+                    <text key="branch" text="Cabang" />
+                    <reference ref="church_base" />
+                </item>
+                <item name="Gereja Pantekosta di Indonesia (GPdI)" icon="presets/religion/church.svg" type="node,closedway,multipolygon">
+                    <key key="denomination" value="pentecostal" />
+                    <key key="name" value="Gereja Pantekosta di Indonesia" />
+                    <key key="short_name" value="GPdI" />
+                    <key key="wikidata" value="Q4216198" />
+                    <key key="wikipedia" value="id:Gereja Pantekosta di Indonesia" />
+                    <key key="website" value="https://gpdi.or.id" />
+                    <key key="contact:instagram" value="https://www.instagram.com/gpdi.id" />
+                    <text key="branch" text="Cabang" />
+                    <reference ref="church_base" />
+                </item>
+                <item name="Gereja Protestan di Indonesia bagian Barat (GPIB)" icon="presets/religion/church.svg" type="node,closedway,multipolygon">
+                    <key key="denomination" value="reformed" />
+                    <key key="name" value="Gereja Protestan di Indonesia bagian Barat" />
+                    <key key="short_name" value="GPIB" />
+                    <key key="wikidata" value="Q12483995" />
+                    <key key="wikipedia" value="id:Gereja Protestan di Indonesia bagian Barat" />
+                    <key key="website" value="https://gpib.or.id" />
+                    <key key="contact:instagram" value="https://www.instagram.com/gpibindonesia" />
+                    <text key="branch" text="Cabang" />
+                    <reference ref="church_base" />
+                </item>
+                <item name="Gereja Sidang Jemaat Allah (GSJA)" icon="presets/religion/church.svg" type="node,closedway,multipolygon">
+                    <key key="denomination" value="assemblies_of_god" />
+                    <key key="name" value="Gereja Sidang Jemaat Allah" />
+                    <key key="short_name" value="GSJA" />
+                    <key key="wikidata" value="Q494890" />
+                    <key key="wikipedia" value="id:Gereja Sidang-Sidang Jemaat Allah" />
+                    <key key="website" value="https://www.gsja.org" />
+                    <key key="contact:instagram" value="https://www.instagram.com/suaragsja" />
+                    <text key="branch" text="Cabang" />
+                    <reference ref="church_base" />
+                </item>
+                <item name="Greja Kristen Jawi Wetan (GKJW)" icon="presets/religion/church.svg" type="node,closedway,multipolygon">
+                    <key key="denomination" value="reformed" />
+                    <key key="name" value="Greja Kristen Jawi Wetan" />
+                    <key key="short_name" value="GKJW" />
+                    <key key="wikidata" value="Q5328667" />
+                    <key key="wikipedia" value="id:Greja Kristen Jawi Wetan" />
+                    <key key="website" value="https://gkjw.or.id" />
+                    <key key="contact:instagram" value="https://www.instagram.com/gkjw.or.id" />
+                    <text key="branch" text="Cabang" />
+                    <reference ref="church_base" />
+                </item>
+                <item name="Huria Kristen Batak Protestan (HKBP)" icon="presets/religion/church.svg" type="node,closedway,multipolygon">
+                    <key key="denomination" value="lutheran" />
+                    <key key="name" value="Huria Kristen Batak Protestan" />
+                    <key key="short_name" value="HKBP" />
+                    <key key="wikidata" value="Q3498417" />
+                    <key key="wikipedia" value="id:Huria Kristen Batak Protestan" />
+                    <key key="website" value="https://hkbp.or.id" />
+                    <key key="contact:instagram" value="https://www.instagram.com/hkbppusat" />
+                    <text key="branch" text="Cabang" />
+                    <reference ref="church_base" />
+                </item>
+            </group>
+        </group>
+        <!-- ============================================ -->
+        <!-- KESEHATAN -->
+        <!-- ============================================ -->
+        <group name="Kesehatan" icon="presets/health/hospital.svg">
+            <group name="Rumah Sakit" icon="presets/health/hospital.svg">
+                <item name="Pertamina IHC" icon="presets/health/hospital.svg" type="node,closedway,multipolygon">
+                    <checkgroup columns="2">
+                        <check key="emergency" text="Gawat Darurat" />
+                        <check key="dispensing" text="Penyediaan Obat" />
+                    </checkgroup>
+                    <key key="amenity" value="hospital" />
+                    <key key="healthcare" value="hospital" />
+                    <key key="operator:type" value="public" />
+                    <key key="operator" value="PT Pertamina Bina Medika IHC" />
+                    <key key="operator:website" value="https://www.pertamedika.co.id" />
+                    <multiselect key="healthcare:speciality" text="Spesialisasi" values="biology;blood_check;clinical_pathology;diagnostic_radiology;medical_physics;medical_engineering;radiology" display_values="Biologi;Pemeriksaan Darah;Patologi Klinis;Radiologi Diagnostik;Fisika Medis;Teknik Medis;Radiologi" />
+                    <text key="name" text="Nama" default="Rumah Sakit Pertamina" />
+                    <text key="alt_name" text="Nama lain" default="IHC" />
+                    <text key="short_name" text="Singkatan" default="RS Pertamina" />
+                    <text key="beds" text="Jumlah Tempat Tidur" />
+                    <reference ref="pembayaran" />
+                    <reference ref="opsional_general" />
+                </item>
+                <item name="Siloam Hospitals" icon="presets/health/hospital.svg" type="node,closedway,multipolygon">
+                    <checkgroup columns="2">
+                        <check key="emergency" text="Gawat Darurat" />
+                        <check key="dispensing" text="Penyediaan Obat" />
+                    </checkgroup>
+                    <key key="amenity" value="hospital" />
+                    <key key="healthcare" value="hospital" />
+                    <key key="operator:type" value="private" />
+                    <key key="operator" value="PT Siloam International Hospitals Tbk" />
+                    <key key="website" value="https://www.siloamhospitals.com" />
+                    <multiselect key="healthcare:speciality" text="Spesialisasi" values="biology;blood_check;clinical_pathology;diagnostic_radiology;medical_physics;medical_engineering;radiology" display_values="Biologi;Pemeriksaan Darah;Patologi Klinis;Radiologi Diagnostik;Fisika Medis;Teknik Medis;Radiologi" />
+                    <text key="name" text="Nama" default="Rumah Sakit Siloam" />
+                    <text key="alt_name" text="Nama lain" default="Siloam Hospitals" />
+                    <text key="short_name" text="Singkatan" default="RS Siloam" />
+                    <text key="beds" text="Jumlah Tempat Tidur" />
+                    <reference ref="pembayaran" />
+                    <reference ref="opsional_general" />
+                </item>
+            </group>
+            <group name="Apotek" icon="presets/health/pharmacy.svg">
+                <item name="Apotek K-24" icon="presets/health/pharmacy.svg" type="node,closedway">
+                    <label text="Apotek K-24" />
+                    <space />
+                    <reference ref="semua_bangunan" />
+                    <key key="name" value="Apotek K-24" />
+                    <key key="amenity" value="pharmacy" />
+                    <key key="healthcare" value="pharmacy" />
+                    <key key="brand" value="Apotek K-24" />
+                    <key key="brand:wikidata" value="Q56390232" />
+                    <key key="website" value="https://www.apotek-k24.com" />
+                    <key key="website:orders" value="https://www.k24klik.com" />
+                    <text key="branch" text="Cabang" />
+                    <reference ref="pembayaran" />
+                    <reference ref="opsional_general" />
+                    <preset_link preset_name="Alamat" />
+                </item>
+                <item name="Kimia Farma" icon="presets/health/pharmacy.svg" type="node,closedway">
+                    <label text="Apotek Kimia Farma" />
+                    <space />
+                    <reference ref="semua_bangunan" />
+                    <key key="name" value="Kimia Farma" />
+                    <key key="amenity" value="pharmacy" />
+                    <key key="healthcare" value="pharmacy" />
+                    <key key="brand" value="Kimia Farma" />
+                    <key key="brand:wikidata" value="Q11264892" />
+                    <key key="website" value="https://www.kimiafarma.co.id" />
+                    <text key="branch" text="Cabang" />
+                    <reference ref="pembayaran" />
+                    <reference ref="opsional_general" />
+                    <preset_link preset_name="Alamat" />
+                </item>
+            </group>
+        </group>
+        <!-- ============================================ -->
+        <!-- KOMERSIAL -->
+        <!-- ============================================ -->
+        <group name="Komersial" icon="presets/shop/convenience.svg">
+            <group name="Ritel" icon="presets/shop/convenience.svg">
+                <group name="Minimarket" icon="presets/shop/convenience.svg">
+                    <item name="Alfa Express" icon="presets/shop/convenience.svg" type="node,closedway">
+                        <label text="Alfa Express" />
+                        <key key="brand" value="Alfa Express" />
+                        <key key="brand:wikidata" value="Q12471463" />
+                        <key key="name" value="Alfa Express" />
+                        <reference ref="convenience_store_base" />
+                    </item>
+                    <item name="Alfamart" icon="presets/shop/icons/convenience.svg" type="node,closedway">
+                        <label text="Alfamart" />
+                        <key key="brand" value="Alfamart" />
+                        <key key="brand:wikidata" value="Q23745600" />
+                        <key key="website" value="https://alfamart.co.id" />
+                        <key key="website:orders" value="https://alfagift.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/alfamartku" />
+                        <key key="contact:twitter" value="https://twitter.com/alfamart" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCwEs8Aod-2YCSx7RVk6jZpA" />
+                        <key key="contact:line" value="https://page.line.me/alfamart" />
+                        <key key="contact:instagram" value="https://www.instagram.com/alfamart" />
+                        <key key="app:google" value="https://play.google.com/store/apps/details?id=com.alfamart.alfagift" />
+                        <key key="app:apple" value="https://apps.apple.com/id/app/alfagift-toko-online-alfamart/id1013717463" />
+                        <key key="membership" value="yes" />
+                        <key key="operator" value="PT Sumber Alfaria Trijaya Tbk" />
+                        <key key="name" value="Alfamart" />
+                        <reference ref="convenience_store_base" />
+                    </item>
+                    <item name="Alfamidi" icon="presets/shop/convenience.svg" type="node,closedway">
+                        <label text="Alfamidi" />
+                        <reference ref="alfamidi_brand" />
+                        <key key="name" value="Alfamidi" />
+                        <reference ref="convenience_store_base" />
+                    </item>
+                    <item name="Indomaret" icon="presets/shop/convenience.svg" type="node,closedway">
+                        <label text="Indomaret" />
+                        <key key="brand" value="Indomaret" />
+                        <key key="brand:wikidata" value="Q4262825" />
+                        <key key="website" value="https://www.indomaret.co.id" />
+                        <key key="website:orders" value="https://www.klikindomaret.com" />
+                        <key key="contact:facebook" value="https://www.facebook.com/IndomaretMudahdanHemat/" />
+                        <key key="contact:instagram" value="https://www.instagram.com/indomaret" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@indomaretofficial" />
+                        <key key="contact:twitter" value="https://x.com/indomaret" />
+                        <key key="contact:youtube" value="https://www.youtube.com/indomaretcoid" />
+                        <combo key="name" text="Tipe" values="Indomaret,Indomaret Point,Indomaret Fresh" default="Indomaret" editable="false" required="true" />
+                        <reference ref="convenience_store_base" />
+                    </item>
+                    <item name="Lawson" icon="presets/shop/convenience.svg" type="node,closedway">
+                        <label text="Lawson" />
+                        <key key="brand" value="Lawson" />
+                        <key key="brand:wikidata" value="Q1557223" />
+                        <key key="website" value="https://lawson-indonesia.com" />
+                        <key key="contact:facebook" value="https://www.facebook.com/LawsonStationIndonesia" />
+                        <key key="contact:twitter" value="https://twitter.com/LawsonIndonesia" />
+                        <key key="contact:instagram" value="https://www.instagram.com/lawson_indonesia" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@lawsonstationindonesia3110" />
+                        <key key="name" value="Lawson" />
+                        <reference ref="convenience_store_base" />
+                    </item>
+                    <item name="Yomart" icon="presets/shop/convenience.svg" type="node,closedway">
+                        <label text="Yomart" />
+                        <key key="brand" value="Yomart" />
+                        <key key="brand:wikidata" value="Q19745366" />
+                        <key key="website" value="https://yomart.co.id" />
+                        <key key="website:orders" value="https://minimarket.yogyaonline.co.id" />
+                        <key key="contact:twitter" value="https://x.com/YomartOfficial" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@YOMART/featured" />
+                        <key key="contact:facebook" value="https://www.facebook.com/YomartMinimarket" />
+                        <key key="contact:instagram" value="https://www.instagram.com/yomartofficial" />
+                        <key key="name" value="Yomart" />
+                        <reference ref="convenience_store_base" />
+                    </item>
+                </group>
+                <group name="Supermarket" icon="presets/shop/supermarket.svg">
+                    <item name="Alfamidi Super" icon="presets/shop/supermarket.svg" type="node,closedway">
+                        <label text="Alfamidi Super" />
+                        <reference ref="alfamidi_brand" />
+                        <key key="name" value="Alfamidi Super" />
+                        <reference ref="supermarket_base" />
+                    </item>
+                    <item name="Foodmart Supermarket" icon="presets/shop/supermarket.svg" type="node,closedway">
+                        <label text="Foodmart" />
+                        <key key="brand" value="Foodmart" />
+                        <key key="name" value="Foodmart" />
+                        <key key="delivery" value="yes" />
+                        <key key="contact:instagram" value="https://www.instagram.com/foodmart_id" />
+                        <reference ref="supermarket_base" />
+                        <reference ref="mppagroup" />
+                    </item>
+                    <item name="Griya" icon="presets/shop/supermarket.svg" type="node,closedway">
+                        <label text="Griya" />
+                        <key key="brand" value="Griya" />
+                        <key key="brand:wikidata" value="Q124353081" />
+                        <key key="name" value="Griya" />
+                        <key key="alt_name" value="Toserba Griya" />
+                        <reference ref="yogyagroup" />
+                        <reference ref="supermarket_base" />
+                    </item>
+                    <item name="Hero Supermarket" icon="presets/shop/supermarket.svg" type="node,closedway">
+                        <label text="Hero Supermarket" />
+                        <key key="brand" value="Hero Supermarket" />
+                        <key key="brand:wikidata" value="Q12485604" />
+                        <key key="name" value="Hero Supermarket" />
+                        <key key="contact:instagram" value="https://www.instagram.com/herosupermarket" />
+                        <reference ref="supermarket_base" />
+                    </item>
+                    <item name="Hyfresh Supermarket" icon="presets/shop/supermarket.svg" type="node,closedway">
+                        <label text="Hyfresh" />
+                        <key key="brand" value="Hyfresh" />
+                        <key key="name" value="Hyfresh" />
+                        <key key="delivery" value="yes" />
+                        <key key="contact:instagram" value="https://www.instagram.com/hyfresh_id" />
+                        <reference ref="supermarket_base" />
+                        <reference ref="mppagroup" />
+                    </item>
+                    <item name="Primo Supermarket" icon="presets/shop/supermarket.svg" type="node,closedway">
+                        <label text="Primo" />
+                        <key key="brand" value="Primo" />
+                        <key key="name" value="Primo" />
+                        <key key="contact:instagram" value="https://www.instagram.com/primosupermarket" />
+                        <reference ref="supermarket_base" />
+                        <reference ref="mppagroup" />
+                    </item>
+                    <item name="Hypermart" icon="presets/shop/supermarket.svg" type="node,closedway">
+                        <label text="Hypermart" />
+                        <key key="brand" value="Hypermart" />
+                        <key key="brand:wikidata" value="Q19726433" />
+                        <key key="name" value="Hypermart" />
+                        <key key="membership" value="yes" />
+                        <key key="website" value="https://www.hypermart.co.id" />
+                        <key key="website:orders" value="https://shop.hypermart.co.id/hypermart" />
+                        <key key="delivery" value="yes" />
+                        <reference ref="supermarket_base" />
+                        <reference ref="mppagroup" />
+                    </item>
+                    <item name="Super Indo" icon="presets/shop/supermarket.svg" type="node,closedway">
+                        <label text="Super Indo" />
+                        <key key="brand" value="Super Indo" />
+                        <key key="brand:wikidata" value="Q12518060" />
+                        <key key="name" value="Super Indo" />
+                        <key key="membership" value="yes" />
+                        <key key="alt_name" value="Superindo" />
+                        <key key="website" value="https://www.superindo.co.id" />
+                        <key key="contact:facebook" value="https://facebook.com/superindosupermarket" />
+                        <key key="contact:instagram" value="https://instagram.com/InfoSuperIndo" />
+                        <key key="contact:pinterest" value="https://pinterest.com/InfoSuperIndo" />
+                        <key key="contact:twitter" value="https://twitter.com/InfoSuperIndo" />
+                        <key key="contact:youtube" value="https://youtube.com/superindosupermarket" />
+                        <reference ref="supermarket_base" />
+                    </item>
+                    <item name="Yogya" icon="presets/shop/supermarket.svg" type="node,closedway">
+                        <label text="Yogya" />
+                        <key key="brand" value="Yogya" />
+                        <key key="brand:wikidata" value="Q124353073" />
+                        <key key="name" value="Yogya" />
+                        <key key="alt_name" value="Toserba Yogya" />
+                        <reference ref="yogyagroup" />
+                        <reference ref="supermarket_base" />
+                    </item>
+                </group>
+                <group name="Department Store" icon="presets/shop/mall.svg">
+                    <item name="Matahari" icon="presets/shop/mall.svg" type="node,closedway">
+                        <reference ref="deptstore_base" />
+                        <key key="brand" value="Matahari" />
+                        <key key="brand:website" value="https://matahari.com" />
+                        <key key="brand:wikidata" value="Q6122878" />
+                        <key key="contact:facebook" value="https://www.facebook.com/MatahariDepartmentStore" />
+                        <key key="contact:instagram" value="https://www.instagram.com/matahari" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@tiktokmatahari" />
+                        <key key="contact:twitter" value="https://x.com/gayamatahari" />
+                        <key key="name" value="Matahari" />
+                    </item>
+                    <item name="Metro" icon="presets/shop/mall.svg" type="node,closedway">
+                        <reference ref="deptstore_base" />
+                        <key key="brand" value="Metro" />
+                        <key key="brand:website" value="https://www.metroindonesia.com" />
+                        <key key="brand:wikidata" value="Q6824450" />
+                        <key key="contact:instagram" value="https://www.instagram.com/metrodept" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@metrodeptstore" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@metrodept" />
+                        <key key="name" value="Metro" />
+                    </item>
+                    <item name="Ramayana" icon="presets/shop/mall.svg" type="node,closedway">
+                        <reference ref="deptstore_base" />
+                        <key key="Operator" value="PT Ramayana Lestari Sentosa Tbk" />
+                        <key key="brand" value="Ramayana" />
+                        <key key="brand:website" value="https://ramayana.co.id" />
+                        <key key="brand:wikidata" value="Q19731380" />
+                        <key key="contact:facebook" value="https://www.facebook.com/Ramayanadepartmentstore" />
+                        <key key="contact:twitter" value="https://twitter.com/ramayanads" />
+                        <key key="contact:instagram" value="https://www.instagram.com/ramayanadeptstore" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCK_EvEAAFzGKUn54sFtt4qw" />
+                        <key key="name" value="Ramayana" />
+                    </item>
+                    <item name="Sogo" icon="presets/shop/mall.svg" type="node,closedway">
+                        <reference ref="deptstore_base" />
+                        <key key="brand" value="Sogo" />
+                        <key key="brand:website" value="https://sogo.co.id" />
+                        <key key="brand:wikidata" value="Q1761653" />
+                        <key key="contact:facebook" value="https://www.facebook.com/SOGO.IND" />
+                        <key key="contact:instagram" value="https://www.instagram.com/sogo_ind" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@sogo_ind" />
+                        <key key="name" value="Sogo" />
+                    </item>
+                </group>
+                <group name="Kecantikan &amp; Perawatan" icon="presets/shop/cosmetics.svg">
+                    <item name="BeautyHaul" icon="presets/shop/cosmetics.svg" type="node,closedway">
+                        <reference ref="cosmetics_base" />
+                        <key key="brand" value="BeautyHaul" />
+                        <key key="brand:website" value="https://www.beautyhaul.com/" />
+                        <key key="contact:facebook" value="https://www.facebook.com/BeautyHaulOfficial" />
+                        <key key="contact:instagram" value="https://www.instagram.com/beautyhaulofficial" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@beautyhaulofficial" />
+                        <key key="name" value="BeautyHaul" />
+                    </item>
+                    <item name="Dan+Dan" icon="presets/shop/cosmetics.svg" type="node,closedway">
+                        <reference ref="cosmetics_base" />
+                        <key key="brand" value="Dan Dan" />
+                        <key key="brand:website" value="https://dandanku.com" />
+                        <key key="contact:instagram" value="https://www.instagram.com/dandan_indonesia" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@dandan_indonesia" />
+                        <key key="contact:twitter" value="https://x.com/dandanindonesia" />
+                        <key key="name" value="Dan Dan" />
+                    </item>
+                    <item name="Guardian" icon="presets/shop/cosmetics.svg" type="node,closedway">
+                        <reference ref="cosmetics_base" />
+                        <key key="brand" value="Guardian" />
+                        <key key="brand:website" value="https://guardianindonesia.co.id" />
+                        <key key="brand:wikidata" value="Q63371124" />
+                        <key key="contact:facebook" value="https://www.facebook.com/GuardianIndo" />
+                        <key key="contact:instagram" value="https://www.instagram.com/guardian_id" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@guardianid" />
+                        <key key="contact:twitter" value="https://x.com/GuardianID" />
+                        <key key="name" value="Guardian" />
+                    </item>
+                    <item name="The Body Shop" icon="presets/shop/cosmetics.svg" type="node,closedway">
+                        <reference ref="cosmetics_base" />
+                        <key key="brand" value="The Body Shop" />
+                        <key key="brand:website" value="https://www.thebodyshop.co.id" />
+                        <key key="brand:wikidata" value="Q837851" />
+                        <key key="contact:facebook" value="https://www.facebook.com/TheBodyShopIndonesia" />
+                        <key key="contact:instagram" value="https://www.instagram.com/thebodyshopindo" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@thebodyshopindo" />
+                        <key key="contact:twitter" value="https://x.com/TheBodyShopIndo" />
+                        <key key="name" value="The Body Shop" />
+                    </item>
+                    <item name="Watsons" icon="presets/shop/cosmetics.svg" type="node,closedway">
+                        <reference ref="cosmetics_base" />
+                        <key key="brand" value="Watsons" />
+                        <key key="brand:website" value="https://www.watsons.co.id" />
+                        <key key="brand:wikidata" value="Q7974785" />
+                        <key key="contact:facebook" value="https://www.facebook.com/WatsonsIndonesia" />
+                        <key key="contact:instagram" value="https://www.instagram.com/watsonsindo" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@watsonsindo" />
+                        <key key="name" value="Watsons" />
+                    </item>
+                    <item name="Boston" icon="presets/shop/cosmetics.svg" type="node,closedway">
+                        <reference ref="cosmetics_base" />
+                        <label text="Boston" />
+                        <key key="brand" value="Boston" />
+                        <key key="name" value="Boston" />
+                        <key key="contact:instagram" value="https://www.instagram.com/boston_id" />
+                        <reference ref="mppagroup" />
+                    </item>
+                </group>
+                <group name="Dealer Kendaraan" icon="presets/vehicle/services.svg">
+                    <item name="Aion" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Aion" />
+                        <key key="alt_name" value="GAC Aion" />
+                        <key key="brand" value="Aion" />
+                        <key key="brand:wikidata" value="Q85740196" />
+                        <key key="brand:website" value="https://aionindonesia.com" />
+                        <key key="contact:instagram" value="https://www.instagram.com/aion_indonesia" />
+                        <key key="contact:facebook" value="https://www.facebook.com/GACAIONIndonesia" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@AIONIndonesia" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@aion_indonesia" />
+                    </item>
+                    <item name="Audi" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Audi" />
+                        <key key="brand" value="Audi" />
+                        <key key="brand:website" value="https://www.audi.co.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/AudiIndonesian" />
+                        <key key="contact:instagram" value="https://www.instagram.com/audi_indonesia" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCgY-FK7IsTZawmRGatcynDQ" />
+                        <key key="contact:twitter" value="https://x.com/audi_indonesia" />
+                    </item>
+                    <item name="BMW" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="BMW" />
+                        <key key="brand" value="BMW" />
+                        <key key="brand:website" value="https://www.bmw.co.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/BMWIndonesia" />
+                        <key key="contact:twitter" value="https://twitter.com/BMW_Indonesia" />
+                        <key key="contact:instagram" value="https://www.instagram.com/bmw_indonesia" />
+                        <key key="contact:youtube" value="https://www.youtube.com/user/bmwindonesia" />
+                    </item>
+                    <item name="BYD" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="BYD" />
+                        <key key="brand" value="BYD" />
+                        <key key="brand:website" value="https://www.byd.com" />
+                        <key key="contact:facebook" value="https://www.facebook.com/IndonesiaBYD" />
+                        <key key="contact:instagram" value="https://www.instagram.com/byd_indonesia" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCIX-Iq7BHJ7kZQvEoVDTVQw" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@byd_indonesia" />
+                    </item>
+                    <item name="Chery" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Chery" />
+                        <key key="brand" value="Chery" />
+                        <key key="brand:website" value="https://chery.co.id" />
+                        <key key="contact:instagram" value="https://www.instagram.com/cherymotorindonesia" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCja9QNu0bF1Hc9la-lJtyfw" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@cherymotorindonesia" />
+                        <key key="contact:facebook" value="https://www.facebook.com/cheryindonesiaofficial" />
+                    </item>
+                    <item name="Citroën" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Citroën" />
+                        <key key="brand" value="Citroën" />
+                        <key key="brand:website" value="https://www.citroen.co.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/citroenindonesiaofficial" />
+                        <key key="contact:twitter" value="https://twitter.com/id_citroen" />
+                        <key key="contact:instagram" value="https://www.instagram.com/citroenidn" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@citroen_id" />
+                    </item>
+                    <item name="DFSK" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="DFSK" />
+                        <key key="brand" value="DFSK" />
+                        <key key="brand:website" value="https://www.dfskmotors.co.id" />
+                        <key key="contact:twitter" value="https://x.com/dfsk_indonesia" />
+                        <key key="contact:instagram" value="https://www.instagram.com/dfskindonesia" />
+                        <key key="contact:facebook" value="https://www.facebook.com/DFSK-Motors-Indonesia-1684920538481095" />
+                        <key key="contact:youtube" value="https://www.youtube.com/c/DFSKMotorsIndonesia" />
+                        <key key="contact:tiktok" value="https://tiktok.com/@dfsk.id" />
+                    </item>
+                    <item name="Daihatsu" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Daihatsu" />
+                        <key key="brand" value="Daihatsu" />
+                        <key key="brand:website" value="https://daihatsu.co.id" />
+                        <key key="contact:facebook" value="https://m.facebook.com/profile.php/?id=100064451359197" />
+                        <key key="contact:instagram" value="https://www.instagram.com/daihatsuind" />
+                        <key key="contact:twitter" value="https://x.com/daihatsuind" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@daihatsuind" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@DaihatsuSahabatku" />
+                    </item>
+                    <item name="Honda" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Honda" />
+                        <key key="brand" value="Honda" />
+                        <key key="brand:website" value="https://www.honda-indonesia.com" />
+                        <key key="contact:facebook" value="https://www.facebook.com/hondaisme" />
+                        <key key="contact:twitter" value="https://x.com/hondaisme" />
+                        <key key="contact:instagram" value="https://www.instagram.com/hondaisme" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@HondaIndonesia" />
+                    </item>
+                    <item name="Hyundai" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Hyundai" />
+                        <key key="brand" value="Hyundai" />
+                        <key key="brand:website" value="https://www.hyundai.com/id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/HyundaiMotorIndonesia" />
+                        <key key="contact:youtube" value="https://www.youtube.com/HyundaiMotorIndonesia" />
+                        <key key="contact:instagram" value="https://www.instagram.com/hyundaimotorindonesia" />
+                        <key key="contact:twitter" value="https://x.com/hyundaimotorid" />
+                    </item>
+                    <item name="Jaecoo" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Jaecoo" />
+                        <key key="brand" value="Jaecoo" />
+                        <key key="brand:website" value="https://jaecoo.id" />
+                        <key key="contact:instagram" value="https://www.instagram.com/jaecoo.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/JaecooIndonesia" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@jaecoo.id" />
+                    </item>
+                    <item name="Jaguar" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Jaguar" />
+                        <key key="brand" value="Jaguar" />
+                        <key key="brand:website" value="https://www.jaguar.co.id" />
+                    </item>
+                    <item name="Kia" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Kia" />
+                        <key key="brand" value="Kia" />
+                        <key key="brand:website" value="https://www.kia.com/id" />
+                        <key key="contact:instagram" value="https://www.instagram.com/kia.idn" />
+                        <key key="contact:facebook" value="https://www.facebook.com/share/1ZsrD36HyP" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@kia_idn" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@kia_idn" />
+                        <key key="contact:twitter" value="https://x.com/kia_idn" />
+                    </item>
+                    <item name="Lexus" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Lexus" />
+                        <key key="brand" value="Lexus" />
+                        <key key="brand:website" value="https://www.lexus.co.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/lexus.indonesia" />
+                        <key key="contact:instagram" value="https://instagram.com/lexus_id" />
+                        <key key="contact:twitter" value="https://x.com/lexusid" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCnXawNPPEm7e0C8N6vqlOQw" />
+                    </item>
+                    <item name="MG" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="MG" />
+                        <key key="brand" value="MG" />
+                        <key key="brand:website" value="https://www.mgmotor.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/MGmotorID" />
+                        <key key="contact:instagram" value="https://www.instagram.com/mgmotor.id" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCjkeHB0_DeugKDwRdQ4ug2Q" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@mgmotorid" />
+                    </item>
+                    <item name="MINI" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="MINI" />
+                        <key key="brand" value="MINI" />
+                        <key key="brand:website" value="https://www.mini.co.id" />
+                        <key key="contact:instagram" value="https://www.instagram.com/mini_indonesia" />
+                    </item>
+                    <item name="Mazda" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="brand" value="Mazda" />
+                        <key key="brand:website" value="https://mazda.co.id" />
+                        <key key="contact:instagram" value="https://www.instagram.com/mazdaid" />
+                        <key key="contact:twitter" value="https://x.com/mazdaidofficial" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@mazdaid" />
+                        <key key="contact:youtube" value="https://www.youtube.com/user/mazdaindonesia" />
+                    </item>
+                    <item name="Mercedes-Benz" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Mercedes-Benz" />
+                        <key key="brand" value="Mercedes-Benz" />
+                        <key key="brand:website" value="https://www.mercedes-benz.co.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/MercedesBenzID" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@MercedesBenzID" />
+                        <key key="contact:instagram" value="https://www.instagram.com/mercedesbenzid" />
+                    </item>
+                    <item name="Mitsubishi" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Mitsubishi" />
+                        <key key="brand" value="Mitsubishi" />
+                        <key key="brand:website" value="https://www.mitsubishi-motors.co.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/MitsubishiMotorsIndonesia" />
+                        <key key="contact:twitter" value="https://x.com/Mitsubishi_ID" />
+                        <key key="contact:instagram" value="https://www.instagram.com/mitsubishimotorsid" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@mitsubishimotorsid" />
+                        <key key="contact:youtube" value="https://www.youtube.com/user/KTBMitsubishiID" />
+                    </item>
+                    <item name="Neta" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Neta" />
+                        <key key="brand" value="Neta" />
+                        <key key="brand:website" value="https://neta.co.id" />
+                        <key key="contact:instagram" value="https://www.instagram.com/netaindonesia" />
+                    </item>
+                    <item name="Nissan" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Nissan" />
+                        <key key="brand" value="Nissan" />
+                        <key key="brand:website" value="https://nissan.co.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/NissanZoneIndonesia" />
+                        <key key="contact:twitter" value="https://x.com/nissanid" />
+                        <key key="contact:youtube" value="https://www.youtube.com/user/nissanid" />
+                        <key key="contact:instagram" value="https://www.instagram.com/nissanid" />
+                    </item>
+                    <item name="Subaru" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Subaru" />
+                        <key key="brand" value="Subaru" />
+                        <key key="brand:website" value="https://www.subaruindonesia.com" />
+                        <key key="contact:facebook" value="https://www.facebook.com/subaru.indonesia" />
+                        <key key="contact:instagram" value="https://www.instagram.com/subaru.indonesia" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@subaru.indonesia" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCVaXGvs4j1V6J1elyZ7CIkg" />
+                    </item>
+                    <item name="Suzuki" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Suzuki" />
+                        <key key="brand" value="Suzuki" />
+                        <key key="brand:website" value="https://auto.suzuki.co.id" />
+                        <key key="contact:twitter" value="https://x.com/suzukiindonesia" />
+                        <key key="contact:facebook" value="https://www.facebook.com/suzukiindonesia" />
+                        <key key="contact:instagram" value="https://www.instagram.com/suzuki_id" />
+                        <key key="contact:youtube" value="https://www.youtube.com/user/SuzukiID" />
+                    </item>
+                    <item name="Toyota" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Toyota" />
+                        <key key="brand" value="Toyota" />
+                        <key key="brand:website" value="https://www.toyota.astra.co.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/ToyotaID" />
+                        <key key="contact:instagram" value="https://www.instagram.com/toyotaid" />
+                        <key key="contact:twitter" value="https://x.com/ToyotaID" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCxVa64ZcWGi_VStlkfmoteQ" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@toyotaid" />
+                        <key key="contact:whatsapp" value="https://wa.me/628111500315" />
+                    </item>
+                    <item name="VinFast" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="VinFast" />
+                        <key key="brand" value="VinFast" />
+                        <key key="brand:website" value="https://vinfastauto.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/VinFast.Indonesia" />
+                        <key key="contact:linkedin" value="https://www.linkedin.com/company/vinfast-indonesia" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@VinFastIndonesia" />
+                    </item>
+                    <item name="Volvo" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Volvo" />
+                        <key key="brand" value="Volvo" />
+                        <key key="brand:website" value="https://www.volvocars.com/id-id" />
+                    </item>
+                    <item name="Wuling" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Wuling" />
+                        <key key="brand" value="Wuling" />
+                        <key key="brand:website" value="https://wuling.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/WulingMotorsIndonesia" />
+                        <key key="contact:instagram" value="https://www.instagram.com/wulingmotorsid" />
+                        <key key="contact:twitter" value="https://x.com/WulingMotorsID" />
+                        <key key="contact:youtube" value="https://www.youtube.com/c/wulingmotorsid" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@wulingmotorsid" />
+                    </item>
+                    <item name="XPeng" icon="presets/shop/car.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="XPeng" />
+                        <key key="brand" value="XPeng" />
+                        <key key="brand:website" value="https://xpeng.co.id" />
+                        <key key="contact:instagram" value="https://www.instagram.com/xpeng_id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/xpeng.id" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@xpeng_id" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@xpeng_id" />
+                    </item>
+                </group>
+            </group>
+            <group name="Kuliner" icon="presets/food/restaurant.svg">
+                <item name="Street food/Jajanan Kaki Lima" icon="presets/food/fast_food.svg" type="node,closedway,multipolygon" preset_name_label="true">
+                    <link wiki="Tag:amenity=fast_food" />
+                    <space />
+                    <key key="amenity" value="fast_food" />
+                    <key key="street_vendor" value="yes" />
+                    <check key="noname" text="Tanpa nama?" disable_off="true" />
+                    <text key="name" text="Nama" />
+                    <text key="brand" text="Merek" />
+                    <text key="brand:wikidata" text="Wikidata Merek" />
+                    <text key="operator" text="Pengelola" />
+                    <reference ref="masakan" />
+                    <preset_link preset_name="Diet/Halal" />
+                    <check key="outdoor_seating" text="Tempat duduk luar" />
+                    <combo key="takeaway" text="Bawa pulang" values="yes,no,only" display_values="Ya,Tidak,Hanya" />
+                    <reference ref="pengiriman" />
+                    <combo key="reservation" text="Reservasi" values="yes,no,required,recommended,members_only" display_values="Ya,Tidak,Wajib,Disarankan,Hanya Anggota" />
+                    <reference ref="jam_buka" />
+                    <space />
+                    <reference ref="internet_merokok" />
+                    <reference ref="link_contact_address" />
+                </item>
+                <item name="Restoran (Template)" icon="presets/food/restaurant.svg" type="node,closedway,multipolygon" preset_name_label="true">
+                    <link wiki="Tag:amenity=restaurant" />
+                    <space />
+                    <key key="amenity" value="restaurant" />
+                    <check key="noname" text="Tanpa nama?" disable_off="true" />
+                    <text key="name" text="Nama" />
+                    <text key="brand" text="Merek" />
+                    <text key="brand:wikidata" text="Wikidata Merek" />
+                    <text key="operator" text="Pengelola" />
+                    <reference ref="masakan" />
+                    <preset_link preset_name="Diet/Halal" />
+                    <check key="outdoor_seating" text="Tempat duduk luar" />
+                    <combo key="takeaway" text="Bawa pulang" values="yes,no,only" display_values="Ya,Tidak,Hanya" />
+                    <combo key="reservation" text="Reservasi" values="yes,no,required,recommended,members_only" display_values="Ya,Tidak,Wajib,Disarankan,Hanya Anggota" />
+                    <reference ref="jam_buka" />
+                    <combo key="opening_hours:kitchen" text="Jam Buka Dapur" delimiter="|" values="24/7|08:30-12:30,15:30-20:00|Sa-Su 00:00-24:00|Mo-Su 09:00-21:00|Mo-Sa 08:00-18:00|Mo-Fr 09:00-17:00|Mo-Fr 08:30-20:00; Sa,Su 08:00-15:00; PH off|Mo-Fr 08:30-20:00; Tu-Su 08:00-15:00; Sa 08:00-12:00|Mo-Su 08:00-18:00; Apr 10-15 off; Jun 08:00-14:00; Aug off; Dec 25 off|sunrise-sunset|Su 10:00+|week 01-53/2 Fr 09:00-12:00; week 02-52/2 We 09:00-12:00" values_no_i18n="true" values_sort="false" />
+                    <reference ref="kursi_roda" />
+                    <space />
+                    <reference ref="internet_merokok" />
+                    <preset_link preset_name="Toilet/WC" />
+                    <reference ref="pengiriman" />
+                    <reference ref="link_contact_address" />
+                </item>
+                <group name="Restoran" icon="presets/food/restaurant.svg">
+                    <item name="Pizza Hut Ristorante" icon="presets/food/restaurant.svg" type="node,closedway">
+                        <label text="Pizza Hut Ristorante" />
+                        <reference ref="semua_bangunan" />
+                        <key key="amenity" value="restaurant" />
+                        <key key="cuisine" value="pizza;italian" />
+                        <reference ref="pizza_hut_operator" />
+                        <key key="name" value="Ristorante" />
+                        <key key="alt_name" value="Pizza Hut Ristorante" />
+                        <key key="website" value="https://www.pizzahut.co.id" />
+                        <key key="reservation" value="yes" />
+                        <key key="diet:halal" value="only" />
+                        <key key="air_conditioning" value="yes" />
+                        <key key="delivery" value="yes" />
+                        <text key="branch" text="Cabang" />
+                        <reference ref="pembayaran" />
+                        <reference ref="opsional_restoran" />
+                        <preset_link preset_name="Alamat" />
+                    </item>
+                    <item name="Pizza Hut" icon="presets/food/restaurant.svg" type="node,closedway">
+                        <label text="Pizza Hut" />
+                        <reference ref="semua_bangunan" />
+                        <key key="amenity" value="restaurant" />
+                        <key key="cuisine" value="pizza;italian" />
+                        <reference ref="pizza_hut_operator" />
+                        <key key="name" value="Pizza Hut" />
+                        <key key="alt_name" value="Pizza Hut Restaurant" />
+                        <key key="short_name" value="PHR" />
+                        <key key="website" value="https://www.pizzahut.co.id" />
+                        <key key="reservation" value="yes" />
+                        <key key="diet:halal" value="only" />
+                        <key key="air_conditioning" value="yes" />
+                        <key key="delivery" value="yes" />
+                        <text key="branch" text="Cabang" />
+                        <reference ref="pembayaran" />
+                        <reference ref="opsional_restoran" />
+                        <preset_link preset_name="Alamat" />
+                    </item>
+                    <item name="Red Pizza Tungku" icon="presets/food/restaurant.svg" type="node,closedway">
+                        <label text="Red Pizza Tungku" />
+                        <reference ref="semua_bangunan" />
+                        <key key="amenity" value="restaurant" />
+                        <key key="cuisine" value="pizza;chicken" />
+                        <key key="brand" value="Red Pizza Tungku" />
+                        <key key="name" value="Red Pizza Tungku" />
+                        <key key="takeaway" value="yes" />
+                        <key key="delivery" value="yes" />
+                        <key key="delivery:partner" value="GrabFood;GoFood" />
+                        <key key="delivery:partner:wikidata" value="Q111178051;Q111181276" />
+                        <key key="contact:instagram" value="https://www.instagram.com/redpizzatungku" />
+                        <key key="diet:halal" value="only" />
+                        <text key="branch" text="Cabang" />
+                        <reference ref="pembayaran" />
+                        <reference ref="opsional_restoran" />
+                        <preset_link preset_name="Alamat" />
+                    </item>
+                    <item name="Red Pizza" icon="presets/food/restaurant.svg" type="node,closedway">
+                        <label text="Red Pizza" />
+                        <reference ref="semua_bangunan" />
+                        <key key="amenity" value="restaurant" />
+                        <key key="cuisine" value="pizza;chicken" />
+                        <key key="brand" value="Red Pizza" />
+                        <key key="name" value="Red Pizza" />
+                        <key key="website:menu" value="https://drive.google.com/file/d/16YwI-YSrXs9JqFj_jA2PmZq1CeMM1N6I/view" />
+                        <key key="takeaway" value="yes" />
+                        <key key="delivery" value="yes" />
+                        <key key="delivery:partner" value="GrabFood;GoFood" />
+                        <key key="delivery:partner:wikidata" value="Q111178051;Q111181276" />
+                        <key key="contact:facebook" value="https://www.facebook.com/Redpizza.id" />
+                        <key key="contact:instagram" value="https://www.instagram.com/redpizza.id" />
+                        <key key="diet:halal" value="only" />
+                        <text key="branch" text="Cabang" />
+                        <reference ref="pembayaran" />
+                        <reference ref="opsional_restoran" />
+                        <preset_link preset_name="Alamat" />
+                    </item>
+                </group>
+                <group name="Kafe" icon="presets/food/cafe.svg">
+                    <item name="Excelso" icon="presets/food/cafe.svg" type="node,closedway">
+                        <label text="Excelso" />
+                        <reference ref="semua_bangunan" />
+                        <key key="amenity" value="cafe" />
+                        <key key="cuisine" value="coffee_shop" />
+                        <key key="takeaway" value="yes" />
+                        <key key="brand" value="Excelso" />
+                        <key key="brand:wikidata" value="Q124651558" />
+                        <key key="name" value="Excelso" />
+                        <key key="app:google" value="https://play.google.com/store/apps/details?id=id.web.ravintola.excelsocrm" />
+                        <key key="app:apple" value="https://apps.apple.com/il/app/excelso/id1434669847" />
+                        <key key="contact:instagram" value="https://www.instagram.com/excelsocoffee" />
+                        <key key="operator" value="PT Excelso Multi Rasa" />
+                        <key key="website:menu" value="https://excelso-coffee.com/our-menu" />
+                        <key key="website" value="https://excelso-coffee.com" />
+                        <key key="membership" value="yes" />
+                        <key key="payment:cash" value="no" />
+                        <key key="payment:debit_cards" value="yes" />
+                        <key key="payment:credit_cards" value="yes" />
+                        <key key="payment:gpn_qris" value="yes" />
+                        <text key="branch" text="Cabang" />
+                        <reference ref="pembayaran" />
+                        <reference ref="opsional_general" />
+                    </item>
+                    <item name="J.CO Donuts &amp; Coffee" icon="presets/food/cafe.svg" type="node,closedway">
+                        <label text="J.Co Donuts and Coffee" />
+                        <reference ref="semua_bangunan" />
+                        <key key="amenity" value="cafe" />
+                        <key key="cuisine" value="donut;coffee_shop;frozen_yogurt" />
+                        <key key="takeaway" value="yes" />
+                        <key key="brand" value="J.CO Donuts" />
+                        <key key="brand:wikidata" value="Q4260444" />
+                        <key key="name" value="J.CO" />
+                        <key key="alt_name" value="J.Co Donuts and Coffee" />
+                        <key key="website" value="https://jcodonuts.com" />
+                        <key key="website:menu" value="https://jcodonuts.com/id/en/menu" />
+                        <key key="website:orders" value="https://jco.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/iamjcolovers" />
+                        <key key="contact:instagram" value="https://instagram.com/jcoindonesia" />
+                        <key key="contact:twitter" value="https://twitter.com/jcoindonesia" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UC1yUQ6TEReWu_QtFvaZX-SQ" />
+                        <key key="app:google" value="https://play.google.com/store/apps/details?id=com.jcodonuts.app" />
+                        <key key="app:apple" value="https://apps.apple.com/id/app/jco/id1589730426" />
+                        <text key="branch" text="Cabang" />
+                        <reference ref="pembayaran" />
+                        <reference ref="opsional_general" />
+                    </item>
+                    <item name="JCO Reserve" icon="presets/food/cafe.svg" type="node,closedway">
+                        <label text="JCO Reserve" />
+                        <reference ref="semua_bangunan" />
+                        <key key="amenity" value="cafe" />
+                        <key key="cuisine" value="donut;coffee_shop;pastry;western" />
+                        <key key="takeaway" value="yes" />
+                        <key key="brand" value="JCO Reserve" />
+                        <key key="name" value="JCO Reserve" />
+                        <key key="website" value="https://www.jcoreserve.com" />
+                        <key key="website:menu" value="https://www.jcoreserve.com/menu" />
+                        <key key="contact:twitter" value="https://x.com/jcoreserve" />
+                        <key key="contact:instagram" value="https://www.instagram.com/jcoreserve" />
+                        <key key="contact:facebook" value="https://www.facebook.com/jcoreserve" />
+                        <text key="branch" text="Cabang" />
+                        <reference ref="pembayaran" />
+                        <reference ref="opsional_general" />
+                    </item>
+                    <item name="Point Coffee" icon="presets/food/cafe.svg" type="node,closedway">
+                        <label text="Point Coffee" />
+                        <reference ref="semua_bangunan" />
+                        <key key="amenity" value="cafe" />
+                        <key key="cuisine" value="coffee_shop" />
+                        <key key="takeaway" value="yes" />
+                        <key key="brand" value="Point Coffee" />
+                        <key key="brand:wikidata" value="Q124651558" />
+                        <key key="name" value="Point Coffee" />
+                        <key key="contact:instagram" value="https://www.instagram.com/pointcoffeeid" />
+                        <text key="branch" text="Cabang" />
+                        <reference ref="pembayaran" />
+                        <reference ref="opsional_general" />
+                    </item>
+                </group>
+                <group name="Fast Food" icon="presets/food/fast_food.svg">
+                    <group name="Burger &amp; Sandwich" icon="presets/food/fast_food.svg">
+                        <item name="Burger King" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Burger King" />
+                            <key key="cuisine" value="burger" />
+                            <key key="brand" value="Burger King" />
+                            <key key="brand:wikidata" value="Q177054" />
+                            <key key="name" value="Burger King" />
+                            <key key="alt_name" value="BK" />
+                            <key key="website:orders" value="https://bkdelivery.co.id" />
+                            <key key="contact:facebook" value="https://www.facebook.com/burgerkingindonesia" />
+                            <key key="contact:instagram" value="https://www.instagram.com/burgerking.id" />
+                            <key key="contact:twitter" value="https://twitter.com/burgerking_id" />
+                            <key key="contact:youtube" value="https://www.youtube.com/channel/UC-F_fh9CRDwhJrY_ibHae-g" />
+                            <key key="air_conditioning" value="yes" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="McDonald's" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="McDonald's" />
+                            <key key="cuisine" value="burger;fried_chicken;ice_cream" />
+                            <key key="brand" value="McDonald's" />
+                            <key key="brand:wikidata" value="Q38076" />
+                            <key key="operator" value="PT Rekso Nasional Food" />
+                            <key key="operator:abbr" value="PT RNF" />
+                            <key key="operator:type" value="private" />
+                            <key key="name" value="McDonald's" />
+                            <key key="short_name" value="McD" />
+                            <key key="website" value="https://www.mcdonalds.co.id" />
+                            <key key="website:menu" value="https://www.mcdonalds.co.id/menu" />
+                            <key key="contact:facebook" value="http://www.facebook.com/McDonaldsID" />
+                            <key key="contact:instagram" value="http://instagram.com/mcdonaldsid" />
+                            <key key="contact:tiktok" value="https://www.tiktok.com/@mcdonaldsid" />
+                            <key key="contact:twitter" value="https://x.com/mcdonalds_id" />
+                            <key key="contact:whatsapp" value="+6281110514045" />
+                            <key key="contact:youtube" value="https://www.youtube.com/user/McDonaldsID" />
+                            <key key="app:google" value="https://play.google.com/store/apps/details?id=com.mcdonalds.mobileapp" />
+                            <key key="app:apple" value="https://apps.apple.com/id/app/mcdonalds/id1217507712" />
+                            <key key="air_conditioning" value="yes" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="Subway" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Subway" />
+                            <key key="cuisine" value="sandwich" />
+                            <key key="brand" value="Subway" />
+                            <key key="brand:wikidata" value="Q244457" />
+                            <key key="name" value="Subway" />
+                            <key key="delivery:partner" value="GrabFood;GoFood;ShopeeFood" />
+                            <key key="delivery:partner:wikidata" value="Q111178051;Q111181276" />
+                            <key key="website" value="https://www.subway.co.id" />
+                            <key key="website:menu" value="https://www.subway.co.id/our-menu" />
+                            <key key="contact:facebook" value="https://www.facebook.com/subway.indonesia" />
+                            <key key="contact:instagram" value="https://www.instagram.com/subway.indonesia" />
+                            <key key="operator" value="PT Sari Sandwich Indonesia" />
+                            <key key="air_conditioning" value="yes" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="Wendy's" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Wendy's" />
+                            <key key="cuisine" value="burger" />
+                            <key key="brand" value="Wendy's" />
+                            <key key="brand:wikidata" value="Q550258" />
+                            <key key="name" value="Wendy's" />
+                            <key key="contact:facebook" value="https://www.facebook.com/Wendysindo" />
+                            <key key="contact:instagram" value="https://www.instagram.com/wendysindo" />
+                            <key key="air_conditioning" value="yes" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                    </group>
+                    <group name="Ayam" icon="presets/food/fast_food.svg">
+                        <item name="A&amp;W" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="A&amp;W" />
+                            <key key="cuisine" value="chicken;burger" />
+                            <key key="brand" value="A&amp;W" />
+                            <key key="brand:wikidata" value="Q277641" />
+                            <key key="operator" value="PT Biru Fast Food Nusantara" />
+                            <key key="operator:type" value="private" />
+                            <key key="name" value="A&amp;W" />
+                            <key key="alt_name" value="A&amp;W Restoran Khas Amerika" />
+                            <key key="website" value="https://www.awrestaurants.co.id" />
+                            <key key="website:menu" value="https://www.awrestaurants.co.id/welcome/paketgratis" />
+                            <key key="contact:facebook" value="https://www.facebook.com/AWIndonesia" />
+                            <key key="contact:instagram" value="https://www.instagram.com/awrestoranid" />
+                            <key key="contact:tiktok" value="https://www.tiktok.com/@AWIndonesia" />
+                            <key key="air_conditioning" value="yes" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="Almaz Fried Chicken" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Almaz Fried Chicken" />
+                            <key key="cuisine" value="chicken" />
+                            <key key="brand" value="Almaz Fried Chicken" />
+                            <key key="name" value="Almaz Fried Chicken" />
+                            <key key="operator" value="PT Abuya Berkah Indonesia Makmur" />
+                            <key key="website" value="https://www.almazfriedchicken.com" />
+                            <key key="contact:facebook" value="https://www.facebook.com/p/Almaz-Fried-Chicken-61558928158486" />
+                            <key key="contact:instagram" value="https://www.instagram.com/almazfriedchicken" />
+                            <key key="contact:tiktok" value="https://www.tiktok.com/@almazfriedchicken.real" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="CFC" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="CFC" />
+                            <key key="cuisine" value="chicken" />
+                            <key key="brand" value="CFC" />
+                            <key key="brand:wikidata" value="Q5020502" />
+                            <key key="name" value="CFC" />
+                            <key key="alt_name" value="California Fried Chicken" />
+                            <key key="operator" value="PT Pioneerindo Gourmet International Tbk" />
+                            <key key="website" value="https://www.cfcindonesia.com" />
+                            <key key="contact:facebook" value="https://www.facebook.com/cfcindonesia" />
+                            <key key="contact:instagram" value="https://www.instagram.com/cfcindonesia_official" />
+                            <key key="contact:tiktok" value="https://www.tiktok.com/@cfcindonesia_official" />
+                            <key key="contact:twitter" value="https://twitter.com/id_cfcindonesia" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="d'BestO" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="d'BestO" />
+                            <key key="cuisine" value="chicken;burger" />
+                            <key key="brand" value="d'BestO" />
+                            <key key="operator" value="PT Setya Kuliner Mandiri" />
+                            <key key="operator:type" value="private" />
+                            <key key="name" value="d'BestO" />
+                            <key key="website" value="https://www.dbesto.co.id" />
+                            <key key="contact:instagram" value="https://www.instagram.com/dbesto_id" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="d'Kriuk" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="d'Kriuk" />
+                            <key key="cuisine" value="chicken" />
+                            <key key="brand" value="d'Kriuk" />
+                            <key key="name" value="d'Kriuk" />
+                            <key key="alt_name" value="Dkriuk Fried Chicken" />
+                            <key key="operator" value="PT Raja Rasa Kuliner" />
+                            <key key="operator:type" value="private" />
+                            <key key="website" value="https://dkriuk.com" />
+                            <key key="contact:instagram" value="https://www.instagram.com/dkriukchicken" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="Hisana Fried Chicken" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Hisana Fried Chicken" />
+                            <key key="cuisine" value="chicken" />
+                            <key key="brand" value="Hisana Fried Chicken" />
+                            <key key="operator" value="PT Selahonje Jaya Abadi" />
+                            <key key="operator:type" value="private" />
+                            <key key="name" value="Hisana Fried Chicken" />
+                            <key key="short_name" value="HFC" />
+                            <key key="website" value="https://hisanafriedchicken.com" />
+                            <key key="contact:facebook" value="https://www.facebook.com/hisanafriedchicken" />
+                            <key key="contact:instagram" value="https://www.instagram.com/hisanaindonesia" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="J Chicken" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="J Chicken" />
+                            <key key="cuisine" value="chicken" />
+                            <key key="brand" value="J.Chicken" />
+                            <key key="name" value="J.Chicken" />
+                            <key key="alt_name" value="J Chicken" />
+                            <key key="operator" value="PT Jfood Group Indonesia" />
+                            <key key="operator:type" value="private" />
+                            <key key="website" value="https://www.jchicken.id" />
+                            <key key="contact:facebook" value="https://www.facebook.com/jchickenid" />
+                            <key key="contact:instagram" value="https://www.instagram.com/jchicken.id" />
+                            <key key="contact:tiktok" value="https://www.tiktok.com/@jchicken.id" />
+                            <key key="app:google" value="https://play.google.com/store/apps/details?id=com.shatan.jchicken" />
+                            <key key="app:apple" value="https://apps.apple.com/id/app/myjck/id6479183495" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="Karen Chicken" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Karen Chicken by Olive" />
+                            <key key="cuisine" value="chicken" />
+                            <key key="brand" value="Karen Chicken" />
+                            <key key="name" value="Karen Chicken" />
+                            <key key="alt_name" value="Karen Chicken by Olive" />
+                            <key key="contact:instagram" value="https://www.instagram.com/karenchickenbyolive" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="KFC" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="KFC" />
+                            <key key="cuisine" value="chicken" />
+                            <key key="brand" value="KFC" />
+                            <key key="brand:wikidata" value="Q524757" />
+                            <key key="name" value="KFC" />
+                            <key key="alt_name" value="Kentucky Fried Chicken" />
+                            <key key="website" value="https://www.kfcku.com" />
+                            <key key="website:orders" value="https://order.kfcku.co.id" />
+                            <key key="contact:facebook" value="https://www.facebook.com/kfcindonesia" />
+                            <key key="contact:instagram" value="https://www.instagram.com/kfcindonesia" />
+                            <key key="contact:twitter" value="https://x.com/kfcindonesia" />
+                            <key key="contact:youtube" value="https://youtube.com/@kfcindonesia" />
+                            <key key="app:google" value="https://play.google.com/store/apps/details?id=com.kfc.mobile" />
+                            <key key="app:apple" value="https://apps.apple.com/id/app/kfcku/id1474915867" />
+                            <key key="operator" value="PT Fast Food Indonesia Tbk" />
+                            <key key="air_conditioning" value="yes" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="Labbaik Chicken" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Labbaik Chicken" />
+                            <key key="cuisine" value="chicken" />
+                            <key key="brand" value="Labbaik Chicken" />
+                            <key key="name" value="Labbaik Chicken" />
+                            <key key="website" value="https://labbaikchicken.co.id" />
+                            <key key="contact:facebook" value="https://www.facebook.com/labbaikchicken" />
+                            <key key="contact:instagram" value="https://www.instagram.com/labbaikchicken" />
+                            <key key="contact:tiktok" value="https://www.tiktok.com/@labbaik.chicken" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="Olive Fried Chicken" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Olive Fried Chicken" />
+                            <key key="cuisine" value="chicken" />
+                            <key key="brand" value="Olive Fried Chicken" />
+                            <key key="name" value="Olive Fried Chicken" />
+                            <key key="operator" value="CV Kepuasan Abadi Konsumen" />
+                            <key key="operator:type" value="private" />
+                            <key key="contact:facebook" value="https://www.facebook.com/ofc.setiapsaatolive" />
+                            <key key="contact:instagram" value="https://www.instagram.com/olivefriedchicken.kak" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="Popeyes" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Popeyes" />
+                            <key key="cuisine" value="chicken" />
+                            <key key="brand" value="Popeyes" />
+                            <key key="brand:wikidata" value="Q1330910" />
+                            <key key="operator" value="PT Sari Chicken Indonesia" />
+                            <key key="operator:type" value="private" />
+                            <key key="name" value="Popeyes" />
+                            <key key="alt_name" value="Popeyes Louisiana Kitchen" />
+                            <key key="website" value="https://popeyes.co.id" />
+                            <key key="contact:facebook" value="https://www.facebook.com/popeyesindo" />
+                            <key key="contact:instagram" value="https://www.instagram.com/popeyes_indo" />
+                            <key key="contact:tiktok" value="https://www.tiktok.com/@popeyes_indo" />
+                            <key key="contact:twitter" value="https://x.com/popeyes_indo" />
+                            <key key="contact:youtube" value="https://www.youtube.com/@popeyes_indo/" />
+                            <key key="app:google" value="https://play.google.com/store/apps/details?id=com.popeyes.id" />
+                            <key key="app:apple" value="https://apps.apple.com/id/app/popeyes-indonesia/id1658746573" />
+                            <key key="air_conditioning" value="yes" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="Richeese Factory" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Richeese Factory" />
+                            <key key="cuisine" value="chicken" />
+                            <key key="brand" value="Richeese Factory" />
+                            <key key="brand:wikidata" value="Q22915087" />
+                            <key key="operator" value="PT Richeese Kuliner Indonesia" />
+                            <key key="operator:type" value="private" />
+                            <key key="name" value="Richeese Factory" />
+                            <key key="website" value="https://richeesefactory.com" />
+                            <key key="website:orders" value="https://order.richeesefactory.com" />
+                            <key key="website:menu" value="https://richeesefactory.com/menus" />
+                            <key key="contact:facebook" value="https://www.facebook.com/RicheeseFactoryID" />
+                            <key key="contact:instagram" value="https://www.instagram.com/richeese_factory" />
+                            <key key="contact:tiktok" value="https://www.tiktok.com/@richeesefactory.id" />
+                            <key key="contact:youtube" value="https://www.youtube.com/@RicheeseFactoryID" />
+                            <key key="app:google" value="https://play.google.com/store/apps/details?id=com.richeese.id" />
+                            <key key="app:apple" value="https://apps.apple.com/id/app/richeese-factory/id6657982438" />
+                            <key key="air_conditioning" value="yes" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="Rocket Chicken" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Rocket Chicken" />
+                            <key key="cuisine" value="chicken" />
+                            <key key="brand" value="Rocket Chicken" />
+                            <key key="brand:wikidata" value="Q67462086" />
+                            <key key="name" value="Rocket Chicken" />
+                            <key key="operator" value="PT Rocket Chicken Indonesia" />
+                            <key key="operator:type" value="private" />
+                            <key key="website" value="https://www.rocketchicken.co.id" />
+                            <key key="contact:facebook" value="https://www.facebook.com/rocketchicken.ind" />
+                            <key key="contact:instagram" value="https://www.instagram.com/rocketchickenofficial" />
+                            <key key="contact:tiktok" value="https://www.tiktok.com/@rocketchickenofficial" />
+                            <key key="contact:twitter" value="https://x.com/rocketchicken" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="Rocky Rooster" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Rocky Rooster" />
+                            <key key="cuisine" value="chicken" />
+                            <key key="brand" value="Rocky Rooster" />
+                            <key key="name" value="Rocky Rooster" />
+                            <key key="contact:instagram" value="https://www.instagram.com/rockyrooster.id" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="Sabana Fried Chicken" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Sabana Fried Chicken" />
+                            <key key="cuisine" value="chicken" />
+                            <key key="brand" value="Sabana Fried Chicken" />
+                            <key key="operator" value="PT Sarana Berkah Niaga" />
+                            <key key="operator:type" value="private" />
+                            <key key="name" value="Sabana Fried Chicken" />
+                            <key key="website" value="https://www.sabana.co.id" />
+                            <key key="contact:instagram" value="https://www.instagram.com/sabanaku" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="Texas Chicken" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Texas Chicken" />
+                            <key key="cuisine" value="chicken" />
+                            <key key="brand" value="Texas Chicken" />
+                            <key key="brand:wikidata" value="Q1089932" />
+                            <key key="operator" value="PT Quick Serve Indonesia" />
+                            <key key="operator:type" value="private" />
+                            <key key="name" value="Texas Chicken" />
+                            <key key="alt_name" value="Church's Chicken" />
+                            <key key="delivery:partner" value="GrabFood;GoFood;ShopeeFood" />
+                            <key key="website" value="https://indonesia.texaschicken.com" />
+                            <key key="contact:facebook" value="https://www.facebook.com/texaschickenidn" />
+                            <key key="contact:instagram" value="https://www.instagram.com/texaschickenidn" />
+                            <key key="contact:twitter" value="https://x.com/TexasChickenID" />
+                            <key key="air_conditioning" value="yes" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="Wingstop" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Wingstop" />
+                            <key key="cuisine" value="chicken;wings" />
+                            <key key="brand" value="Wingstop" />
+                            <key key="brand:wikidata" value="Q8025339" />
+                            <key key="operator" value="PT Wiryamanta Sadina" />
+                            <key key="operator:type" value="private" />
+                            <key key="name" value="Wingstop" />
+                            <key key="website" value="https://wingstop.id" />
+                            <key key="website:menu" value="https://wingstop.id/main/menu" />
+                            <key key="contact:facebook" value="https://www.facebook.com/WingstopID" />
+                            <key key="contact:instagram" value="https://www.instagram.com/wingstopid" />
+                            <key key="contact:tiktok" value="https://www.tiktok.com/@wingstopid" />
+                            <key key="contact:youtube" value="https://www.youtube.com/channel/UCBaPTPqWT5fGZYjK7fxCGzg" />
+                            <key key="app:google" value="https://play.google.com/store/apps/details?id=com.wiryamanta.wingstop" />
+                            <key key="app:apple" value="https://apps.apple.com/id/app/wingstop-indonesia/id6751758171" />
+                            <key key="air_conditioning" value="yes" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                    </group>
+                    <group name="Pizza" icon="presets/food/fast_food.svg">
+                        <item name="Domino's Pizza" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Domino's Pizza" />
+                            <key key="cuisine" value="pizza" />
+                            <key key="brand" value="Domino's Pizza" />
+                            <key key="brand:wikidata" value="Q839466" />
+                            <key key="brand:wikipedia" value="en:Domino's" />
+                            <key key="name" value="Domino's Pizza" />
+                            <key key="alt_name" value="Dominos" />
+                            <key key="website" value="https://pizza-restoran.dominos.co.id" />
+                            <key key="contact:instagram" value="https://www.instagram.com/dominos_id" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="Papa Ron's Pizza" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Papa Ron's Pizza" />
+                            <key key="cuisine" value="pizza" />
+                            <key key="brand" value="Papa Ron's Pizza" />
+                            <key key="brand:wikidata" value="Q12503044" />
+                            <key key="brand:wikipedia" value="id:Papa Ron's Pizza" />
+                            <key key="name" value="Papa Ron's Pizza" />
+                            <key key="website" value="https://paparonspizza.com" />
+                            <key key="contact:facebook" value="https://www.facebook.com/prpronspizzaindonesia" />
+                            <key key="contact:instagram" value="https://www.instagram.com/paparonspizzaindonesia" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                        <item name="Pizza Hut Delivery" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Pizza Hut Delivery" />
+                            <key key="cuisine" value="pizza;italian" />
+                            <reference ref="pizza_hut_operator" />
+                            <key key="name" value="Pizza Hut Delivery" />
+                            <key key="short_name" value="PHD" />
+                            <key key="takeaway" value="only" />
+                            <key key="website" value="https://www.pizzahut.co.id" />
+                            <reference ref="fast_food_base" />
+                        </item>
+                    </group>
+                    <group name="Martabak" icon="presets/food/fast_food.svg">
+                        <item name="Martabak (Template)" icon="presets/food/fast_food.svg" type="node,closedway,multipolygon" preset_name_label="true">
+                            <link wiki="Tag:amenity=fast_food" />
+                            <space />
+                            <key key="amenity" value="fast_food" />
+                            <check key="street_vendor" text="Kaki lima?" disable_off="true" />
+                            <check key="noname" text="Tanpa nama?" disable_off="true" />
+                            <text key="name" text="Nama" />
+                            <text key="brand" text="Merek" />
+                            <text key="brand:wikidata" text="Wikidata Merek" />
+                            <text key="operator" text="Pengelola" />
+                            <key key="cuisine" value="indonesian;martabak;dessert" />
+                            <preset_link preset_name="Diet/Halal" />
+                            <check key="outdoor_seating" text="Tempat duduk luar" />
+                            <combo key="takeaway" text="Bawa pulang" values="yes,no,only" display_values="Ya,Tidak,Hanya" />
+                            <reference ref="pengiriman" />
+                            <combo key="reservation" text="Reservasi" values="yes,no,required,recommended,members_only" display_values="Ya,Tidak,Wajib,Disarankan,Hanya Anggota" />
+                            <reference ref="jam_buka" />
+                            <space />
+                            <reference ref="internet_merokok" />
+                            <reference ref="link_contact_address" />
+                        </item>
+                        <item name="Martabak Legit Group" icon="presets/food/fast_food.svg" type="node,closedway,multipolygon" preset_name_label="true">
+                            <link wiki="Tag:amenity=fast_food" />
+                            <space />
+                            <text key="branch" text="Cabang" />
+                            <text key="opening_hours" text="Jam Operasional" default="Mo-Su 15:00-23:00" />
+                            <check key="outdoor_seating" text="Tempat duduk luar" />
+                            <key key="amenity" value="fast_food" />
+                            <key key="brand" value="Martabak Legit Group" />
+                            <key key="contact:facebook" value="https://www.facebook.com/martabaklegitbandung" />
+                            <key key="contact:instagram" value="https://www.instagram.com/officialmartabaklegitgroup" />
+                            <key key="contact:tiktok" value="https://www.tiktok.com/@officialmartabaklegit" />
+                            <key key="contact:twitter" value="https://x.com/martabaklegitID" />
+                            <key key="cuisine" value="indonesian;martabak;dessert" />
+                            <key key="delivery:partner:wikidata" value="Q111178051;Q111181276" />
+                            <key key="delivery:partner" value="GrabFood;GoFood;ShopeeFood" />
+                            <key key="delivery" value="yes" />
+                            <key key="diet:halal" value="only" />
+                            <key key="name" value="Martabak Legit Group" />
+                            <key key="operator" value="PT Sinar Legit Abadi" />
+                            <key key="reservation" value="yes" />
+                            <key key="takeaway" value="only" />
+                            <key key="payment:cash" value="yes" />
+                            <key key="payment:gpn_qris" value="yes" />
+                            <key key="website" value="https://martabaklegitgroup.id" />
+                            <space />
+                            <preset_link preset_name="Alamat" />
+                        </item>
+                        <item name="Martabak Pecenongan 78" icon="presets/food/fast_food.svg" type="node,closedway,multipolygon" preset_name_label="true">
+                            <link wiki="Tag:amenity=fast_food" />
+                            <space />
+                            <text key="branch" text="Cabang" />
+                            <check key="outdoor_seating" text="Tempat duduk luar" />
+                            <key key="amenity" value="fast_food" />
+                            <key key="brand" value="Martabak Pecenongan 78" />
+                            <key key="contact:instagram" value="https://www.instagram.com/martabakpecenongan78" />
+                            <key key="contact:tiktok" value="https://www.tiktok.com/@martabakpecenongan78.id" />
+                            <key key="cuisine" value="indonesian;martabak;dessert" />
+                            <key key="delivery:partner:wikidata" value="Q111178051;Q111181276" />
+                            <key key="delivery:partner" value="GrabFood;GoFood;ShopeeFood" />
+                            <key key="delivery" value="yes" />
+                            <key key="diet:halal" value="only" />
+                            <key key="name" value="Martabak Pecenongan 78" />
+                            <key key="reservation" value="yes" />
+                            <key key="takeaway" value="only" />
+                            <key key="website:orders" value="https://martabakpecenongan78.klikit.io/menu" />
+                            <reference ref="jam_buka" />
+                            <space />
+                            <reference ref="internet_merokok" />
+                            <reference ref="link_contact_address" />
+                        </item>
+                    </group>
+                </group>
+            </group>
+            <group name="Jasa" icon="presets/service/community_centre.svg">
+                <group name="Barbershop" icon="presets/shop/hairdresser.svg">
+                    <item name="Redbox Barbershop" icon="presets/shop/hairdresser.svg">
+                        <label text="Redbox Barbershop" />
+                        <reference ref="semua_bangunan" />
+                        <key key="shop" value="hairdresser" />
+                        <key key="hairdresser" value="barber" />
+                        <key key="brand" value="Redbox Barbershop" />
+                        <key key="name" value="Redbox Barbershop" />
+                        <key key="reservation" value="yes" />
+                        <reference ref="jam_buka" />
+                        <text key="branch" text="Cabang" />
+                        <reference ref="link_contact_address" />
+                        <reference ref="sumber_data" />
+                        <key key="contact:facebook" value="https://www.facebook.com/redboxbarbershop" />
+                        <key key="contact:instagram" value="https://www.instagram.com/redboxbarbershop" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@red_box_barbershop" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCJrxCVx8_oK8dFxNHDQUUaw" />
+                        <key key="contact:twitter" value="https://x.com/redboxbarber" />
+                    </item>
+                </group>
+                <group name="Laundry" icon="presets/shop/laundry.svg">
+                    <item name="Cirebon Laundry" icon="presets/shop/laundry.svg" type="node,closedway">
+                        <label text="Cirebon Laundry" />
+                        <reference ref="semua_bangunan" />
+                        <key key="shop" value="laundry" />
+                        <key key="brand" value="Cirebon Laundry" />
+                        <key key="name" value="Cirebon Laundry" />
+                        <reference ref="jam_buka" />
+                        <key key="contact:instagram" value="https://www.instagram.com/laundry.cirebon" />
+                        <text key="branch" text="Cabang" />
+                        <reference ref="laundry_services" />
+                        <reference ref="opsional_general" />
+                        <reference ref="link_contact_address" />
+                        <reference ref="sumber_data" />
+                    </item>
+                    <item name="Kota Laundry" icon="presets/shop/laundry.svg" type="node,closedway">
+                        <label text="Kota Laundry" />
+                        <reference ref="semua_bangunan" />
+                        <key key="shop" value="laundry" />
+                        <key key="brand" value="Kota Laundry" />
+                        <key key="name" value="Kota Laundry" />
+                        <reference ref="jam_buka" />
+                        <key key="contact:instagram" value="https://www.instagram.com/kotalaundry.id" />
+                        <text key="branch" text="Cabang" />
+                        <reference ref="laundry_services" />
+                        <reference ref="opsional_general" />
+                        <reference ref="link_contact_address" />
+                        <reference ref="sumber_data" />
+                    </item>
+                </group>
+            </group>
+        </group>
+        <!-- ============================================ -->
+        <!-- FINANSIAL -->
+        <!-- ============================================ -->
+        <group name="Finansial" icon="presets/money/bank.svg">
+            <group name="Bank" icon="presets/money/bank.svg">
+                <item name="Bank Banten" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank Banten" />
+                    <key key="brand" value="Bank Banten" />
+                    <key key="brand:wikidata" value="Q12474516" />
+                    <key key="brand:website" value="https://www.bankbanten.co.id" />
+                    <key key="name" value="Bank Banten" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank BCA" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank Central Asia" />
+                    <key key="brand" value="Bank Central Asia" />
+                    <key key="brand:wikidata" value="Q806626" />
+                    <key key="brand:website" value="https://www.bca.co.id" />
+                    <key key="name" value="Bank Central Asia" />
+                    <key key="short_name" value="BCA" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank BJB" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank BJB" />
+                    <key key="brand" value="Bank BJB" />
+                    <key key="brand:wikidata" value="Q12474472" />
+                    <key key="brand:website" value="https://www.bankbjb.co.id" />
+                    <key key="name" value="Bank BJB" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank BNI" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank Negara Indonesia (BNI)" />
+                    <key key="brand" value="BNI" />
+                    <key key="brand:wikidata" value="Q2882611" />
+                    <key key="brand:website" value="https://www.bni.co.id" />
+                    <key key="name" value="BNI" />
+                    <key key="official_name" value="Bank Negara Indonesia" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank BRI" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank Rakyat Indonesia (BRI)" />
+                    <key key="brand" value="BRI" />
+                    <key key="brand:wikidata" value="Q623042" />
+                    <key key="brand:website" value="https://bri.co.id" />
+                    <key key="name" value="BRI" />
+                    <key key="official_name" value="Bank Rakyat Indonesia" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank Bukopin (Sekarang KB Bank)" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank Bukopin (Sekarang KB Bank)" />
+                    <key key="brand" value="KB Bank" />
+                    <key key="brand:wikidata" value="Q806620" />
+                    <key key="brand:website" value="https://www.kbbank.co.id" />
+                    <key key="name" value="Bank Bukopin" />
+                    <key key="alt_name" value="KB Bank" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank Danamon" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank Danamon" />
+                    <key key="brand" value="Bank Danamon" />
+                    <key key="brand:wikidata" value="Q4855913" />
+                    <key key="brand:website" value="https://www.danamon.co.id" />
+                    <key key="name" value="Bank Danamon" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank INA" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank INA" />
+                    <key key="brand" value="Bank INA" />
+                    <key key="brand:website" value="https://www.bankina.co.id" />
+                    <key key="name" value="Bank INA" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank J-Trust Bank" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank J-Trust Bank" />
+                    <key key="brand" value="J Trust Bank" />
+                    <key key="brand:wikidata" value="Q96100052" />
+                    <key key="brand:website" value="https://www.jtrustbank.co.id" />
+                    <key key="name" value="J Trust Bank" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank Jago" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank Jago" />
+                    <key key="brand" value="Bank Jago" />
+                    <key key="brand:wikidata" value="Q12474471" />
+                    <key key="brand:website" value="https://www.jago.com" />
+                    <key key="name" value="Bank Jago" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank Jatim" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank Jatim" />
+                    <key key="brand" value="Bank Jatim" />
+                    <key key="brand:wikidata" value="Q12474496" />
+                    <key key="brand:website" value="https://www.bankjatim.co.id" />
+                    <key key="name" value="Bank Jatim" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank Jatim Syariah" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank Jatim Syariah" />
+                    <key key="brand" value="Bank Jatim Syariah" />
+                    <key key="brand:website" value="https://www.bankjatim.co.id" />
+                    <key key="name" value="Bank Jatim Syariah" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank Mandiri" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank Mandiri" />
+                    <key key="brand" value="Bank Mandiri" />
+                    <key key="brand:wikidata" value="Q806639" />
+                    <key key="brand:website" value="https://bankmandiri.co.id" />
+                    <key key="name" value="Bank Mandiri" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank Mega" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank Mega" />
+                    <key key="brand" value="Bank Mega" />
+                    <key key="brand:wikidata" value="Q12474504" />
+                    <key key="brand:website" value="https://bankmega.com" />
+                    <key key="name" value="Bank Mega" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank Muamalat" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank Muamalat" />
+                    <key key="brand" value="Bank Muamalat" />
+                    <key key="brand:wikidata" value="Q4855949" />
+                    <key key="brand:website" value="https://www.bankmuamalat.co.id" />
+                    <key key="name" value="Bank Muamalat" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank Permata" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank Permata" />
+                    <key key="brand" value="PermataBank" />
+                    <key key="brand:wikidata" value="Q4855963" />
+                    <key key="brand:website" value="https://www.permatabank.com" />
+                    <key key="name" value="Bank Permata" />
+                    <text key="branch" text="Cabang" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank QNB Indonesia" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank QNB Indonesia" />
+                    <key key="brand" value="Bank QNB Indonesia" />
+                    <key key="brand:wikidata" value="Q12474517" />
+                    <key key="brand:website" value="https://qnb.co.id" />
+                    <key key="name" value="Bank QNB Indonesia" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank Sinarmas" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank Sinarmas" />
+                    <key key="brand" value="Bank Sinarmas" />
+                    <key key="brand:wikidata" value="Q61852434" />
+                    <key key="brand:website" value="https://www.banksinarmas.com" />
+                    <key key="name" value="Bank Sinarmas" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank SMBC Indonesia" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank SMBC Indonesia" />
+                    <key key="brand" value="Bank SMBC Indonesia" />
+                    <key key="brand:wikidata" value="Q12474535" />
+                    <key key="brand:website" value="https://www.smbci.com" />
+                    <key key="name" value="Bank SMBC Indonesia" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank Syariah Indonesia" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank Syariah Indonesia (BSI)" />
+                    <key key="brand" value="Bank Syariah Indonesia" />
+                    <key key="brand:wikidata" value="Q105574200" />
+                    <key key="brand:website" value="https://www.bankbsi.co.id" />
+                    <key key="name" value="Bank Syariah Indonesia" />
+                    <key key="short_name" value="BSI" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank UOB" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank UOB" />
+                    <key key="brand" value="UOB" />
+                    <key key="brand:en" value="UOB" />
+                    <key key="brand:zh" value="大华银行" />
+                    <key key="brand:wikidata" value="Q2064074" />
+                    <key key="brand:website" value="https://www.uob.co.id" />
+                    <key key="name" value="UOB" />
+                    <key key="name:en" value="UOB" />
+                    <key key="name:zh" value="大华银行" />
+                    <reference ref="bank_base" />
+                </item>
+                <item name="Bank Woori Saudara" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="Bank Woori Saudara" />
+                    <key key="brand" value="Bank Woori Saudara" />
+                    <key key="brand:wikidata" value="Q4855966" />
+                    <key key="brand:website" value="https://www.bankwoorisaudara.com" />
+                    <key key="name" value="Bank Woori Saudara" />
+                    <reference ref="bank_base" />
+                </item>
+            </group>
+            <group name="ATM" icon="presets/money/atm.svg">
+                <item name="ATM Bersama" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="ATM Bersama" />
+                    <reference ref="semua_bangunan" />
+                    <key key="amenity" value="atm" />
+                    <key key="brand" value="ATM Bersama" />
+                    <key key="brand:wikidata" value="Q4654742" />
+                    <key key="brand:website" value="https://atmbersama.com" />
+                    <key key="operator" value="PT Artajasa Pembayaran Elektronis" />
+                    <key key="name" value="ATM Bersama" />
+                </item>
+                <item name="ATM Link" icon="presets/money/bank.svg" type="node,closedway">
+                    <label text="ATM Link" />
+                    <reference ref="semua_bangunan" />
+                    <key key="amenity" value="atm" />
+                    <key key="brand" value="ATM Link" />
+                    <key key="brand:wikidata" value="Q6554231" />
+                    <key key="brand:website" value="https://www.jalin.co.id" />
+                    <key key="operator" value="PT Jalin Pembayaran Nusantara" />
+                    <key key="name" value="ATM Link" />
+                </item>
+            </group>
+        </group>
+        <!-- ============================================ -->
+        <!-- TRANSPORTASI -->
+        <!-- ============================================ -->
+        <group name="Transportasi" icon="presets/vehicle/services.svg">
+            <group name="Ekspedisi" icon="presets/service/post_office.svg">
+                <item name="Anteraja" icon="presets/service/post_office.svg" type="node,closedway">
+                    <label text="Anteraja" />
+                    <space />
+                    <label text="Pilih 'Ya' jika berupa bangunan, 'Khusus' jika bangunan khusus untuk kantor ini, atau 'Bukan' jika berupa node." />
+                    <key key="operator" value="Anteraja" />
+                    <key key="operator:wikidata" value="Q109439307" />
+                    <key key="website" value="https://anteraja.id" />
+                    <key key="contact:facebook" value="https://www.facebook.com/Anterajaindonesia" />
+                    <key key="contact:instagram" value="https://www.instagram.com/anteraja.id" />
+                    <key key="contact:tiktok" value="https://www.tiktok.com/@anteraja.id" />
+                    <key key="contact:twitter" value="https://x.com/anteraja_id" />
+                    <key key="contact:youtube" value="https://www.youtube.com/channel/UCfBt9jFDqZ_ms7Xh0umoyLA" />
+                    <key key="app:apple" value="https://apps.apple.com/us/app/anteraja/id1468862408" />
+                    <key key="app:google" value="https://play.google.com/store/apps/details?id=id.anteraja.aca" />
+                    <reference ref="postal_service_base" />
+                </item>
+                <item name="J&amp;T Express" icon="presets/service/post_office.svg" type="node,closedway">
+                    <label text="J&amp;T Express" />
+                    <space />
+                    <label text="Pilih 'Ya' jika berupa bangunan, 'Khusus' jika bangunan khusus untuk kantor ini, atau 'Bukan' jika berupa node." />
+                    <key key="operator" value="J&amp;T Express" />
+                    <key key="operator:wikidata" value="Q95690344" />
+                    <key key="website" value="https://jet.co.id" />
+                    <key key="contact:facebook" value="https://www.facebook.com/jntexpressindonesia" />
+                    <key key="contact:instagram" value="https://www.instagram.com/jntexpressid" />
+                    <key key="contact:tiktok" value="https://www.tiktok.com/@jntexpressid" />
+                    <key key="contact:twitter" value="https://x.com/jntexpressid" />
+                    <key key="contact:youtube" value="https://www.youtube.com/channel/UCdL3-euNvJhMMBvEVVBg5pA" />
+                    <key key="app:google" value="https://play.google.com/store/apps/details?id=com.msd.JTClient" />
+                    <key key="app:apple" value="https://apps.apple.com/id/app/j-t-express/id1073040673" />
+                    <reference ref="postal_service_base" />
+                </item>
+                <item name="JNE" icon="presets/service/post_office.svg" type="node,closedway">
+                    <label text="JNE" />
+                    <space />
+                    <label text="Pilih 'Ya' jika berupa bangunan, 'Khusus' jika bangunan khusus untuk kantor ini, atau 'Bukan' jika berupa node." />
+                    <key key="name" value="JNE" />
+                    <key key="alt_name" value="Jalur Nugraha Ekakurir" />
+                    <key key="official_name" value="JNE Express" />
+                    <key key="operator" value="JNE" />
+                    <key key="operator:wikidata" value="Q6127003" />
+                    <key key="website" value="https://www.jne.co.id" />
+                    <key key="contact:instagram" value="https://www.instagram.com/jne_id" />
+                    <key key="contact:tiktok" value="https://www.tiktok.com/@jne_id" />
+                    <key key="contact:twitter" value="https://twitter.com/JNE_ID" />
+                    <key key="contact:facebook" value="https://www.facebook.com/JNEPusat" />
+                    <key key="app:apple" value="https://apps.apple.com/id/app/my-jne/id1447606780" />
+                    <key key="app:google" value="https://play.google.com/store/apps/details?id=com.indivara.jneone" />
+                    <reference ref="postal_service_base" />
+                </item>
+                <item name="Kantor Pos Indonesia" icon="presets/service/post_office.svg" type="node,closedway">
+                    <label text="Kantor Pos Indonesia" />
+                    <space />
+                    <label text="Pilih 'Ya' jika berupa bangunan, 'Khusus' jika bangunan khusus untuk kantor ini, atau 'Bukan' jika berupa node." />
+                    <key key="name" value="Kantor Pos" />
+                    <key key="operator" value="Pos Indonesia" />
+                    <key key="operator:wikidata" value="Q4273095" />
+                    <key key="website" value="https://www.posindonesia.co.id" />
+                    <key key="contact:instagram" value="https://www.instagram.com/posindonesia.ig" />
+                    <key key="contact:twitter" value="https://twitter.com/posindonesia" />
+                    <key key="contact:facebook" value="https://www.facebook.com/posindonesia" />
+                    <key key="contact:telegram" value="https://t.me/posindonesia_officialbot" />
+                    <key key="app:google" value="https://play.google.com/store/apps/details?id=com.posindonesia.cob" />
+                    <reference ref="postal_service_base" />
+                </item>
+                <item name="SiCepat Ekspres" icon="presets/service/post_office.svg" type="node,closedway">
+                    <label text="SiCepat Ekspres" />
+                    <space />
+                    <label text="Pilih 'Ya' jika berupa bangunan, 'Khusus' jika bangunan khusus untuk kantor ini, atau 'Bukan' jika berupa node." />
+                    <key key="operator" value="SiCepat Ekspres" />
+                    <key key="operator:wikidata" value="Q56394041" />
+                    <key key="website" value="https://www.sicepat.com" />
+                    <key key="app:google" value="https://play.google.com/store/apps/details?id=com.sicepat.consumer" />
+                    <key key="app:apple" value="https://apps.apple.com/id/app/sicepat-ekspres/id1608647889" />
+                    <reference ref="postal_service_base" />
+                </item>
+            </group>
+            <group name="Stasiun Pengisian Energi" icon="presets/vehicle/charging_station.svg">
+                <group name="SPBU" icon="presets/vehicle/fuel.svg">
+                    <item name="Pertamina" icon="presets/vehicle/fuel.svg" type="node">
+                        <label text="SPBU Pertamina" />
+                        <key key="amenity" value="fuel" />
+                        <key key="brand" value="Pertamina" />
+                        <key key="brand:website" value="https://www.pertamina.com" />
+                        <key key="brand:wikidata" value="Q1641044" />
+                        <key key="operator" value="Pertamina" />
+                        <key key="website" value="https://mypertamina.id" />
+                        <key key="name" value="SPBU Pertamina" />
+                        <text key="ref" text="Nomor SPBU (mis. 31.123.12)" />
+                        <checkgroup columns="4">
+                            <check key="full_service" text="Dilayani petugas?" />
+                            <check key="self_service" text="Self Service?" />
+                            <check key="hgv" text="Muat kendaraan besar?" />
+                            <check key="compressed_air" text="Tabung isi angin?" default="on" />
+                        </checkgroup>
+                        <optional text="Bahan bakar tersedia:">
+                            <checkgroup columns="4">
+                                <check key="fuel:octane_90" text="Pertalite" />
+                                <check key="fuel:octane_92" text="Pertamax" />
+                                <check key="fuel:octane_95" text="Pertamax Green" />
+                                <check key="fuel:octane_98" text="Pertamax Turbo" />
+                                <check key="fuel:octane_100" text="Pertamax Racing" />
+                                <check key="fuel:biodiesel" text="Biodiesel" />
+                                <check key="fuel:diesel" text="Dexlite/Dex" />
+                            </checkgroup>
+                        </optional>
+                        <optional text="Metode pembayaran:">
+                            <checkgroup columns="4">
+                                <check key="payment:cash" text="Tunai" default="on" />
+                                <check key="payment:debit_cards" text="Kartu debit" />
+                                <check key="payment:credit_cards" text="Kartu kredit" />
+                                <check key="payment:contactless" text="Contactless" />
+                                <check key="payment:ep_mandiri_emoney" text="Mandiri e-money" />
+                                <check key="payment:ep_brizzi" text="BRI Brizzi" />
+                                <check key="payment:ep_flazz" text="BCA Flazz" />
+                                <check key="payment:ep_tapcash" text="BNI TapCash" />
+                                <check key="payment:gpn_qris" text="QRIS" />
+                                <check key="payment:my_pertamina_app" text="App MyPertamina" />
+                            </checkgroup>
+                        </optional>
+                        <reference ref="jam_buka" />
+                        <preset_link preset_name="Alamat" />
+                    </item>
+                    <group name="Fasilitas" icon="presets/vehicle/services.svg">
+                        <item name="Totem Digital SPBU" icon="presets/leisure/totem.svg" type="node">
+                            <label text="Totem atau plang Digital SPBU" />
+                            <key key="access" value="no" />
+                            <key key="advertising" value="totem" />
+                            <key key="animated" value="digital_prices" />
+                            <key key="luminous" value="yes" />
+                            <key key="message" value="commercial" />
+                            <combo key="operator" text="Operator" text_context="addr:" values="Pertamina,Shell,BP,Vivo" use_last_as_default="force" match="key" alternative_autocomplete_keys="operator" />
+                            <key key="visibility" value="street" />
+                        </item>
+                    </group>
+                </group>
+                <group name="SPKLU" icon="presets/vehicle/charging_station.svg">
+                    <item name="SPKLU PLN" icon="presets/vehicle/charging_station.svg">
+                        <label text="SPKLU PLN (Belum Lengkap)" />
+                        <key key="amenity" value="charging_station" />
+                        <key key="brand" value="PLN" />
+                        <key key="network" value="PLN" />
+                    </item>
+                    <item name="Voltron" icon="presets/vehicle/charging_station.svg">
+                        <label text="Voltron" />
+                        <key key="amenity" value="charging_station" />
+                        <key key="brand" value="Voltron" />
+                        <key key="network" value="Voltron" />
+                        <key key="brand:website" value="https://voltron.id" />
+                        <text key="capacity" text="Kapasitas Kendaraan" default="2" />
+                        <text key="socket:type2" text="Jumlah Soket Type 2" default="2" />
+                        <text key="charge" text="Tarif Pengisian" default="2467 IDR/kWh" />
+                        <text key="opening_hours" text="Jam Operasional" default="24/7" />
+                        <key key="access" value="yes" />
+                        <key key="fee" value="yes" />
+                        <key key="motorcar" value="yes" />
+                        <key key="authentication:app" value="yes" />
+                        <key key="authentication:none" value="no" />
+                        <key key="payment:cash" value="no" />
+                        <key key="payment:dana" value="yes" />
+                        <key key="payment:gopay_id" value="yes" />
+                        <key key="payment:jcb" value="yes" />
+                        <key key="payment:mastercard" value="yes" />
+                        <key key="payment:ovo" value="yes" />
+                        <key key="payment:shopeepay" value="yes" />
+                        <key key="payment:visa" value="yes" />
+                    </item>
+                </group>
+            </group>
+        </group>
+        <!-- ============================================ -->
+        <!-- HIBURAN -->
+        <!-- ============================================ -->
+        <group name="Hiburan" icon="presets/leisure/cinema.svg">
+            <group name="Bioskop" icon="presets/leisure/cinema.svg">
+                <item name="Cinema XXI" icon="presets/leisure/cinema.svg">
+                    <reference ref="cinema_base" />
+                    <key key="name" value="Cinema XXI" />
+                    <key key="brand" value="Cinema XXI" />
+                    <key key="brand:short" value="XXI" />
+                    <key key="brand:wikidata" value="Q4630986" />
+                    <key key="brand:website" value="https://www.cinema21.co.id" />
+                    <key key="operator" value="PT Nusantara Sejahtera Raya Tbk" />
+                    <key key="website" value="https://21cineplex.com" />
+                    <key key="website:booking" value="https://m.21cineplex.com" />
+                    <key key="contact:instagram" value="https://www.instagram.com/cinema.21" />
+                    <key key="contact:tiktok" value="https://www.tiktok.com/@cinema.21" />
+                    <key key="contact:youtube" value="https://www.youtube.com/user/KanalXXI/videos" />
+                    <key key="contact:twitter" value="https://twitter.com/cinema21" />
+                    <key key="contact:facebook" value="https://www.facebook.com/cinema21" />
+                    <key key="app:google" value="https://play.google.com/store/apps/details?id=lds.cinema21" />
+                    <key key="app:apple" value="https://apps.apple.com/id/app/m-tix-xxi/id784387995" />
+                </item>
+                <item name="CGV Cinemas" icon="presets/leisure/cinema.svg">
+                    <reference ref="cinema_base" />
+                    <key key="name" value="CGV" />
+                    <key key="old_name" value="Blitzmegaplex;CGV Blitz" />
+                    <key key="brand" value="CGV Cinemas" />
+                    <key key="brand:short" value="CGV" />
+                    <key key="brand:wikidata" value="Q4926985" />
+                    <key key="website" value="https://www.cgv.id" />
+                    <key key="operator" value="PT Graha Layar Prima Tbk" />
+                    <key key="membership" value="yes" />
+                    <key key="app:google" value="https://play.google.com/store/apps/details?id=com.blitz.blitzandapp1" />
+                    <key key="app:apple" value="https://itunes.apple.com/id/app/cgv-blitz/id781405923" />
+                    <key key="contact:facebook" value="https://www.facebook.com/CGV.ID" />
+                    <key key="contact:instagram" value="https://www.instagram.com/cgv.id" />
+                    <key key="contact:threads" value="https://www.threads.net/@cgv.id" />
+                    <key key="contact:tiktok" value="https://www.tiktok.com/@cgv.id" />
+                    <key key="contact:twitter" value="https://twitter.com/CGV_ID" />
+                    <key key="contact:line" value="https://linevoom.line.me/user/_dW6OoBCQpPPdkV6Qx1el0GoqVZJ9jG0QbR2W7iY" />
+                    <key key="contact:youtube" value="https://www.youtube.com/channel/UC2vfMMUMoAZd-RBGwA0-9Nw" />
+                </item>
+                <item name="Cinépolis Indonesia" icon="presets/leisure/cinema.svg">
+                    <reference ref="cinema_base" />
+                    <key key="name" value="Cinépolis" />
+                    <key key="alt_name" value="Cinepolis" />
+                    <key key="old_name" value="Cinemaxx" />
+                    <key key="operator" value="PT Cinemaxx Global Pasifik" />
+                    <key key="brand" value="Cinépolis" />
+                    <key key="brand:wikidata" value="Q133830119" />
+                    <key key="membership" value="yes" />
+                    <key key="website" value="https://cinepolis.co.id" />
+                    <key key="app:apple" value="https://itunes.apple.com/in/app/cinemaxx/id986733797" />
+                    <key key="app:google" value="https://play.google.com/store/apps/details?id=com.cinemaxx.activity" />
+                    <key key="contact:twitter" value="https://twitter.com/cinepolisid" />
+                    <key key="contact:instagram" value="https://www.instagram.com/cinepolisid" />
+                    <key key="contact:facebook" value="https://www.facebook.com/cinepolisid" />
+                    <key key="contact:youtube" value="https://www.youtube.com/channel/UCP70SpqoP28WPYIHkzf_Y8Q" />
+                </item>
+            </group>
+        </group>
+        <!-- ============================================ -->
+        <!-- LAINNYA -->
+        <!-- ============================================ -->
+        <group name="Lainnya" icon="presets/sightseeing/viewpoint.svg">
+            <group name="Anotasi" icon="presets/misc/housenumber.svg">
+                <item name="Nama" icon="presets/misc/name.svg" type="node,way,closedway,multipolygon,relation" preset_name_label="true">
+                    <link wiki="Key:name" />
+                    <label text="Gunakan hanya untuk nama yang benar-benar digunakan di dunia nyata. Jangan mengisi kolom nama apabila objek tidak memiliki nama, hanya dikenal secara generik, atau nilainya bukan nama (misalnya alamat atau nomor referensi). Tag ini tidak boleh berisi deskripsi, jenis objek, lokasi, atau properti lainnya." />
+                    <space />
+                    <check key="noname" text="Tanpa nama" disable_off="true" />
+                    <text key="name" text="Nama" />
+                    <optional text="Opsional:">
+                        <text key="alt_name" text="Nama alternatif" match="key" />
+                        <text key="short_name" text="Nama singkatan" match="key" />
+                        <text key="old_name" text="Nama historis" match="key" />
+                        <text key="loc_name" text="Nama lokal" match="key" />
+                        <text key="reg_name" text="Nama regional" match="key" />
+                        <text key="nat_name" text="Nama nasional" match="key" />
+                        <text key="int_name" text="Nama internasional" match="key" />
+                        <text key="official_name" text="Nama resmi" match="key" />
+                    </optional>
+                </item>
+                <item name="Alamat" icon="presets/misc/housenumber.svg" type="node,way,closedway,multipolygon,relation" preset_name_label="true">
+                    <label text="Gunakan kolom kelurahan untuk input data otomatis" />
+                    <label text="Saat ini automasi hanya untuk Kota Cirebon" />
+                    <link wiki="Key:addr" />
+                    <space />
+                    <text key="addr:housenumber" text="Nomor rumah" match="key" auto_increment="-2,-1,+1,+2" />
+                    <check key="nohousenumber" text="Tidak ada nomor rumah" disable_off="true" />
+                    <text key="addr:street" text="Nama jalan" use_last_as_default="force" match="key" alternative_autocomplete_keys="name" />
+                    <key key="addr:country" value="ID" />
+                    <optional text="Hanya untuk alamat tanpa nama jalan (mis. nama komplek perumahan)">
+                        <text key="addr:place" text="Nama tempat" use_last_as_default="force" match="key" alternative_autocomplete_keys="name" />
+                    </optional>
+                    <space />
+                    <text key="addr:unit" text="Unit" match="key" />
+                    <text key="addr:housename" text="Nama rumah" match="key" alternative_autocomplete_keys="name" />
+                    <text key="addr:hamlet" text="Desa/Dusun" match="key" alternative_autocomplete_keys="addr:hamlet" />
+                    <combo key="addr:subdistrict" text="Kelurahan" text_context="addr:" values="Argasunya,Harjamukti,Kalijaga,Kecapi,Larangan,Kebonbaru,Kejaksan,Kesenden,Sukapura,Drajat,Karyamulya,Kesambi,Pekiringan,Sunyaragi,Kesepuhan,Lemahwungkuk,Panjunan,Pegambiran,Jagasatru,Pekalangan,Pekalipan,Pulasaren" use_last_as_default="force" editable="true" values_searchable="true" />
+                    <text key="addr:district" text="Kecamatan" use_last_as_default="force" values_sort="false" value_template="?{ &quot;addr:subdistrict&quot;=Argasunya 'Harjamukti' | &quot;addr:subdistrict&quot;=Harjamukti 'Harjamukti' | &quot;addr:subdistrict&quot;=Kalijaga 'Harjamukti' | &quot;addr:subdistrict&quot;=Kecapi 'Harjamukti' | &quot;addr:subdistrict&quot;=Larangan 'Harjamukti' | &quot;addr:subdistrict&quot;=Kebonbaru 'Kejaksan' | &quot;addr:subdistrict&quot;=Kejaksan 'Kejaksan' | &quot;addr:subdistrict&quot;=Kesenden 'Kejaksan' | &quot;addr:subdistrict&quot;=Sukapura 'Kejaksan' | &quot;addr:subdistrict&quot;=Drajat 'Kesambi' | &quot;addr:subdistrict&quot;=Karyamulya 'Kesambi' | &quot;addr:subdistrict&quot;=Kesambi 'Kesambi' | &quot;addr:subdistrict&quot;=Pekiringan 'Kesambi' | &quot;addr:subdistrict&quot;=Sunyaragi 'Kesambi' | &quot;addr:subdistrict&quot;=Kesepuhan 'Lemahwungkuk' | &quot;addr:subdistrict&quot;=Lemahwungkuk 'Lemahwungkuk' | &quot;addr:subdistrict&quot;=Panjunan 'Lemahwungkuk' | &quot;addr:subdistrict&quot;=Pegambiran 'Lemahwungkuk' | &quot;addr:subdistrict&quot;=Jagasatru 'Pekalipan' | &quot;addr:subdistrict&quot;=Pekalangan 'Pekalipan' | &quot;addr:subdistrict&quot;=Pekalipan 'Pekalipan' | &quot;addr:subdistrict&quot;=Pulasaren 'Pekalipan' | '' }" />
+                    <text key="addr:city" text="Kota/Kabupaten" use_last_as_default="force" match="key" values_sort="false" value_template="?{ &quot;addr:district&quot;=&quot;Harjamukti&quot; 'Kota Cirebon' | &quot;addr:district&quot;=&quot;Kejaksan&quot; 'Kota Cirebon' | &quot;addr:district&quot;=&quot;Kesambi&quot; 'Kota Cirebon' | &quot;addr:district&quot;=&quot;Lemahwungkuk&quot; 'Kota Cirebon' | &quot;addr:district&quot;=&quot;Pekalipan&quot; 'Kota Cirebon' | '' }" />
+                    <text key="addr:province" text="Provinsi" text_context="addr:" value_template="?{ &quot;addr:city&quot;=&quot;Kota Cirebon&quot; 'Jawa Barat'| '' }" use_last_as_default="force" />
+                    <text key="addr:postcode" text="Kode Pos" length="5" use_last_as_default="force" values_sort="false" value_template="?{ &quot;addr:subdistrict&quot;=Argasunya '45145' | &quot;addr:subdistrict&quot;=Harjamukti '45143' | &quot;addr:subdistrict&quot;=Kalijaga '45144' | &quot;addr:subdistrict&quot;=Kecapi '45142' | &quot;addr:subdistrict&quot;=Larangan '45141' | &quot;addr:subdistrict&quot;=Kebonbaru '45124' | &quot;addr:subdistrict&quot;=Kejaksan '45123' | &quot;addr:subdistrict&quot;=Kesenden '45121' | &quot;addr:subdistrict&quot;=Sukapura '45122' | &quot;addr:subdistrict&quot;=Drajat '45133' | &quot;addr:subdistrict&quot;=Karyamulya '45135' | &quot;addr:subdistrict&quot;=Kesambi '45134' | &quot;addr:subdistrict&quot;=Pekiringan '45131' | &quot;addr:subdistrict&quot;=Sunyaragi '45132' | &quot;addr:subdistrict&quot;=Kesepuhan '45114' | &quot;addr:subdistrict&quot;=Lemahwungkuk '45111' | &quot;addr:subdistrict&quot;=Panjunan '45112' | &quot;addr:subdistrict&quot;=Pegambiran '45113' | &quot;addr:subdistrict&quot;=Jagasatru '45115' | &quot;addr:subdistrict&quot;=Pekalangan '45117' | &quot;addr:subdistrict&quot;=Pekalipan '45118' | &quot;addr:subdistrict&quot;=Pulasaren '45116' | '' }" />
+                </item>
+                <item name="Interpolasi Alamat" icon="presets/misc/interpolation.svg" type="way" preset_name_label="true">
+                    <link wiki="Key:addr" />
+                    <space />
+                    <combo key="addr:interpolation" text="Skema penomoran" values="odd,even,all,alphabetic" display_values="Ganjil,Genap,Semua,Alfabet" default="odd" match="key" />
+                    <optional text="Opsional:">
+                        <combo key="addr:inclusion" text="Akurasi" values="actual,estimate,potential" display_values="Aktual,Perkiraan,Potensial" match="key" />
+                    </optional>
+                </item>
+                <item name="Kontak (Skema Umum)" icon="presets/misc/contact.svg" type="node,way,closedway,multipolygon,relation" preset_name_label="true">
+                    <link wiki="Anotasi" />
+                    <space />
+                    <text key="website" text="Situs web" match="key" />
+                    <text key="email" text="Alamat email" match="key" />
+                    <space />
+                    <text key="phone" text="Nomor telepon" match="key" />
+                    <text key="mobile" text="Nomor telepon seluler" match="key" />
+                    <text key="fax" text="Nomor Fax" match="key" />
+                    <label text="Gunakan format E.123, misalnya +62 81234 567 890" />
+                    <space />
+                    <reference ref="wikipedia_wikidata" />
+                    <text key="image" text="Gambar" />
+                    <preset_link preset_name="Kontak (Skema dengan Awalan 'contact:*')" text="Tag serupa tetapi dengan skema penandaan yang berbeda:" text_context="Kontak" />
+                    <preset_link preset_name="Media Sosial" />
+                </item>
+                <item name="Kontak (Skema dengan Awalan 'contact:*')" icon="presets/misc/contact.svg" type="node,way,closedway,multipolygon,relation" preset_name_label="true">
+                    <link wiki="Key:contact" />
+                    <space />
+                    <text key="contact:website" text="Situs web" match="key" />
+                    <text key="contact:email" text="Alamat email" match="key" />
+                    <space />
+                    <text key="contact:phone" text="Nomor telepon" match="key" />
+                    <text key="contact:mobile" text="Nomor telepon seluler" match="key" />
+                    <text key="contact:fax" text="Nomor Fax" match="key" />
+                    <label text="Gunakan format E.123, misalnya +62 81234 567 890" />
+                    <space />
+                    <reference ref="wikipedia_wikidata" />
+                    <text key="image" text="Gambar" />
+                    <preset_link preset_name="Kontak (Skema Umum)" text="Tag serupa tetapi dengan skema penandaan yang berbeda:" text_context="Kontak" />
+                    <preset_link preset_name="Media Sosial" />
+                </item>
+                <item name="Media Sosial" icon="presets/misc/social_networks.svg" type="node,way,closedway,multipolygon,relation" preset_name_label="true">
+                    <link wiki="Key:contact" />
+                    <space />
+                    <text key="contact:booking" text="Booking.com (hotel id)" match="key" text_context="social_network" />
+                    <text key="contact:facebook" text="Facebook" match="key" text_context="social_network" />
+                    <text key="contact:instagram" text="Instagram" match="key" text_context="social_network" />
+                    <text key="contact:linkedin" text="Linkedin" match="key" text_context="social_network" />
+                    <text key="contact:pinterest" text="Pinterest" match="key" text_context="social_network" />
+                    <text key="contact:skype" text="Skype" match="key" text_context="social_network" />
+                    <text key="contact:telegram" text="Telegram" match="key" text_context="social_network" />
+                    <text key="contact:tiktok" text="Tiktok" match="key" text_context="social_network" />
+                    <text key="contact:tripadvisor" text="Tripadvisor" match="key" text_context="social_network" />
+                    <text key="contact:twitter" text="X/Twitter" match="key" text_context="social_network" />
+                    <text key="contact:whatsapp" text="Whatsapp (nomor)" match="key" text_context="social_network" />
+                    <text key="contact:youtube" text="Youtube" match="key" text_context="social_network" />
+                    <preset_link preset_name="Kontak (Skema Umum)" text_context="Contact" />
+                    <preset_link preset_name="Kontak (Skema dengan Awalan 'contact:*')" text_context="Contact" />
+                </item>
+                <item name="Deskripsi" icon="presets/misc/description.svg" type="node,way,closedway,multipolygon,relation" preset_name_label="true">
+                    <link wiki="Key:description" />
+                    <space />
+                    <label text="Teks singkat dengan informasi tambahan." text_context="description=*" />
+                    <label text="Mungkin dapat dilihat oleh pengguna akhir (mungkin menggunakan sistem pencarian atau peta dengan pop-up)." text_context="description=*" />
+                    <space />
+                    <text key="description" text="Deskripsi" match="key" />
+                    <preset_link preset_name="Catatan" text="Tag serupa tetapi berbeda:" />
+                    <preset_link preset_name="Perbaiki" text="Tag serupa tetapi berbeda:" />
+                </item>
+                <item name="Catatan" icon="presets/misc/note.svg" name_context="tag note=*" type="node,way,closedway,multipolygon,relation" preset_name_label="true">
+                    <link wiki="Key:note" />
+                    <space />
+                    <label text="Petunjuk penting untuk pemeta lain (bukan untuk pengguna)." text_context="note=*" />
+                    <space />
+                    <text key="note" text="Catatan" text_context="tag note=*" match="key" />
+                    <preset_link preset_name="Perbaiki" text="Tag serupa tetapi berbeda:" />
+                    <preset_link preset_name="Deskripsi" text="Tag serupa tetapi berbeda:" />
+                </item>
+                <item name="Perbaiki" icon="presets/misc/fixme.svg" type="node,way,closedway,multipolygon,relation" preset_name_label="true">
+                    <link wiki="Key:fixme" />
+                    <space />
+                    <label text="Petunjuk untuk pemeta lain (bukan untuk pengguna) bahwa suatu objek perlu diperbaiki." text_context="fixme=*" />
+                    <space />
+                    <text key="fixme" text="Perbaiki" match="key" />
+                    <preset_link preset_name="Catatan" text="Tag serupa tetapi berbeda:" />
+                    <preset_link preset_name="Deskripsi" text="Tag serupa tetapi berbeda:" />
+                </item>
+                <item name="Diet/Halal" icon="presets/food/diet.svg" type="node,closedway,multipolygon" preset_name_label="true">
+                    <link wiki="Key:diet" />
+                    <combo key="diet:halal" text="Halal" values="yes,no,only" display_values="Ya,Tidak,Hanya" />
+                    <space />
+                    <combo key="diet:vegetarian" text="Vegetarian" values="yes,no,only" display_values="Ya,Tidak,Hanya" />
+                    <combo key="diet:vegan" text="Vegan" values="yes,no,only" display_values="Ya,Tidak,Hanya" />
+                    <combo key="diet:gluten_free" text="Bebas gluten" values="yes,no,only" display_values="Ya,Tidak,Hanya" />
+                </item>
+            </group>
+            <group name="Atribut" icon="presets/misc/name.svg">
+                <item name="Pembatasan Akses" icon="presets/vehicle/restriction/restrictions.svg" type="node,way,closedway,multipolygon,relation" preset_name_label="true">
+                    <link wiki="Key:access" />
+                    <space />
+                    <combo key="access" text="General Access" values="yes,destination,delivery,permissive,permit,private,customers,agricultural,forestry,no" values_sort="false" />
+                    <combo key="vehicle" text="Semua Kendaraan" values="yes,destination,delivery,permissive,permit,private,agricultural,forestry,no" values_sort="false" match="key" />
+                    <combo key="bicycle" text="Sepeda" values="yes,official,designated,permissive,destination,delivery,permit,private,use_sidepath,customers,no" values_sort="false" match="key" />
+                    <combo key="motor_vehicle" text="Kendaraan Bermotor" values="yes,official,designated,destination,delivery,permissive,permit,private,agricultural,forestry,no" values_sort="false" match="key" />
+                    <combo key="motorcycle" text="Sepeda Motor" values="yes,official,designated,destination,delivery,permissive,permit,private,agricultural,forestry,no" values_sort="false" match="key" />
+                    <combo key="motorcar" text="Mobil" values="yes,official,designated,destination,delivery,permissive,permit,private,agricultural,forestry,no" values_sort="false" match="key" />
+                    <combo key="hgv" text="Kendaraan Besar" values="yes,official,designated,destination,delivery,permissive,permit,private,agricultural,forestry,no" values_sort="false" match="key" />
+                </item>
+            </group>
+        </group>
+    </group>
+</presets>
