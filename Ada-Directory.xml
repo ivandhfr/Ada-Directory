@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0" name="Ada Directory" author="ivandhfr" version="2026.04.2" baselanguage="id-ID" description="Preset Penandaan Indonesia">
+<?xml version="1.0" encoding="UTF-8" ?>
+<presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0" name="Ada Directory" author="ivandhfr" version="2026.10.0" baselanguage="id-ID" description="Preset Penandaan Indonesia">
     <!-- +===================================================+ -->
     <!-- |     THIS PROJECT IS WORK IN PROGRESS              | -->
     <!-- |     Always double check before uploading to OSM   | -->
@@ -83,7 +83,12 @@
                 <check key="atm" text="ATM" />
             </checkgroup>
         </optional>
+        <combo key="level" text="Lantai" values="-2,-1,0,1,2,3,4,5,6,7,8,9,10" display_values="-2,-1,dasar,1,2,3,4,5,6,7,8,9,10" />
         <reference ref="pembayaran" />
+        <combo key="self_service" text="Self service?" values=",yes,no,only,partially" display_values=",Ya,Tidak,Hanya,Sebagian" />
+        <combo key="self_checkout" text="Self checkout?" values=",yes,no,only" display_values=",Ya,Tidak,Hanya" />
+        <combo key="display_operated" text="Pengoperasian dengan layar?" values=",yes,no,only" display_values=",Ya,Tidak,Hanya" />
+        <combo key="app_operated" text="Pengoperasian dengan app?" values=",yes,no,only" display_values=",Ya,Tidak,Hanya" />
         <reference ref="opsional_general" />
         <preset_link preset_name="Alamat" />
     </chunk>
@@ -183,7 +188,7 @@
             <list_entry value="only" display_value="Hanya Pengiriman" />
         </combo>
         <multiselect key="delivery:partner" text="Partner Pengiriman" values="GrabFood;GoFood;ShopeeFood" delimiter=";" use_last_as_default="true" values_sort="false" />
-        <text key="delivery:partner:wikidata" text="Wikidata Partner" value_template="?{ &quot;delivery:partner&quot;=&quot;GrabFood;GoFood&quot; 'Q111178051;Q111181276' | &quot;delivery:partner&quot;=&quot;GoFood;GrabFood&quot; 'Q111181276;Q111178051' | &quot;delivery:partner&quot;=GrabFood 'Q111178051' | &quot;delivery:partner&quot;=GoFood 'Q111181276' | '' }" />
+        <text key="delivery:partner:wikidata" text="Wikidata Partner" value_template="?{ &quot;delivery:partner&quot;=&quot;GrabFood;GoFood&quot; &apos;Q111178051;Q111181276&apos; | &quot;delivery:partner&quot;=&quot;GoFood;GrabFood&quot; &apos;Q111181276;Q111178051&apos; | &quot;delivery:partner&quot;=GrabFood &apos;Q111178051&apos; | &quot;delivery:partner&quot;=GoFood &apos;Q111181276&apos; | &apos;&apos; }" />
     </chunk>
     <chunk id="kursi_roda">
         <combo key="wheelchair" text="Akses kursi roda" values="yes,no,limited" display_values="Ya,Tidak,Terbatas" default="" />
@@ -200,7 +205,7 @@
         <key key="operator:addr:postcode" value="12870" />
         <key key="operator:addr:province" value="DKI Jakarta" />
         <key key="operator:addr:street" value="Jalan Jenderal Gatot Subroto" />
-        <key key="operator:phone" value="+62 21 50966789" />
+        <key key="operator:phone" value="+62 21 5096 6789" />
         <key key="operator:type" value="private" />
         <key key="operator:website" value="https://www.sarimelatikencana.co.id" />
         <key key="operator:wikidata" value="Q96100601" />
@@ -311,7 +316,7 @@
         <multiselect key="cuisine" text="Masakan" values="african;american;arab;argentinian;asian;bagel;balkan;barbecue;bavarian;beef_bowl;brazilian;burger;cake;caribbean;chicken;chinese;coffee_shop;crepe;curry;danish;donut;ethiopian;filipino;fish;fish_and_chips;french;friture;frozen_yogurt;german;georgian;greek;heuriger;hot_dog;ice_cream;indian;indonesian;international;italian;japanese;kebab;korean;lebanese;malaysian;mediterranean;mexican;moroccan;noodle;pancake;pasta;persian;peruvian;pizza;polish;portuguese;ramen;regional;russian;sandwich;sausage;seafood;soba;spanish;steak_house;sushi;tex-mex;tapas;thai;turkish;vietnamese;wings" display_values="African;American;Arab;Argentinian;Asian;Bagel;Balkan;Barbecue;Bavarian;Beef Bowl;Brazilian;Burger;Cake;Caribbean;Chicken;Chinese;Coffee Shop;Crepe;Curry;Danish;Donut;Ethiopian;Filipino;Fish;Fish and Chips;French;Friture;Frozen Yogurt;German;Georgian;Greek;Heuriger;Hot Dog;Ice Cream;Indian;Indonesian;International;Italian;Japanese;Kebab;Korean;Lebanese;Malaysian;Mediterranean;Mexican;Moroccan;Noodle;Pancake;Pasta;Persian;Peruvian;Pizza;Polish;Portuguese;Ramen;Regional;Russian;Sandwich;Sausage;Seafood;Soba;Spanish;Steak House;Sushi;Tex-Mex;Tapas;Thai;Turkish;Vietnamese;Wings" values_searchable="true" values_sort="false" />
     </chunk>
     <chunk id="semua_bangunan">
-        <combo key="building" text="Jenis Bangunan" values="yes,allotment_house,annexe,apartments,bakehouse,barn,barracks,beach_hut,boathouse,bridge,bungalow,bunker,cabin,carport,castle,cathedral,chapel,church,civic,clock_tower,college,commercial,conservatory,construction,container,cowshed,detached,digester,dormitory,farm,farm_auxiliary,fire_station,garage,garages,gatehouse,ger,government,grandstand,greenhouse,guardhouse,hangar,hospital,hotel,house,houseboat,hut,industrial,kindergarten,kiosk,kingdom_hall,livestock,military,monastery,mosque,museum,office,outbuilding,pagoda,parking,pavilion,presbytery,public,quonset_hut,religious,residential,retail,riding_hall,roof,ruins,school,semidetached_house,service,shed,ship,shrine,silo,slurry_tank,sports_centre,sports_hall,stable,stadium,static_caravan,stilt_house,storage_tank,sty,supermarket,synagogue,tech_cab,temple,tent,terrace,toilets,tower,train_station,transformer_tower,transportation,tree_house,triumphal_arch,trullo,university,warehouse,water_tower,windmill" display_values="Ya (Umum),Rumah Petak Kebun,Bangunan Tambahan,Apartemen,Rumah Pemanggang,Lumbung,Barak,Kabin Pantai,Rumah Untuk Perahu,Jembatan Tertutup,Bungalo,Bunker,Kabin,Carport,Kastil,Katedral,Kapel,Gereja,Sipil,Menara Jam,Perguruan Tinggi,Komersial,Konservatori,Konstruksi,Kontainer,Kandang Sapi,Terpisah,Bioreaktor,Asrama,Pertanian,Bangunan Pertanian Tambahan,Pemadam Kebakaran,Garasi Tunggal,Garasi Kompleks,Gerbang Kontrol,Ger/Yurt,Pemerintahan,Tribun,Rumah Kaca,Pos Jaga,Hangar,Rumah Sakit,Hotel,Rumah,Rumah Dari Perahu,Gubuk,Industri,Taman Kanak-kanak,Kios,Kingdom Hall,Kandang Ternak,Militer,Biara,Masjid,Museum,Kantor,Bangunan Tambahan,Pagoda,Gedung Parkir,Paviliun,Rumah Imam,Publik,Quonset Hut,Keagamaan (Umum),Residensial,Ritel,Gedung Berkuda,Atap/Kanopi,Reruntuhan,Sekolah,Rumah Semi-Terpisah,Servis,Gudang/Shed,Kapal Permanen,Kuil Kecil,Silo,Tangki Kotoran Ternak,Pusat Olahraga,Gedung Olahraga,Kandang Kuda,Stadion,Karavan Statis,Rumah Panggung,Tangki Penyimpanan,Kandang Babi,Supermarket,Sinagoga,Kabin Teknis,Pura/Vihara,Tenda Permanen,Teras Rumah,Toilet,Menara,Stasiun Kereta,Menara Trafo,Transportasi,Rumah Pohon,Gerbang Kemenangan,Trullo,Universitas,Gudang Besar,Menara Air,Kincir Angin" default="yes" values_searchable="true" match="key" />
+        <combo key="building" text="Jenis Bangunan" values="yes,allotment_house,annexe,apartments,bakehouse,barn,barracks,beach_hut,boathouse,bridge,bungalow,bunker,cabin,carport,castle,cathedral,chapel,church,civic,clock_tower,college,commercial,conservatory,construction,container,cowshed,detached,digester,dormitory,farm,farm_auxiliary,fire_station,garage,garages,gatehouse,ger,government,grandstand,greenhouse,guardhouse,hangar,hospital,hotel,house,houseboat,hut,industrial,kindergarten,kiosk,kingdom_hall,livestock,military,monastery,mosque,museum,office,outbuilding,pagoda,parking,pavilion,presbytery,public,quonset_hut,religious,residential,retail,riding_hall,roof,ruins,school,semidetached_house,service,shed,ship,shrine,shophouse,silo,slurry_tank,sports_centre,sports_hall,stable,stadium,static_caravan,stilt_house,storage_tank,sty,supermarket,synagogue,tech_cab,temple,tent,terrace,toilets,tower,train_station,transformer_tower,transportation,tree_house,triumphal_arch,trullo,university,warehouse,water_tower,windmill" display_values="Ya (Umum),Rumah Petak Kebun,Bangunan Tambahan,Apartemen,Rumah Pemanggang,Lumbung,Barak,Kabin Pantai,Rumah Untuk Perahu,Jembatan Tertutup,Bungalo,Bunker,Kabin,Carport,Kastil,Katedral,Kapel,Gereja,Sipil,Menara Jam,Perguruan Tinggi,Komersial,Konservatori,Konstruksi,Kontainer,Kandang Sapi,Terpisah,Bioreaktor,Asrama,Pertanian,Bangunan Pertanian Tambahan,Pemadam Kebakaran,Garasi Tunggal,Garasi Kompleks,Gerbang Kontrol,Ger/Yurt,Pemerintahan,Tribun,Rumah Kaca,Pos Jaga,Hangar,Rumah Sakit,Hotel,Rumah,Rumah Dari Perahu,Gubuk,Industri,Taman Kanak-kanak,Kios,Kingdom Hall,Kandang Ternak,Militer,Biara,Masjid,Museum,Kantor,Bangunan Tambahan,Pagoda,Gedung Parkir,Paviliun,Rumah Imam,Publik,Quonset Hut,Keagamaan (Umum),Residensial,Ritel,Gedung Berkuda,Atap/Kanopi,Reruntuhan,Sekolah,Rumah Semi-Terpisah,Servis,Gudang/Shed,Kapal Permanen,Kuil Kecil,Ruko,Silo,Tangki Kotoran Ternak,Pusat Olahraga,Gedung Olahraga,Kandang Kuda,Stadion,Karavan Statis,Rumah Panggung,Tangki Penyimpanan,Kandang Babi,Supermarket,Sinagoga,Kabin Teknis,Pura/Vihara,Tenda Permanen,Teras Rumah,Toilet,Menara,Stasiun Kereta,Menara Trafo,Transportasi,Rumah Pohon,Gerbang Kemenangan,Trullo,Universitas,Gudang Besar,Menara Air,Kincir Angin" values_searchable="true" match="key" />
     </chunk>
     <chunk id="link_contact_address">
         <preset_link preset_name="Kontak (Skema Umum)" />
@@ -329,7 +334,7 @@
         <!-- |     INFRASTRUKTUR                             | -->
         <!-- +===============================================+ -->
         <group name="Infrastruktur" icon="presets/landmark/building.svg">
-            <item name="Panel Surya (Atap PV)" icon="presets/power/solar.svg" type="node,way,closedway,relation">
+            <item name="Panel Surya (Atap PV)" icon="presets/power/power_source-sun.svg" type="node,way,closedway,relation">
                 <label text="Solar Photovoltaic Panel" />
                 <space />
                 <key key="power" value="generator" />
@@ -343,7 +348,7 @@
                 <text key="generator:output:electricity" text="Output listrik (W)" default="" />
                 <text key="operator" text="Operator" default="" />
             </item>
-            <item name="Solar Water Heater (Atap)" icon="presets/power/solar_thermal.svg" type="node,way,closedway,relation">
+            <item name="Solar Water Heater (Atap)" icon="presets/power/generator.svg" type="node,way,closedway,relation">
                 <label text="Solar Thermal Collector" />
                 <space />
                 <key key="power" value="generator" />
@@ -435,7 +440,7 @@
                     <key key="building" value="roof" />
                     <key key="layer" value="1" />
                 </item>
-                <item name="Pos Satpam/Security" icon="presets/landmark/building.svg" type="closedway">
+                <item name="Pos Satpam/Security" icon="presets/service/surveillance.svg" type="closedway">
                     <key key="building" value="guardhouse" />
                 </item>
             </group>
@@ -443,7 +448,7 @@
         <!-- +===============================================+ -->
         <!-- |     PENDIDIKAN                                | -->
         <!-- +===============================================+ -->
-        <group name="Pendidikan" icon="presets/education/school.svg">
+        <group name="Pendidikan" icon="presets/education/education.svg">
             <item name="PAUD/TK (Taman Kanak-Kanak)/RA/Playgroup" description="Khusus kawasan atau titik" icon="presets/education/kindergarten.svg" type="node,closedway,relation">
                 <reference ref="school_base" />
                 <key key="amenity" value="kindergarten" />
@@ -689,7 +694,7 @@
         <!-- ============================================ -->
         <!-- KESEHATAN -->
         <!-- ============================================ -->
-        <group name="Kesehatan" icon="presets/health/hospital.svg">
+        <group name="Kesehatan" icon="presets/health/clinic.svg">
             <group name="Rumah Sakit" icon="presets/health/hospital.svg">
                 <item name="Pertamina IHC" icon="presets/health/hospital.svg" type="node,closedway,multipolygon">
                     <checkgroup columns="2">
@@ -765,8 +770,386 @@
         <!-- ============================================ -->
         <!-- KOMERSIAL -->
         <!-- ============================================ -->
-        <group name="Komersial" icon="presets/shop/convenience.svg">
+        <group name="Komersial" icon="presets/shop/mall.svg">
             <group name="Ritel" icon="presets/shop/convenience.svg">
+                <group name="Dealer Kendaraan" icon="presets/shop/vehicle.svg">
+                    <item name="Aion" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Aion" />
+                        <key key="alt_name" value="GAC Aion" />
+                        <key key="brand" value="Aion" />
+                        <key key="brand:wikidata" value="Q85740196" />
+                        <key key="brand:website" value="https://aionindonesia.com" />
+                        <key key="contact:instagram" value="https://www.instagram.com/aion_indonesia" />
+                        <key key="contact:facebook" value="https://www.facebook.com/GACAIONIndonesia" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@AIONIndonesia" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@aion_indonesia" />
+                    </item>
+                    <item name="Audi" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Audi" />
+                        <key key="brand" value="Audi" />
+                        <key key="brand:website" value="https://www.audi.co.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/AudiIndonesian" />
+                        <key key="contact:instagram" value="https://www.instagram.com/audi_indonesia" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCgY-FK7IsTZawmRGatcynDQ" />
+                        <key key="contact:twitter" value="https://x.com/audi_indonesia" />
+                    </item>
+                    <item name="BMW" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="BMW" />
+                        <key key="brand" value="BMW" />
+                        <key key="brand:website" value="https://www.bmw.co.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/BMWIndonesia" />
+                        <key key="contact:twitter" value="https://twitter.com/BMW_Indonesia" />
+                        <key key="contact:instagram" value="https://www.instagram.com/bmw_indonesia" />
+                        <key key="contact:youtube" value="https://www.youtube.com/user/bmwindonesia" />
+                    </item>
+                    <item name="BYD" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="BYD" />
+                        <key key="brand" value="BYD" />
+                        <key key="brand:website" value="https://www.byd.com" />
+                        <key key="contact:facebook" value="https://www.facebook.com/IndonesiaBYD" />
+                        <key key="contact:instagram" value="https://www.instagram.com/byd_indonesia" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCIX-Iq7BHJ7kZQvEoVDTVQw" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@byd_indonesia" />
+                    </item>
+                    <item name="Chery" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Chery" />
+                        <key key="brand" value="Chery" />
+                        <key key="brand:website" value="https://chery.co.id" />
+                        <key key="contact:instagram" value="https://www.instagram.com/cherymotorindonesia" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCja9QNu0bF1Hc9la-lJtyfw" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@cherymotorindonesia" />
+                        <key key="contact:facebook" value="https://www.facebook.com/cheryindonesiaofficial" />
+                    </item>
+                    <item name="Citroën" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Citroën" />
+                        <key key="brand" value="Citroën" />
+                        <key key="brand:website" value="https://www.citroen.co.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/citroenindonesiaofficial" />
+                        <key key="contact:twitter" value="https://twitter.com/id_citroen" />
+                        <key key="contact:instagram" value="https://www.instagram.com/citroenidn" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@citroen_id" />
+                    </item>
+                    <item name="DFSK" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="DFSK" />
+                        <key key="brand" value="DFSK" />
+                        <key key="brand:website" value="https://www.dfskmotors.co.id" />
+                        <key key="contact:twitter" value="https://x.com/dfsk_indonesia" />
+                        <key key="contact:instagram" value="https://www.instagram.com/dfskindonesia" />
+                        <key key="contact:facebook" value="https://www.facebook.com/DFSK-Motors-Indonesia-1684920538481095" />
+                        <key key="contact:youtube" value="https://www.youtube.com/c/DFSKMotorsIndonesia" />
+                        <key key="contact:tiktok" value="https://tiktok.com/@dfsk.id" />
+                    </item>
+                    <item name="Daihatsu" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Daihatsu" />
+                        <key key="brand" value="Daihatsu" />
+                        <key key="brand:website" value="https://daihatsu.co.id" />
+                        <key key="contact:facebook" value="https://m.facebook.com/profile.php/?id=100064451359197" />
+                        <key key="contact:instagram" value="https://www.instagram.com/daihatsuind" />
+                        <key key="contact:twitter" value="https://x.com/daihatsuind" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@daihatsuind" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@DaihatsuSahabatku" />
+                    </item>
+                    <item name="Honda" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Honda" />
+                        <key key="brand" value="Honda" />
+                        <key key="brand:website" value="https://www.honda-indonesia.com" />
+                        <key key="contact:facebook" value="https://www.facebook.com/hondaisme" />
+                        <key key="contact:twitter" value="https://x.com/hondaisme" />
+                        <key key="contact:instagram" value="https://www.instagram.com/hondaisme" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@HondaIndonesia" />
+                    </item>
+                    <item name="Hyundai" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Hyundai" />
+                        <key key="brand" value="Hyundai" />
+                        <key key="brand:website" value="https://www.hyundai.com/id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/HyundaiMotorIndonesia" />
+                        <key key="contact:youtube" value="https://www.youtube.com/HyundaiMotorIndonesia" />
+                        <key key="contact:instagram" value="https://www.instagram.com/hyundaimotorindonesia" />
+                        <key key="contact:twitter" value="https://x.com/hyundaimotorid" />
+                    </item>
+                    <item name="Jaecoo" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Jaecoo" />
+                        <key key="brand" value="Jaecoo" />
+                        <key key="brand:website" value="https://jaecoo.id" />
+                        <key key="contact:instagram" value="https://www.instagram.com/jaecoo.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/JaecooIndonesia" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@jaecoo.id" />
+                    </item>
+                    <item name="Jaguar" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Jaguar" />
+                        <key key="brand" value="Jaguar" />
+                        <key key="brand:website" value="https://www.jaguar.co.id" />
+                    </item>
+                    <item name="Kia" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Kia" />
+                        <key key="brand" value="Kia" />
+                        <key key="brand:website" value="https://www.kia.com/id" />
+                        <key key="contact:instagram" value="https://www.instagram.com/kia.idn" />
+                        <key key="contact:facebook" value="https://www.facebook.com/share/1ZsrD36HyP" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@kia_idn" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@kia_idn" />
+                        <key key="contact:twitter" value="https://x.com/kia_idn" />
+                    </item>
+                    <item name="Lexus" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Lexus" />
+                        <key key="brand" value="Lexus" />
+                        <key key="brand:website" value="https://www.lexus.co.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/lexus.indonesia" />
+                        <key key="contact:instagram" value="https://instagram.com/lexus_id" />
+                        <key key="contact:twitter" value="https://x.com/lexusid" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCnXawNPPEm7e0C8N6vqlOQw" />
+                    </item>
+                    <item name="MG" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="MG" />
+                        <key key="brand" value="MG" />
+                        <key key="brand:website" value="https://www.mgmotor.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/MGmotorID" />
+                        <key key="contact:instagram" value="https://www.instagram.com/mgmotor.id" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCjkeHB0_DeugKDwRdQ4ug2Q" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@mgmotorid" />
+                    </item>
+                    <item name="MINI" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="MINI" />
+                        <key key="brand" value="MINI" />
+                        <key key="brand:website" value="https://www.mini.co.id" />
+                        <key key="contact:instagram" value="https://www.instagram.com/mini_indonesia" />
+                    </item>
+                    <item name="Mazda" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="brand" value="Mazda" />
+                        <key key="brand:website" value="https://mazda.co.id" />
+                        <key key="contact:instagram" value="https://www.instagram.com/mazdaid" />
+                        <key key="contact:twitter" value="https://x.com/mazdaidofficial" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@mazdaid" />
+                        <key key="contact:youtube" value="https://www.youtube.com/user/mazdaindonesia" />
+                    </item>
+                    <item name="Mercedes-Benz" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Mercedes-Benz" />
+                        <key key="brand" value="Mercedes-Benz" />
+                        <key key="brand:website" value="https://www.mercedes-benz.co.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/MercedesBenzID" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@MercedesBenzID" />
+                        <key key="contact:instagram" value="https://www.instagram.com/mercedesbenzid" />
+                    </item>
+                    <item name="Mitsubishi" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Mitsubishi" />
+                        <key key="brand" value="Mitsubishi" />
+                        <key key="brand:website" value="https://www.mitsubishi-motors.co.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/MitsubishiMotorsIndonesia" />
+                        <key key="contact:twitter" value="https://x.com/Mitsubishi_ID" />
+                        <key key="contact:instagram" value="https://www.instagram.com/mitsubishimotorsid" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@mitsubishimotorsid" />
+                        <key key="contact:youtube" value="https://www.youtube.com/user/KTBMitsubishiID" />
+                    </item>
+                    <item name="Neta" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Neta" />
+                        <key key="brand" value="Neta" />
+                        <key key="brand:website" value="https://neta.co.id" />
+                        <key key="contact:instagram" value="https://www.instagram.com/netaindonesia" />
+                    </item>
+                    <item name="Nissan" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Nissan" />
+                        <key key="brand" value="Nissan" />
+                        <key key="brand:website" value="https://nissan.co.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/NissanZoneIndonesia" />
+                        <key key="contact:twitter" value="https://x.com/nissanid" />
+                        <key key="contact:youtube" value="https://www.youtube.com/user/nissanid" />
+                        <key key="contact:instagram" value="https://www.instagram.com/nissanid" />
+                    </item>
+                    <item name="Subaru" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Subaru" />
+                        <key key="brand" value="Subaru" />
+                        <key key="brand:website" value="https://www.subaruindonesia.com" />
+                        <key key="contact:facebook" value="https://www.facebook.com/subaru.indonesia" />
+                        <key key="contact:instagram" value="https://www.instagram.com/subaru.indonesia" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@subaru.indonesia" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCVaXGvs4j1V6J1elyZ7CIkg" />
+                    </item>
+                    <item name="Suzuki" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Suzuki" />
+                        <key key="brand" value="Suzuki" />
+                        <key key="brand:website" value="https://auto.suzuki.co.id" />
+                        <key key="contact:twitter" value="https://x.com/suzukiindonesia" />
+                        <key key="contact:facebook" value="https://www.facebook.com/suzukiindonesia" />
+                        <key key="contact:instagram" value="https://www.instagram.com/suzuki_id" />
+                        <key key="contact:youtube" value="https://www.youtube.com/user/SuzukiID" />
+                    </item>
+                    <item name="Toyota" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Toyota" />
+                        <key key="brand" value="Toyota" />
+                        <key key="brand:website" value="https://www.toyota.astra.co.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/ToyotaID" />
+                        <key key="contact:instagram" value="https://www.instagram.com/toyotaid" />
+                        <key key="contact:twitter" value="https://x.com/ToyotaID" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCxVa64ZcWGi_VStlkfmoteQ" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@toyotaid" />
+                        <key key="contact:whatsapp" value="https://wa.me/628111500315" />
+                    </item>
+                    <item name="VinFast" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="VinFast" />
+                        <key key="brand" value="VinFast" />
+                        <key key="brand:website" value="https://vinfastauto.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/VinFast.Indonesia" />
+                        <key key="contact:linkedin" value="https://www.linkedin.com/company/vinfast-indonesia" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@VinFastIndonesia" />
+                    </item>
+                    <item name="Volvo" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Volvo" />
+                        <key key="brand" value="Volvo" />
+                        <key key="brand:website" value="https://www.volvocars.com/id-id" />
+                    </item>
+                    <item name="Wuling" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="Wuling" />
+                        <key key="brand" value="Wuling" />
+                        <key key="brand:website" value="https://wuling.id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/WulingMotorsIndonesia" />
+                        <key key="contact:instagram" value="https://www.instagram.com/wulingmotorsid" />
+                        <key key="contact:twitter" value="https://x.com/WulingMotorsID" />
+                        <key key="contact:youtube" value="https://www.youtube.com/c/wulingmotorsid" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@wulingmotorsid" />
+                    </item>
+                    <item name="XPeng" icon="presets/shop/vehicle.svg">
+                        <reference ref="dealer_mobil_base" />
+                        <key key="name" value="XPeng" />
+                        <key key="brand" value="XPeng" />
+                        <key key="brand:website" value="https://xpeng.co.id" />
+                        <key key="contact:instagram" value="https://www.instagram.com/xpeng_id" />
+                        <key key="contact:facebook" value="https://www.facebook.com/xpeng.id" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@xpeng_id" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@xpeng_id" />
+                    </item>
+                </group>
+                <group name="Department Store" icon="presets/shop/mall.svg">
+                    <item name="Matahari" icon="presets/shop/mall.svg" type="node,closedway">
+                        <reference ref="deptstore_base" />
+                        <key key="brand" value="Matahari" />
+                        <key key="brand:website" value="https://matahari.com" />
+                        <key key="brand:wikidata" value="Q6122878" />
+                        <key key="contact:facebook" value="https://www.facebook.com/MatahariDepartmentStore" />
+                        <key key="contact:instagram" value="https://www.instagram.com/matahari" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@tiktokmatahari" />
+                        <key key="contact:twitter" value="https://x.com/gayamatahari" />
+                        <key key="name" value="Matahari" />
+                    </item>
+                    <item name="Metro" icon="presets/shop/mall.svg" type="node,closedway">
+                        <reference ref="deptstore_base" />
+                        <key key="brand" value="Metro" />
+                        <key key="brand:website" value="https://www.metroindonesia.com" />
+                        <key key="brand:wikidata" value="Q6824450" />
+                        <key key="contact:instagram" value="https://www.instagram.com/metrodept" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@metrodeptstore" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@metrodept" />
+                        <key key="name" value="Metro" />
+                    </item>
+                    <item name="Ramayana" icon="presets/shop/mall.svg" type="node,closedway">
+                        <reference ref="deptstore_base" />
+                        <key key="operator" value="PT Ramayana Lestari Sentosa Tbk" />
+                        <key key="brand" value="Ramayana" />
+                        <key key="brand:website" value="https://ramayana.co.id" />
+                        <key key="brand:wikidata" value="Q19731380" />
+                        <key key="contact:facebook" value="https://www.facebook.com/Ramayanadepartmentstore" />
+                        <key key="contact:twitter" value="https://twitter.com/ramayanads" />
+                        <key key="contact:instagram" value="https://www.instagram.com/ramayanadeptstore" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCK_EvEAAFzGKUn54sFtt4qw" />
+                        <key key="name" value="Ramayana" />
+                    </item>
+                    <item name="Sogo" icon="presets/shop/mall.svg" type="node,closedway">
+                        <reference ref="deptstore_base" />
+                        <key key="brand" value="Sogo" />
+                        <key key="brand:website" value="https://sogo.co.id" />
+                        <key key="brand:wikidata" value="Q1761653" />
+                        <key key="contact:facebook" value="https://www.facebook.com/SOGO.IND" />
+                        <key key="contact:instagram" value="https://www.instagram.com/sogo_ind" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@sogo_ind" />
+                        <key key="name" value="Sogo" />
+                    </item>
+                </group>
+                <group name="Kecantikan &amp; Perawatan" icon="presets/shop/beauty.svg">
+                    <item name="BeautyHaul" icon="presets/shop/cosmetics.svg" type="node,closedway">
+                        <reference ref="cosmetics_base" />
+                        <key key="brand" value="BeautyHaul" />
+                        <key key="brand:website" value="https://www.beautyhaul.com/" />
+                        <key key="contact:facebook" value="https://www.facebook.com/BeautyHaulOfficial" />
+                        <key key="contact:instagram" value="https://www.instagram.com/beautyhaulofficial" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@beautyhaulofficial" />
+                        <key key="name" value="BeautyHaul" />
+                    </item>
+                    <item name="Dan+Dan" icon="presets/shop/cosmetics.svg" type="node,closedway">
+                        <reference ref="cosmetics_base" />
+                        <key key="brand" value="Dan Dan" />
+                        <key key="brand:website" value="https://dandanku.com" />
+                        <key key="contact:instagram" value="https://www.instagram.com/dandan_indonesia" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@dandan_indonesia" />
+                        <key key="contact:twitter" value="https://x.com/dandanindonesia" />
+                        <key key="name" value="Dan Dan" />
+                    </item>
+                    <item name="Guardian" icon="presets/shop/cosmetics.svg" type="node,closedway">
+                        <reference ref="cosmetics_base" />
+                        <key key="brand" value="Guardian" />
+                        <key key="brand:website" value="https://guardianindonesia.co.id" />
+                        <key key="brand:wikidata" value="Q63371124" />
+                        <key key="contact:facebook" value="https://www.facebook.com/GuardianIndo" />
+                        <key key="contact:instagram" value="https://www.instagram.com/guardian_id" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@guardianid" />
+                        <key key="contact:twitter" value="https://x.com/GuardianID" />
+                        <key key="name" value="Guardian" />
+                    </item>
+                    <item name="The Body Shop" icon="presets/shop/cosmetics.svg" type="node,closedway">
+                        <reference ref="cosmetics_base" />
+                        <key key="brand" value="The Body Shop" />
+                        <key key="brand:website" value="https://www.thebodyshop.co.id" />
+                        <key key="brand:wikidata" value="Q837851" />
+                        <key key="contact:facebook" value="https://www.facebook.com/TheBodyShopIndonesia" />
+                        <key key="contact:instagram" value="https://www.instagram.com/thebodyshopindo" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@thebodyshopindo" />
+                        <key key="contact:twitter" value="https://x.com/TheBodyShopIndo" />
+                        <key key="name" value="The Body Shop" />
+                    </item>
+                    <item name="Watsons" icon="presets/shop/cosmetics.svg" type="node,closedway">
+                        <reference ref="cosmetics_base" />
+                        <key key="brand" value="Watsons" />
+                        <key key="brand:website" value="https://www.watsons.co.id" />
+                        <key key="brand:wikidata" value="Q7974785" />
+                        <key key="contact:facebook" value="https://www.facebook.com/WatsonsIndonesia" />
+                        <key key="contact:instagram" value="https://www.instagram.com/watsonsindo" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@watsonsindo" />
+                        <key key="name" value="Watsons" />
+                    </item>
+                    <item name="Boston" icon="presets/shop/cosmetics.svg" type="node,closedway">
+                        <reference ref="cosmetics_base" />
+                        <label text="Boston" />
+                        <key key="brand" value="Boston" />
+                        <key key="name" value="Boston" />
+                        <key key="contact:instagram" value="https://www.instagram.com/boston_id" />
+                        <reference ref="mppagroup" />
+                    </item>
+                </group>
                 <group name="Minimarket" icon="presets/shop/convenience.svg">
                     <item name="Alfa Express" icon="presets/shop/convenience.svg" type="node,closedway">
                         <label text="Alfa Express" />
@@ -775,7 +1158,7 @@
                         <key key="name" value="Alfa Express" />
                         <reference ref="convenience_store_base" />
                     </item>
-                    <item name="Alfamart" icon="presets/shop/icons/convenience.svg" type="node,closedway">
+                    <item name="Alfamart" icon="presets/shop/convenience.svg" type="node,closedway">
                         <label text="Alfamart" />
                         <key key="brand" value="Alfamart" />
                         <key key="brand:wikidata" value="Q23745600" />
@@ -837,6 +1220,93 @@
                         <key key="contact:instagram" value="https://www.instagram.com/yomartofficial" />
                         <key key="name" value="Yomart" />
                         <reference ref="convenience_store_base" />
+                    </item>
+                </group>
+                <group name="Rumah Tangga" icon="presets/shop/furniture.svg">
+                    <item name="IKEA Indonesia" icon="presets/shop/furniture.svg" type="node,closedway,multipolygon">
+                        <label text="IKEA" />
+                        <text key="branch" text="Cabang" />
+                        <key key="shop" value="furniture" />
+                        <key key="brand" value="IKEA" />
+                        <key key="brand:wikidata" value="Q54078" />
+                        <key key="name" value="IKEA" />
+                        <key key="operator" value="PT DFI Retail Nusantara Tbk" />
+                        <key key="operator:website" value="https://www.dfinusantara.co.id" />
+                        <key key="website" value="https://www.ikea.co.id" />
+                        <key key="contact:phone" value="+62 21 2985 3900" />
+                        <key key="contact:whatsapp" value="+62 811 1300 2242" />
+                        <key key="contact:email" value="cs@ikea.co.id" />
+                        <key key="app:google" value="https://play.google.com/store/apps/details?id=id.co.ikea.android" />
+                        <key key="app:apple" value="https://apps.apple.com/id/app/ikea-indonesia/id1448679530" />
+                        <key key="contact:facebook" value="https://www.facebook.com/IKEAindonesia/" />
+                        <key key="contact:instagram" value="https://www.instagram.com/ikea_id/" />
+                        <key key="contact:pinterest" value="https://www.pinterest.com/ikeaindonesia/" />
+                        <key key="contact:twitter" value="https://twitter.com/ikea_ind" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCK5-jZtp3K3Vl347vYaffLg" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@ikea_indonesia" />
+                        <key key="air_conditioning" value="yes" />
+                    </item>
+                    <item name="AZKO" icon="presets/shop/diy_store.svg" type="node,closedway,multipolygon">
+                        <label text="AZKO" />
+                        <reference ref="retail_base" />
+                        <key key="shop" value="doityourself" />
+                        <key key="brand" value="AZKO" />
+                        <key key="brand:wikidata" value="Q133932948" />
+                        <key key="name" value="AZKO" />
+                        <key key="operator" value="PT Aspirasi Hidup Indonesia Tbk" />
+                        <key key="operator:website" value="https://ahi.id" />
+                        <key key="website" value="https://azko.id" />
+                        <key key="contact:email" value="azko.care@ahi.id" />
+                        <key key="app:google" value="https://play.google.com/store/apps/details?id=com.mobileappruparupa" />
+                        <key key="app:apple" value="https://apps.apple.com/id/app/ruparupa/id1324434624" />
+                        <key key="contact:facebook" value="https://www.facebook.com/azko.id" />
+                        <key key="contact:instagram" value="https://www.instagram.com/azko.id" />
+                        <key key="contact:pinterest" value="https://www.pinterest.com/azkoindonesia/" />
+                        <key key="contact:twitter" value="https://x.com/azko_id" />
+                        <key key="contact:youtube" value="https://www.youtube.com/@AzkoIndonesia" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@azko.id" />
+                        <key key="air_conditioning" value="yes" />
+                        <key key="membership" value="yes" />
+                    </item>
+                    <item name="Informa" icon="presets/shop/furniture.svg" type="node,closedway,multipolygon">
+                        <label text="Informa" />
+                        <reference ref="retail_base" />
+                        <key key="shop" value="furniture" />
+                        <key key="brand" value="Informa" />
+                        <key key="brand:wikidata" value="Q133933054" />
+                        <key key="name" value="Informa" />
+                        <key key="operator" value="PT Home Center Indonesia" />
+                        <key key="operator:type" value="private" />
+                        <key key="website" value="https://informa.co.id" />
+                        <key key="contact:whatsapp" value="+62 815 1100 2000" />
+                        <key key="app:google" value="https://play.google.com/store/apps/details?id=mobi.mobileforce.informa" />
+                        <key key="app:apple" value="https://apps.apple.com/id/app/informa/id1182293866" />
+                        <key key="contact:facebook" value="https://www.facebook.com/InformaID" />
+                        <key key="contact:instagram" value="https://www.instagram.com/InformaID/" />
+                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCyHe3AWFAK9iVrzYtGztnLQ" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@informaid?lang=en" />
+                        <key key="membership" value="yes" />
+                    </item>
+                    <item name="Ace Hardware" icon="presets/shop/diy_store.svg" type="node,closedway,multipolygon">
+                        <label text="Ace Hardware" />
+                        <reference ref="retail_base" />
+                        <key key="shop" value="doityourself" />
+                        <key key="brand" value="Ace Hardware" />
+                        <key key="brand:wikidata" value="Q4672981" />
+                        <key key="name" value="Ace Hardware" />
+                        <key key="operator" value="PT Mitra Adiperkasa Tbk" />
+                        <key key="operator:abbr" value="MAP" />
+                        <key key="operator:website" value="https://www.map.co.id" />
+                        <key key="website" value="https://acehardware.co.id" />
+                        <key key="contact:email" value="helpfulhub@acehardware.co.id" />
+                        <key key="app:google" value="https://play.google.com/store/apps/details?id=com.infotech.mapclub" />
+                        <key key="app:apple" value="https://apps.apple.com/id/app/mapclub/id1242193571" />
+                        <key key="contact:facebook" value="https://www.facebook.com/acehardwareidn" />
+                        <key key="contact:instagram" value="https://www.instagram.com/acehardwareidn" />
+                        <key key="contact:youtube" value="https://youtube.com/@acehardwareidn" />
+                        <key key="contact:tiktok" value="https://www.tiktok.com/@acehardwareidn" />
+                        <key key="contact:threads" value="https://www.threads.com/@acehardwareidn" />
+                        <key key="membership" value="yes" />
                     </item>
                 </group>
                 <group name="Supermarket" icon="presets/shop/supermarket.svg">
@@ -924,384 +1394,6 @@
                         <key key="alt_name" value="Toserba Yogya" />
                         <reference ref="yogyagroup" />
                         <reference ref="supermarket_base" />
-                    </item>
-                </group>
-                <group name="Department Store" icon="presets/shop/mall.svg">
-                    <item name="Matahari" icon="presets/shop/mall.svg" type="node,closedway">
-                        <reference ref="deptstore_base" />
-                        <key key="brand" value="Matahari" />
-                        <key key="brand:website" value="https://matahari.com" />
-                        <key key="brand:wikidata" value="Q6122878" />
-                        <key key="contact:facebook" value="https://www.facebook.com/MatahariDepartmentStore" />
-                        <key key="contact:instagram" value="https://www.instagram.com/matahari" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@tiktokmatahari" />
-                        <key key="contact:twitter" value="https://x.com/gayamatahari" />
-                        <key key="name" value="Matahari" />
-                    </item>
-                    <item name="Metro" icon="presets/shop/mall.svg" type="node,closedway">
-                        <reference ref="deptstore_base" />
-                        <key key="brand" value="Metro" />
-                        <key key="brand:website" value="https://www.metroindonesia.com" />
-                        <key key="brand:wikidata" value="Q6824450" />
-                        <key key="contact:instagram" value="https://www.instagram.com/metrodept" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@metrodeptstore" />
-                        <key key="contact:youtube" value="https://www.youtube.com/@metrodept" />
-                        <key key="name" value="Metro" />
-                    </item>
-                    <item name="Ramayana" icon="presets/shop/mall.svg" type="node,closedway">
-                        <reference ref="deptstore_base" />
-                        <key key="Operator" value="PT Ramayana Lestari Sentosa Tbk" />
-                        <key key="brand" value="Ramayana" />
-                        <key key="brand:website" value="https://ramayana.co.id" />
-                        <key key="brand:wikidata" value="Q19731380" />
-                        <key key="contact:facebook" value="https://www.facebook.com/Ramayanadepartmentstore" />
-                        <key key="contact:twitter" value="https://twitter.com/ramayanads" />
-                        <key key="contact:instagram" value="https://www.instagram.com/ramayanadeptstore" />
-                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCK_EvEAAFzGKUn54sFtt4qw" />
-                        <key key="name" value="Ramayana" />
-                    </item>
-                    <item name="Sogo" icon="presets/shop/mall.svg" type="node,closedway">
-                        <reference ref="deptstore_base" />
-                        <key key="brand" value="Sogo" />
-                        <key key="brand:website" value="https://sogo.co.id" />
-                        <key key="brand:wikidata" value="Q1761653" />
-                        <key key="contact:facebook" value="https://www.facebook.com/SOGO.IND" />
-                        <key key="contact:instagram" value="https://www.instagram.com/sogo_ind" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@sogo_ind" />
-                        <key key="name" value="Sogo" />
-                    </item>
-                </group>
-                <group name="Kecantikan &amp; Perawatan" icon="presets/shop/cosmetics.svg">
-                    <item name="BeautyHaul" icon="presets/shop/cosmetics.svg" type="node,closedway">
-                        <reference ref="cosmetics_base" />
-                        <key key="brand" value="BeautyHaul" />
-                        <key key="brand:website" value="https://www.beautyhaul.com/" />
-                        <key key="contact:facebook" value="https://www.facebook.com/BeautyHaulOfficial" />
-                        <key key="contact:instagram" value="https://www.instagram.com/beautyhaulofficial" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@beautyhaulofficial" />
-                        <key key="name" value="BeautyHaul" />
-                    </item>
-                    <item name="Dan+Dan" icon="presets/shop/cosmetics.svg" type="node,closedway">
-                        <reference ref="cosmetics_base" />
-                        <key key="brand" value="Dan Dan" />
-                        <key key="brand:website" value="https://dandanku.com" />
-                        <key key="contact:instagram" value="https://www.instagram.com/dandan_indonesia" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@dandan_indonesia" />
-                        <key key="contact:twitter" value="https://x.com/dandanindonesia" />
-                        <key key="name" value="Dan Dan" />
-                    </item>
-                    <item name="Guardian" icon="presets/shop/cosmetics.svg" type="node,closedway">
-                        <reference ref="cosmetics_base" />
-                        <key key="brand" value="Guardian" />
-                        <key key="brand:website" value="https://guardianindonesia.co.id" />
-                        <key key="brand:wikidata" value="Q63371124" />
-                        <key key="contact:facebook" value="https://www.facebook.com/GuardianIndo" />
-                        <key key="contact:instagram" value="https://www.instagram.com/guardian_id" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@guardianid" />
-                        <key key="contact:twitter" value="https://x.com/GuardianID" />
-                        <key key="name" value="Guardian" />
-                    </item>
-                    <item name="The Body Shop" icon="presets/shop/cosmetics.svg" type="node,closedway">
-                        <reference ref="cosmetics_base" />
-                        <key key="brand" value="The Body Shop" />
-                        <key key="brand:website" value="https://www.thebodyshop.co.id" />
-                        <key key="brand:wikidata" value="Q837851" />
-                        <key key="contact:facebook" value="https://www.facebook.com/TheBodyShopIndonesia" />
-                        <key key="contact:instagram" value="https://www.instagram.com/thebodyshopindo" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@thebodyshopindo" />
-                        <key key="contact:twitter" value="https://x.com/TheBodyShopIndo" />
-                        <key key="name" value="The Body Shop" />
-                    </item>
-                    <item name="Watsons" icon="presets/shop/cosmetics.svg" type="node,closedway">
-                        <reference ref="cosmetics_base" />
-                        <key key="brand" value="Watsons" />
-                        <key key="brand:website" value="https://www.watsons.co.id" />
-                        <key key="brand:wikidata" value="Q7974785" />
-                        <key key="contact:facebook" value="https://www.facebook.com/WatsonsIndonesia" />
-                        <key key="contact:instagram" value="https://www.instagram.com/watsonsindo" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@watsonsindo" />
-                        <key key="name" value="Watsons" />
-                    </item>
-                    <item name="Boston" icon="presets/shop/cosmetics.svg" type="node,closedway">
-                        <reference ref="cosmetics_base" />
-                        <label text="Boston" />
-                        <key key="brand" value="Boston" />
-                        <key key="name" value="Boston" />
-                        <key key="contact:instagram" value="https://www.instagram.com/boston_id" />
-                        <reference ref="mppagroup" />
-                    </item>
-                </group>
-                <group name="Dealer Kendaraan" icon="presets/vehicle/services.svg">
-                    <item name="Aion" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Aion" />
-                        <key key="alt_name" value="GAC Aion" />
-                        <key key="brand" value="Aion" />
-                        <key key="brand:wikidata" value="Q85740196" />
-                        <key key="brand:website" value="https://aionindonesia.com" />
-                        <key key="contact:instagram" value="https://www.instagram.com/aion_indonesia" />
-                        <key key="contact:facebook" value="https://www.facebook.com/GACAIONIndonesia" />
-                        <key key="contact:youtube" value="https://www.youtube.com/@AIONIndonesia" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@aion_indonesia" />
-                    </item>
-                    <item name="Audi" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Audi" />
-                        <key key="brand" value="Audi" />
-                        <key key="brand:website" value="https://www.audi.co.id" />
-                        <key key="contact:facebook" value="https://www.facebook.com/AudiIndonesian" />
-                        <key key="contact:instagram" value="https://www.instagram.com/audi_indonesia" />
-                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCgY-FK7IsTZawmRGatcynDQ" />
-                        <key key="contact:twitter" value="https://x.com/audi_indonesia" />
-                    </item>
-                    <item name="BMW" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="BMW" />
-                        <key key="brand" value="BMW" />
-                        <key key="brand:website" value="https://www.bmw.co.id" />
-                        <key key="contact:facebook" value="https://www.facebook.com/BMWIndonesia" />
-                        <key key="contact:twitter" value="https://twitter.com/BMW_Indonesia" />
-                        <key key="contact:instagram" value="https://www.instagram.com/bmw_indonesia" />
-                        <key key="contact:youtube" value="https://www.youtube.com/user/bmwindonesia" />
-                    </item>
-                    <item name="BYD" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="BYD" />
-                        <key key="brand" value="BYD" />
-                        <key key="brand:website" value="https://www.byd.com" />
-                        <key key="contact:facebook" value="https://www.facebook.com/IndonesiaBYD" />
-                        <key key="contact:instagram" value="https://www.instagram.com/byd_indonesia" />
-                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCIX-Iq7BHJ7kZQvEoVDTVQw" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@byd_indonesia" />
-                    </item>
-                    <item name="Chery" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Chery" />
-                        <key key="brand" value="Chery" />
-                        <key key="brand:website" value="https://chery.co.id" />
-                        <key key="contact:instagram" value="https://www.instagram.com/cherymotorindonesia" />
-                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCja9QNu0bF1Hc9la-lJtyfw" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@cherymotorindonesia" />
-                        <key key="contact:facebook" value="https://www.facebook.com/cheryindonesiaofficial" />
-                    </item>
-                    <item name="Citroën" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Citroën" />
-                        <key key="brand" value="Citroën" />
-                        <key key="brand:website" value="https://www.citroen.co.id" />
-                        <key key="contact:facebook" value="https://www.facebook.com/citroenindonesiaofficial" />
-                        <key key="contact:twitter" value="https://twitter.com/id_citroen" />
-                        <key key="contact:instagram" value="https://www.instagram.com/citroenidn" />
-                        <key key="contact:youtube" value="https://www.youtube.com/@citroen_id" />
-                    </item>
-                    <item name="DFSK" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="DFSK" />
-                        <key key="brand" value="DFSK" />
-                        <key key="brand:website" value="https://www.dfskmotors.co.id" />
-                        <key key="contact:twitter" value="https://x.com/dfsk_indonesia" />
-                        <key key="contact:instagram" value="https://www.instagram.com/dfskindonesia" />
-                        <key key="contact:facebook" value="https://www.facebook.com/DFSK-Motors-Indonesia-1684920538481095" />
-                        <key key="contact:youtube" value="https://www.youtube.com/c/DFSKMotorsIndonesia" />
-                        <key key="contact:tiktok" value="https://tiktok.com/@dfsk.id" />
-                    </item>
-                    <item name="Daihatsu" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Daihatsu" />
-                        <key key="brand" value="Daihatsu" />
-                        <key key="brand:website" value="https://daihatsu.co.id" />
-                        <key key="contact:facebook" value="https://m.facebook.com/profile.php/?id=100064451359197" />
-                        <key key="contact:instagram" value="https://www.instagram.com/daihatsuind" />
-                        <key key="contact:twitter" value="https://x.com/daihatsuind" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@daihatsuind" />
-                        <key key="contact:youtube" value="https://www.youtube.com/@DaihatsuSahabatku" />
-                    </item>
-                    <item name="Honda" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Honda" />
-                        <key key="brand" value="Honda" />
-                        <key key="brand:website" value="https://www.honda-indonesia.com" />
-                        <key key="contact:facebook" value="https://www.facebook.com/hondaisme" />
-                        <key key="contact:twitter" value="https://x.com/hondaisme" />
-                        <key key="contact:instagram" value="https://www.instagram.com/hondaisme" />
-                        <key key="contact:youtube" value="https://www.youtube.com/@HondaIndonesia" />
-                    </item>
-                    <item name="Hyundai" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Hyundai" />
-                        <key key="brand" value="Hyundai" />
-                        <key key="brand:website" value="https://www.hyundai.com/id" />
-                        <key key="contact:facebook" value="https://www.facebook.com/HyundaiMotorIndonesia" />
-                        <key key="contact:youtube" value="https://www.youtube.com/HyundaiMotorIndonesia" />
-                        <key key="contact:instagram" value="https://www.instagram.com/hyundaimotorindonesia" />
-                        <key key="contact:twitter" value="https://x.com/hyundaimotorid" />
-                    </item>
-                    <item name="Jaecoo" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Jaecoo" />
-                        <key key="brand" value="Jaecoo" />
-                        <key key="brand:website" value="https://jaecoo.id" />
-                        <key key="contact:instagram" value="https://www.instagram.com/jaecoo.id" />
-                        <key key="contact:facebook" value="https://www.facebook.com/JaecooIndonesia" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@jaecoo.id" />
-                    </item>
-                    <item name="Jaguar" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Jaguar" />
-                        <key key="brand" value="Jaguar" />
-                        <key key="brand:website" value="https://www.jaguar.co.id" />
-                    </item>
-                    <item name="Kia" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Kia" />
-                        <key key="brand" value="Kia" />
-                        <key key="brand:website" value="https://www.kia.com/id" />
-                        <key key="contact:instagram" value="https://www.instagram.com/kia.idn" />
-                        <key key="contact:facebook" value="https://www.facebook.com/share/1ZsrD36HyP" />
-                        <key key="contact:youtube" value="https://www.youtube.com/@kia_idn" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@kia_idn" />
-                        <key key="contact:twitter" value="https://x.com/kia_idn" />
-                    </item>
-                    <item name="Lexus" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Lexus" />
-                        <key key="brand" value="Lexus" />
-                        <key key="brand:website" value="https://www.lexus.co.id" />
-                        <key key="contact:facebook" value="https://www.facebook.com/lexus.indonesia" />
-                        <key key="contact:instagram" value="https://instagram.com/lexus_id" />
-                        <key key="contact:twitter" value="https://x.com/lexusid" />
-                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCnXawNPPEm7e0C8N6vqlOQw" />
-                    </item>
-                    <item name="MG" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="MG" />
-                        <key key="brand" value="MG" />
-                        <key key="brand:website" value="https://www.mgmotor.id" />
-                        <key key="contact:facebook" value="https://www.facebook.com/MGmotorID" />
-                        <key key="contact:instagram" value="https://www.instagram.com/mgmotor.id" />
-                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCjkeHB0_DeugKDwRdQ4ug2Q" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@mgmotorid" />
-                    </item>
-                    <item name="MINI" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="MINI" />
-                        <key key="brand" value="MINI" />
-                        <key key="brand:website" value="https://www.mini.co.id" />
-                        <key key="contact:instagram" value="https://www.instagram.com/mini_indonesia" />
-                    </item>
-                    <item name="Mazda" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="brand" value="Mazda" />
-                        <key key="brand:website" value="https://mazda.co.id" />
-                        <key key="contact:instagram" value="https://www.instagram.com/mazdaid" />
-                        <key key="contact:twitter" value="https://x.com/mazdaidofficial" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@mazdaid" />
-                        <key key="contact:youtube" value="https://www.youtube.com/user/mazdaindonesia" />
-                    </item>
-                    <item name="Mercedes-Benz" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Mercedes-Benz" />
-                        <key key="brand" value="Mercedes-Benz" />
-                        <key key="brand:website" value="https://www.mercedes-benz.co.id" />
-                        <key key="contact:facebook" value="https://www.facebook.com/MercedesBenzID" />
-                        <key key="contact:youtube" value="https://www.youtube.com/@MercedesBenzID" />
-                        <key key="contact:instagram" value="https://www.instagram.com/mercedesbenzid" />
-                    </item>
-                    <item name="Mitsubishi" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Mitsubishi" />
-                        <key key="brand" value="Mitsubishi" />
-                        <key key="brand:website" value="https://www.mitsubishi-motors.co.id" />
-                        <key key="contact:facebook" value="https://www.facebook.com/MitsubishiMotorsIndonesia" />
-                        <key key="contact:twitter" value="https://x.com/Mitsubishi_ID" />
-                        <key key="contact:instagram" value="https://www.instagram.com/mitsubishimotorsid" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@mitsubishimotorsid" />
-                        <key key="contact:youtube" value="https://www.youtube.com/user/KTBMitsubishiID" />
-                    </item>
-                    <item name="Neta" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Neta" />
-                        <key key="brand" value="Neta" />
-                        <key key="brand:website" value="https://neta.co.id" />
-                        <key key="contact:instagram" value="https://www.instagram.com/netaindonesia" />
-                    </item>
-                    <item name="Nissan" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Nissan" />
-                        <key key="brand" value="Nissan" />
-                        <key key="brand:website" value="https://nissan.co.id" />
-                        <key key="contact:facebook" value="https://www.facebook.com/NissanZoneIndonesia" />
-                        <key key="contact:twitter" value="https://x.com/nissanid" />
-                        <key key="contact:youtube" value="https://www.youtube.com/user/nissanid" />
-                        <key key="contact:instagram" value="https://www.instagram.com/nissanid" />
-                    </item>
-                    <item name="Subaru" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Subaru" />
-                        <key key="brand" value="Subaru" />
-                        <key key="brand:website" value="https://www.subaruindonesia.com" />
-                        <key key="contact:facebook" value="https://www.facebook.com/subaru.indonesia" />
-                        <key key="contact:instagram" value="https://www.instagram.com/subaru.indonesia" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@subaru.indonesia" />
-                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCVaXGvs4j1V6J1elyZ7CIkg" />
-                    </item>
-                    <item name="Suzuki" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Suzuki" />
-                        <key key="brand" value="Suzuki" />
-                        <key key="brand:website" value="https://auto.suzuki.co.id" />
-                        <key key="contact:twitter" value="https://x.com/suzukiindonesia" />
-                        <key key="contact:facebook" value="https://www.facebook.com/suzukiindonesia" />
-                        <key key="contact:instagram" value="https://www.instagram.com/suzuki_id" />
-                        <key key="contact:youtube" value="https://www.youtube.com/user/SuzukiID" />
-                    </item>
-                    <item name="Toyota" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Toyota" />
-                        <key key="brand" value="Toyota" />
-                        <key key="brand:website" value="https://www.toyota.astra.co.id" />
-                        <key key="contact:facebook" value="https://www.facebook.com/ToyotaID" />
-                        <key key="contact:instagram" value="https://www.instagram.com/toyotaid" />
-                        <key key="contact:twitter" value="https://x.com/ToyotaID" />
-                        <key key="contact:youtube" value="https://www.youtube.com/channel/UCxVa64ZcWGi_VStlkfmoteQ" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@toyotaid" />
-                        <key key="contact:whatsapp" value="https://wa.me/628111500315" />
-                    </item>
-                    <item name="VinFast" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="VinFast" />
-                        <key key="brand" value="VinFast" />
-                        <key key="brand:website" value="https://vinfastauto.id" />
-                        <key key="contact:facebook" value="https://www.facebook.com/VinFast.Indonesia" />
-                        <key key="contact:linkedin" value="https://www.linkedin.com/company/vinfast-indonesia" />
-                        <key key="contact:youtube" value="https://www.youtube.com/@VinFastIndonesia" />
-                    </item>
-                    <item name="Volvo" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Volvo" />
-                        <key key="brand" value="Volvo" />
-                        <key key="brand:website" value="https://www.volvocars.com/id-id" />
-                    </item>
-                    <item name="Wuling" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="Wuling" />
-                        <key key="brand" value="Wuling" />
-                        <key key="brand:website" value="https://wuling.id" />
-                        <key key="contact:facebook" value="https://www.facebook.com/WulingMotorsIndonesia" />
-                        <key key="contact:instagram" value="https://www.instagram.com/wulingmotorsid" />
-                        <key key="contact:twitter" value="https://x.com/WulingMotorsID" />
-                        <key key="contact:youtube" value="https://www.youtube.com/c/wulingmotorsid" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@wulingmotorsid" />
-                    </item>
-                    <item name="XPeng" icon="presets/shop/car.svg">
-                        <reference ref="dealer_mobil_base" />
-                        <key key="name" value="XPeng" />
-                        <key key="brand" value="XPeng" />
-                        <key key="brand:website" value="https://xpeng.co.id" />
-                        <key key="contact:instagram" value="https://www.instagram.com/xpeng_id" />
-                        <key key="contact:facebook" value="https://www.facebook.com/xpeng.id" />
-                        <key key="contact:youtube" value="https://www.youtube.com/@xpeng_id" />
-                        <key key="contact:tiktok" value="https://www.tiktok.com/@xpeng_id" />
                     </item>
                 </group>
             </group>
@@ -1524,15 +1616,15 @@
                             <key key="air_conditioning" value="yes" />
                             <reference ref="fast_food_base" />
                         </item>
-                        <item name="McDonald's" icon="presets/food/fast_food.svg" type="node,closedway">
-                            <label text="McDonald's" />
+                        <item name="McDonald&apos;s" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="McDonald&apos;s" />
                             <key key="cuisine" value="burger;fried_chicken;ice_cream" />
-                            <key key="brand" value="McDonald's" />
+                            <key key="brand" value="McDonald&apos;s" />
                             <key key="brand:wikidata" value="Q38076" />
                             <key key="operator" value="PT Rekso Nasional Food" />
                             <key key="operator:abbr" value="PT RNF" />
                             <key key="operator:type" value="private" />
-                            <key key="name" value="McDonald's" />
+                            <key key="name" value="McDonald&apos;s" />
                             <key key="short_name" value="McD" />
                             <key key="website" value="https://www.mcdonalds.co.id" />
                             <key key="website:menu" value="https://www.mcdonalds.co.id/menu" />
@@ -1540,7 +1632,7 @@
                             <key key="contact:instagram" value="http://instagram.com/mcdonaldsid" />
                             <key key="contact:tiktok" value="https://www.tiktok.com/@mcdonaldsid" />
                             <key key="contact:twitter" value="https://x.com/mcdonalds_id" />
-                            <key key="contact:whatsapp" value="+6281110514045" />
+                            <key key="contact:whatsapp" value="+62 811 1051 4045" />
                             <key key="contact:youtube" value="https://www.youtube.com/user/McDonaldsID" />
                             <key key="app:google" value="https://play.google.com/store/apps/details?id=com.mcdonalds.mobileapp" />
                             <key key="app:apple" value="https://apps.apple.com/id/app/mcdonalds/id1217507712" />
@@ -1563,12 +1655,12 @@
                             <key key="air_conditioning" value="yes" />
                             <reference ref="fast_food_base" />
                         </item>
-                        <item name="Wendy's" icon="presets/food/fast_food.svg" type="node,closedway">
-                            <label text="Wendy's" />
+                        <item name="Wendy&apos;s" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Wendy&apos;s" />
                             <key key="cuisine" value="burger" />
-                            <key key="brand" value="Wendy's" />
+                            <key key="brand" value="Wendy&apos;s" />
                             <key key="brand:wikidata" value="Q550258" />
-                            <key key="name" value="Wendy's" />
+                            <key key="name" value="Wendy&apos;s" />
                             <key key="contact:facebook" value="https://www.facebook.com/Wendysindo" />
                             <key key="contact:instagram" value="https://www.instagram.com/wendysindo" />
                             <key key="air_conditioning" value="yes" />
@@ -1620,22 +1712,22 @@
                             <key key="contact:twitter" value="https://twitter.com/id_cfcindonesia" />
                             <reference ref="fast_food_base" />
                         </item>
-                        <item name="d'BestO" icon="presets/food/fast_food.svg" type="node,closedway">
-                            <label text="d'BestO" />
+                        <item name="d&apos;BestO" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="d&apos;BestO" />
                             <key key="cuisine" value="chicken;burger" />
-                            <key key="brand" value="d'BestO" />
+                            <key key="brand" value="d&apos;BestO" />
                             <key key="operator" value="PT Setya Kuliner Mandiri" />
                             <key key="operator:type" value="private" />
-                            <key key="name" value="d'BestO" />
+                            <key key="name" value="d&apos;BestO" />
                             <key key="website" value="https://www.dbesto.co.id" />
                             <key key="contact:instagram" value="https://www.instagram.com/dbesto_id" />
                             <reference ref="fast_food_base" />
                         </item>
-                        <item name="d'Kriuk" icon="presets/food/fast_food.svg" type="node,closedway">
-                            <label text="d'Kriuk" />
+                        <item name="d&apos;Kriuk" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="d&apos;Kriuk" />
                             <key key="cuisine" value="chicken" />
-                            <key key="brand" value="d'Kriuk" />
-                            <key key="name" value="d'Kriuk" />
+                            <key key="brand" value="d&apos;Kriuk" />
+                            <key key="name" value="d&apos;Kriuk" />
                             <key key="alt_name" value="Dkriuk Fried Chicken" />
                             <key key="operator" value="PT Raja Rasa Kuliner" />
                             <key key="operator:type" value="private" />
@@ -1804,7 +1896,7 @@
                             <key key="operator" value="PT Quick Serve Indonesia" />
                             <key key="operator:type" value="private" />
                             <key key="name" value="Texas Chicken" />
-                            <key key="alt_name" value="Church's Chicken" />
+                            <key key="alt_name" value="Church&apos;s Chicken" />
                             <key key="delivery:partner" value="GrabFood;GoFood;ShopeeFood" />
                             <key key="website" value="https://indonesia.texaschicken.com" />
                             <key key="contact:facebook" value="https://www.facebook.com/texaschickenidn" />
@@ -1834,25 +1926,25 @@
                         </item>
                     </group>
                     <group name="Pizza" icon="presets/food/fast_food.svg">
-                        <item name="Domino's Pizza" icon="presets/food/fast_food.svg" type="node,closedway">
-                            <label text="Domino's Pizza" />
+                        <item name="Domino&apos;s Pizza" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Domino&apos;s Pizza" />
                             <key key="cuisine" value="pizza" />
-                            <key key="brand" value="Domino's Pizza" />
+                            <key key="brand" value="Domino&apos;s Pizza" />
                             <key key="brand:wikidata" value="Q839466" />
-                            <key key="brand:wikipedia" value="en:Domino's" />
-                            <key key="name" value="Domino's Pizza" />
+                            <key key="brand:wikipedia" value="en:Domino&apos;s" />
+                            <key key="name" value="Domino&apos;s Pizza" />
                             <key key="alt_name" value="Dominos" />
                             <key key="website" value="https://pizza-restoran.dominos.co.id" />
                             <key key="contact:instagram" value="https://www.instagram.com/dominos_id" />
                             <reference ref="fast_food_base" />
                         </item>
-                        <item name="Papa Ron's Pizza" icon="presets/food/fast_food.svg" type="node,closedway">
-                            <label text="Papa Ron's Pizza" />
+                        <item name="Papa Ron&apos;s Pizza" icon="presets/food/fast_food.svg" type="node,closedway">
+                            <label text="Papa Ron&apos;s Pizza" />
                             <key key="cuisine" value="pizza" />
-                            <key key="brand" value="Papa Ron's Pizza" />
+                            <key key="brand" value="Papa Ron&apos;s Pizza" />
                             <key key="brand:wikidata" value="Q12503044" />
-                            <key key="brand:wikipedia" value="id:Papa Ron's Pizza" />
-                            <key key="name" value="Papa Ron's Pizza" />
+                            <key key="brand:wikipedia" value="id:Papa Ron&apos;s Pizza" />
+                            <key key="name" value="Papa Ron&apos;s Pizza" />
                             <key key="website" value="https://paparonspizza.com" />
                             <key key="contact:facebook" value="https://www.facebook.com/prpronspizzaindonesia" />
                             <key key="contact:instagram" value="https://www.instagram.com/paparonspizzaindonesia" />
@@ -2130,7 +2222,6 @@
                     <key key="brand:wikidata" value="Q4855963" />
                     <key key="brand:website" value="https://www.permatabank.com" />
                     <key key="name" value="Bank Permata" />
-                    <text key="branch" text="Cabang" />
                     <reference ref="bank_base" />
                 </item>
                 <item name="Bank QNB Indonesia" icon="presets/money/bank.svg" type="node,closedway">
@@ -2188,7 +2279,7 @@
                 </item>
             </group>
             <group name="ATM" icon="presets/money/atm.svg">
-                <item name="ATM Bersama" icon="presets/money/bank.svg" type="node,closedway">
+                <item name="ATM Bersama" icon="presets/money/atm.svg" type="node,closedway">
                     <label text="ATM Bersama" />
                     <reference ref="semua_bangunan" />
                     <key key="amenity" value="atm" />
@@ -2198,7 +2289,7 @@
                     <key key="operator" value="PT Artajasa Pembayaran Elektronis" />
                     <key key="name" value="ATM Bersama" />
                 </item>
-                <item name="ATM Link" icon="presets/money/bank.svg" type="node,closedway">
+                <item name="ATM Link" icon="presets/money/atm.svg" type="node,closedway">
                     <label text="ATM Link" />
                     <reference ref="semua_bangunan" />
                     <key key="amenity" value="atm" />
@@ -2213,12 +2304,12 @@
         <!-- ============================================ -->
         <!-- TRANSPORTASI -->
         <!-- ============================================ -->
-        <group name="Transportasi" icon="presets/vehicle/services.svg">
+        <group name="Transportasi" icon="presets/transport/train.svg">
             <group name="Ekspedisi" icon="presets/service/post_office.svg">
                 <item name="Anteraja" icon="presets/service/post_office.svg" type="node,closedway">
                     <label text="Anteraja" />
                     <space />
-                    <label text="Pilih 'Ya' jika berupa bangunan, 'Khusus' jika bangunan khusus untuk kantor ini, atau 'Bukan' jika berupa node." />
+                    <label text="Pilih &apos;Ya&apos; jika berupa bangunan, &apos;Khusus&apos; jika bangunan khusus untuk kantor ini, atau &apos;Bukan&apos; jika berupa node." />
                     <key key="operator" value="Anteraja" />
                     <key key="operator:wikidata" value="Q109439307" />
                     <key key="website" value="https://anteraja.id" />
@@ -2234,7 +2325,7 @@
                 <item name="J&amp;T Express" icon="presets/service/post_office.svg" type="node,closedway">
                     <label text="J&amp;T Express" />
                     <space />
-                    <label text="Pilih 'Ya' jika berupa bangunan, 'Khusus' jika bangunan khusus untuk kantor ini, atau 'Bukan' jika berupa node." />
+                    <label text="Pilih &apos;Ya&apos; jika berupa bangunan, &apos;Khusus&apos; jika bangunan khusus untuk kantor ini, atau &apos;Bukan&apos; jika berupa node." />
                     <key key="operator" value="J&amp;T Express" />
                     <key key="operator:wikidata" value="Q95690344" />
                     <key key="website" value="https://jet.co.id" />
@@ -2250,7 +2341,7 @@
                 <item name="JNE" icon="presets/service/post_office.svg" type="node,closedway">
                     <label text="JNE" />
                     <space />
-                    <label text="Pilih 'Ya' jika berupa bangunan, 'Khusus' jika bangunan khusus untuk kantor ini, atau 'Bukan' jika berupa node." />
+                    <label text="Pilih &apos;Ya&apos; jika berupa bangunan, &apos;Khusus&apos; jika bangunan khusus untuk kantor ini, atau &apos;Bukan&apos; jika berupa node." />
                     <key key="name" value="JNE" />
                     <key key="alt_name" value="Jalur Nugraha Ekakurir" />
                     <key key="official_name" value="JNE Express" />
@@ -2268,7 +2359,7 @@
                 <item name="Kantor Pos Indonesia" icon="presets/service/post_office.svg" type="node,closedway">
                     <label text="Kantor Pos Indonesia" />
                     <space />
-                    <label text="Pilih 'Ya' jika berupa bangunan, 'Khusus' jika bangunan khusus untuk kantor ini, atau 'Bukan' jika berupa node." />
+                    <label text="Pilih &apos;Ya&apos; jika berupa bangunan, &apos;Khusus&apos; jika bangunan khusus untuk kantor ini, atau &apos;Bukan&apos; jika berupa node." />
                     <key key="name" value="Kantor Pos" />
                     <key key="operator" value="Pos Indonesia" />
                     <key key="operator:wikidata" value="Q4273095" />
@@ -2283,7 +2374,7 @@
                 <item name="SiCepat Ekspres" icon="presets/service/post_office.svg" type="node,closedway">
                     <label text="SiCepat Ekspres" />
                     <space />
-                    <label text="Pilih 'Ya' jika berupa bangunan, 'Khusus' jika bangunan khusus untuk kantor ini, atau 'Bukan' jika berupa node." />
+                    <label text="Pilih &apos;Ya&apos; jika berupa bangunan, &apos;Khusus&apos; jika bangunan khusus untuk kantor ini, atau &apos;Bukan&apos; jika berupa node." />
                     <key key="operator" value="SiCepat Ekspres" />
                     <key key="operator:wikidata" value="Q56394041" />
                     <key key="website" value="https://www.sicepat.com" />
@@ -2338,7 +2429,7 @@
                         <reference ref="jam_buka" />
                         <preset_link preset_name="Alamat" />
                     </item>
-                    <group name="Fasilitas" icon="presets/vehicle/services.svg">
+                    <group name="Fasilitas" icon="presets/shop/vehicle.svg">
                         <item name="Totem Digital SPBU" icon="presets/leisure/totem.svg" type="node">
                             <label text="Totem atau plang Digital SPBU" />
                             <key key="access" value="no" />
@@ -2451,7 +2542,7 @@
         <!-- LAINNYA -->
         <!-- ============================================ -->
         <group name="Lainnya" icon="presets/sightseeing/viewpoint.svg">
-            <group name="Anotasi" icon="presets/misc/housenumber.svg">
+            <group name="Anotasi" icon="presets/misc/name.svg">
                 <item name="Nama" icon="presets/misc/name.svg" type="node,way,closedway,multipolygon,relation" preset_name_label="true">
                     <link wiki="Key:name" />
                     <label text="Gunakan hanya untuk nama yang benar-benar digunakan di dunia nyata. Jangan mengisi kolom nama apabila objek tidak memiliki nama, hanya dikenal secara generik, atau nilainya bukan nama (misalnya alamat atau nomor referensi). Tag ini tidak boleh berisi deskripsi, jenis objek, lokasi, atau properti lainnya." />
@@ -2486,10 +2577,10 @@
                     <text key="addr:housename" text="Nama rumah" match="key" alternative_autocomplete_keys="name" />
                     <text key="addr:hamlet" text="Desa/Dusun" match="key" alternative_autocomplete_keys="addr:hamlet" />
                     <combo key="addr:subdistrict" text="Kelurahan" text_context="addr:" values="Argasunya,Harjamukti,Kalijaga,Kecapi,Larangan,Kebonbaru,Kejaksan,Kesenden,Sukapura,Drajat,Karyamulya,Kesambi,Pekiringan,Sunyaragi,Kesepuhan,Lemahwungkuk,Panjunan,Pegambiran,Jagasatru,Pekalangan,Pekalipan,Pulasaren" use_last_as_default="force" editable="true" values_searchable="true" />
-                    <text key="addr:district" text="Kecamatan" use_last_as_default="force" values_sort="false" value_template="?{ &quot;addr:subdistrict&quot;=Argasunya 'Harjamukti' | &quot;addr:subdistrict&quot;=Harjamukti 'Harjamukti' | &quot;addr:subdistrict&quot;=Kalijaga 'Harjamukti' | &quot;addr:subdistrict&quot;=Kecapi 'Harjamukti' | &quot;addr:subdistrict&quot;=Larangan 'Harjamukti' | &quot;addr:subdistrict&quot;=Kebonbaru 'Kejaksan' | &quot;addr:subdistrict&quot;=Kejaksan 'Kejaksan' | &quot;addr:subdistrict&quot;=Kesenden 'Kejaksan' | &quot;addr:subdistrict&quot;=Sukapura 'Kejaksan' | &quot;addr:subdistrict&quot;=Drajat 'Kesambi' | &quot;addr:subdistrict&quot;=Karyamulya 'Kesambi' | &quot;addr:subdistrict&quot;=Kesambi 'Kesambi' | &quot;addr:subdistrict&quot;=Pekiringan 'Kesambi' | &quot;addr:subdistrict&quot;=Sunyaragi 'Kesambi' | &quot;addr:subdistrict&quot;=Kesepuhan 'Lemahwungkuk' | &quot;addr:subdistrict&quot;=Lemahwungkuk 'Lemahwungkuk' | &quot;addr:subdistrict&quot;=Panjunan 'Lemahwungkuk' | &quot;addr:subdistrict&quot;=Pegambiran 'Lemahwungkuk' | &quot;addr:subdistrict&quot;=Jagasatru 'Pekalipan' | &quot;addr:subdistrict&quot;=Pekalangan 'Pekalipan' | &quot;addr:subdistrict&quot;=Pekalipan 'Pekalipan' | &quot;addr:subdistrict&quot;=Pulasaren 'Pekalipan' | '' }" />
-                    <text key="addr:city" text="Kota/Kabupaten" use_last_as_default="force" match="key" values_sort="false" value_template="?{ &quot;addr:district&quot;=&quot;Harjamukti&quot; 'Kota Cirebon' | &quot;addr:district&quot;=&quot;Kejaksan&quot; 'Kota Cirebon' | &quot;addr:district&quot;=&quot;Kesambi&quot; 'Kota Cirebon' | &quot;addr:district&quot;=&quot;Lemahwungkuk&quot; 'Kota Cirebon' | &quot;addr:district&quot;=&quot;Pekalipan&quot; 'Kota Cirebon' | '' }" />
-                    <text key="addr:province" text="Provinsi" text_context="addr:" value_template="?{ &quot;addr:city&quot;=&quot;Kota Cirebon&quot; 'Jawa Barat'| '' }" use_last_as_default="force" />
-                    <text key="addr:postcode" text="Kode Pos" length="5" use_last_as_default="force" values_sort="false" value_template="?{ &quot;addr:subdistrict&quot;=Argasunya '45145' | &quot;addr:subdistrict&quot;=Harjamukti '45143' | &quot;addr:subdistrict&quot;=Kalijaga '45144' | &quot;addr:subdistrict&quot;=Kecapi '45142' | &quot;addr:subdistrict&quot;=Larangan '45141' | &quot;addr:subdistrict&quot;=Kebonbaru '45124' | &quot;addr:subdistrict&quot;=Kejaksan '45123' | &quot;addr:subdistrict&quot;=Kesenden '45121' | &quot;addr:subdistrict&quot;=Sukapura '45122' | &quot;addr:subdistrict&quot;=Drajat '45133' | &quot;addr:subdistrict&quot;=Karyamulya '45135' | &quot;addr:subdistrict&quot;=Kesambi '45134' | &quot;addr:subdistrict&quot;=Pekiringan '45131' | &quot;addr:subdistrict&quot;=Sunyaragi '45132' | &quot;addr:subdistrict&quot;=Kesepuhan '45114' | &quot;addr:subdistrict&quot;=Lemahwungkuk '45111' | &quot;addr:subdistrict&quot;=Panjunan '45112' | &quot;addr:subdistrict&quot;=Pegambiran '45113' | &quot;addr:subdistrict&quot;=Jagasatru '45115' | &quot;addr:subdistrict&quot;=Pekalangan '45117' | &quot;addr:subdistrict&quot;=Pekalipan '45118' | &quot;addr:subdistrict&quot;=Pulasaren '45116' | '' }" />
+                    <text key="addr:district" text="Kecamatan" use_last_as_default="force" values_sort="false" value_template="?{ &quot;addr:subdistrict&quot;=Argasunya &apos;Harjamukti&apos; | &quot;addr:subdistrict&quot;=Harjamukti &apos;Harjamukti&apos; | &quot;addr:subdistrict&quot;=Kalijaga &apos;Harjamukti&apos; | &quot;addr:subdistrict&quot;=Kecapi &apos;Harjamukti&apos; | &quot;addr:subdistrict&quot;=Larangan &apos;Harjamukti&apos; | &quot;addr:subdistrict&quot;=Kebonbaru &apos;Kejaksan&apos; | &quot;addr:subdistrict&quot;=Kejaksan &apos;Kejaksan&apos; | &quot;addr:subdistrict&quot;=Kesenden &apos;Kejaksan&apos; | &quot;addr:subdistrict&quot;=Sukapura &apos;Kejaksan&apos; | &quot;addr:subdistrict&quot;=Drajat &apos;Kesambi&apos; | &quot;addr:subdistrict&quot;=Karyamulya &apos;Kesambi&apos; | &quot;addr:subdistrict&quot;=Kesambi &apos;Kesambi&apos; | &quot;addr:subdistrict&quot;=Pekiringan &apos;Kesambi&apos; | &quot;addr:subdistrict&quot;=Sunyaragi &apos;Kesambi&apos; | &quot;addr:subdistrict&quot;=Kesepuhan &apos;Lemahwungkuk&apos; | &quot;addr:subdistrict&quot;=Lemahwungkuk &apos;Lemahwungkuk&apos; | &quot;addr:subdistrict&quot;=Panjunan &apos;Lemahwungkuk&apos; | &quot;addr:subdistrict&quot;=Pegambiran &apos;Lemahwungkuk&apos; | &quot;addr:subdistrict&quot;=Jagasatru &apos;Pekalipan&apos; | &quot;addr:subdistrict&quot;=Pekalangan &apos;Pekalipan&apos; | &quot;addr:subdistrict&quot;=Pekalipan &apos;Pekalipan&apos; | &quot;addr:subdistrict&quot;=Pulasaren &apos;Pekalipan&apos; | &apos;&apos; }" />
+                    <text key="addr:city" text="Kota/Kabupaten" use_last_as_default="force" match="key" values_sort="false" value_template="?{ &quot;addr:district&quot;=&quot;Harjamukti&quot; &apos;Kota Cirebon&apos; | &quot;addr:district&quot;=&quot;Kejaksan&quot; &apos;Kota Cirebon&apos; | &quot;addr:district&quot;=&quot;Kesambi&quot; &apos;Kota Cirebon&apos; | &quot;addr:district&quot;=&quot;Lemahwungkuk&quot; &apos;Kota Cirebon&apos; | &quot;addr:district&quot;=&quot;Pekalipan&quot; &apos;Kota Cirebon&apos; | &apos;&apos; }" />
+                    <text key="addr:province" text="Provinsi" text_context="addr:" value_template="?{ &quot;addr:city&quot;=&quot;Kota Cirebon&quot; &apos;Jawa Barat&apos;| &apos;&apos; }" use_last_as_default="force" />
+                    <text key="addr:postcode" text="Kode Pos" length="5" use_last_as_default="force" values_sort="false" value_template="?{ &quot;addr:subdistrict&quot;=Argasunya &apos;45145&apos; | &quot;addr:subdistrict&quot;=Harjamukti &apos;45143&apos; | &quot;addr:subdistrict&quot;=Kalijaga &apos;45144&apos; | &quot;addr:subdistrict&quot;=Kecapi &apos;45142&apos; | &quot;addr:subdistrict&quot;=Larangan &apos;45141&apos; | &quot;addr:subdistrict&quot;=Kebonbaru &apos;45124&apos; | &quot;addr:subdistrict&quot;=Kejaksan &apos;45123&apos; | &quot;addr:subdistrict&quot;=Kesenden &apos;45121&apos; | &quot;addr:subdistrict&quot;=Sukapura &apos;45122&apos; | &quot;addr:subdistrict&quot;=Drajat &apos;45133&apos; | &quot;addr:subdistrict&quot;=Karyamulya &apos;45135&apos; | &quot;addr:subdistrict&quot;=Kesambi &apos;45134&apos; | &quot;addr:subdistrict&quot;=Pekiringan &apos;45131&apos; | &quot;addr:subdistrict&quot;=Sunyaragi &apos;45132&apos; | &quot;addr:subdistrict&quot;=Kesepuhan &apos;45114&apos; | &quot;addr:subdistrict&quot;=Lemahwungkuk &apos;45111&apos; | &quot;addr:subdistrict&quot;=Panjunan &apos;45112&apos; | &quot;addr:subdistrict&quot;=Pegambiran &apos;45113&apos; | &quot;addr:subdistrict&quot;=Jagasatru &apos;45115&apos; | &quot;addr:subdistrict&quot;=Pekalangan &apos;45117&apos; | &quot;addr:subdistrict&quot;=Pekalipan &apos;45118&apos; | &quot;addr:subdistrict&quot;=Pulasaren &apos;45116&apos; | &apos;&apos; }" />
                 </item>
                 <item name="Interpolasi Alamat" icon="presets/misc/interpolation.svg" type="way" preset_name_label="true">
                     <link wiki="Key:addr" />
@@ -2500,7 +2591,7 @@
                     </optional>
                 </item>
                 <item name="Kontak (Skema Umum)" icon="presets/misc/contact.svg" type="node,way,closedway,multipolygon,relation" preset_name_label="true">
-                    <link wiki="Anotasi" />
+                    <link wiki="Annotations" />
                     <space />
                     <text key="website" text="Situs web" match="key" />
                     <text key="email" text="Alamat email" match="key" />
@@ -2508,14 +2599,14 @@
                     <text key="phone" text="Nomor telepon" match="key" />
                     <text key="mobile" text="Nomor telepon seluler" match="key" />
                     <text key="fax" text="Nomor Fax" match="key" />
-                    <label text="Gunakan format E.123, misalnya +62 81234 567 890" />
+                    <label text="Gunakan format internasional E.123 / DIN 5008 (pisahkan kode negara, kode area, dan nomor dengan spasi), misalnya +62 21 5096 6789 atau +62 812 3456 7890" />
                     <space />
                     <reference ref="wikipedia_wikidata" />
                     <text key="image" text="Gambar" />
-                    <preset_link preset_name="Kontak (Skema dengan Awalan 'contact:*')" text="Tag serupa tetapi dengan skema penandaan yang berbeda:" text_context="Kontak" />
+                    <preset_link preset_name="Kontak (Skema dengan Awalan &apos;contact:*&apos;)" text="Tag serupa tetapi dengan skema penandaan yang berbeda:" text_context="Kontak" />
                     <preset_link preset_name="Media Sosial" />
                 </item>
-                <item name="Kontak (Skema dengan Awalan 'contact:*')" icon="presets/misc/contact.svg" type="node,way,closedway,multipolygon,relation" preset_name_label="true">
+                <item name="Kontak (Skema dengan Awalan &apos;contact:*&apos;)" icon="presets/misc/contact.svg" type="node,way,closedway,multipolygon,relation" preset_name_label="true">
                     <link wiki="Key:contact" />
                     <space />
                     <text key="contact:website" text="Situs web" match="key" />
@@ -2524,7 +2615,7 @@
                     <text key="contact:phone" text="Nomor telepon" match="key" />
                     <text key="contact:mobile" text="Nomor telepon seluler" match="key" />
                     <text key="contact:fax" text="Nomor Fax" match="key" />
-                    <label text="Gunakan format E.123, misalnya +62 81234 567 890" />
+                    <label text="Gunakan format internasional E.123 / DIN 5008 (pisahkan kode negara, kode area, dan nomor dengan spasi), misalnya +62 21 5096 6789 atau +62 812 3456 7890" />
                     <space />
                     <reference ref="wikipedia_wikidata" />
                     <text key="image" text="Gambar" />
@@ -2537,6 +2628,7 @@
                     <text key="contact:booking" text="Booking.com (hotel id)" match="key" text_context="social_network" />
                     <text key="contact:facebook" text="Facebook" match="key" text_context="social_network" />
                     <text key="contact:instagram" text="Instagram" match="key" text_context="social_network" />
+                    <text key="contact:threads" text="Threads" match="key" text_context="social_network" />
                     <text key="contact:linkedin" text="Linkedin" match="key" text_context="social_network" />
                     <text key="contact:pinterest" text="Pinterest" match="key" text_context="social_network" />
                     <text key="contact:skype" text="Skype" match="key" text_context="social_network" />
@@ -2547,7 +2639,7 @@
                     <text key="contact:whatsapp" text="Whatsapp (nomor)" match="key" text_context="social_network" />
                     <text key="contact:youtube" text="Youtube" match="key" text_context="social_network" />
                     <preset_link preset_name="Kontak (Skema Umum)" text_context="Contact" />
-                    <preset_link preset_name="Kontak (Skema dengan Awalan 'contact:*')" text_context="Contact" />
+                    <preset_link preset_name="Kontak (Skema dengan Awalan &apos;contact:*&apos;)" text_context="Contact" />
                 </item>
                 <item name="Deskripsi" icon="presets/misc/description.svg" type="node,way,closedway,multipolygon,relation" preset_name_label="true">
                     <link wiki="Key:description" />
@@ -2586,7 +2678,7 @@
                     <combo key="diet:gluten_free" text="Bebas gluten" values="yes,no,only" display_values="Ya,Tidak,Hanya" />
                 </item>
             </group>
-            <group name="Atribut" icon="presets/misc/name.svg">
+            <group name="Atribut" icon="presets/misc/no_icon.svg">
                 <item name="Pembatasan Akses" icon="presets/vehicle/restriction/restrictions.svg" type="node,way,closedway,multipolygon,relation" preset_name_label="true">
                     <link wiki="Key:access" />
                     <space />
@@ -2597,6 +2689,12 @@
                     <combo key="motorcycle" text="Sepeda Motor" values="yes,official,designated,destination,delivery,permissive,permit,private,agricultural,forestry,no" values_sort="false" match="key" />
                     <combo key="motorcar" text="Mobil" values="yes,official,designated,destination,delivery,permissive,permit,private,agricultural,forestry,no" values_sort="false" match="key" />
                     <combo key="hgv" text="Kendaraan Besar" values="yes,official,designated,destination,delivery,permissive,permit,private,agricultural,forestry,no" values_sort="false" match="key" />
+                </item>
+            </group>
+            <group name="Sumber data" icon="presets/misc/description.svg">
+                <item name="Sumber Data Geometri" icon="presets/misc/description.svg" type="way,closedway,multipolygon,relation">
+                    <combo key="source:geometry" text="Sumber data geometri" values="Esri;Bing;Mapbox Satellite" delimiter=";" values_sort="false" />
+                    <text key="source:geometry:date" text="Tanggal data geometri (Format: YYYY-MM-DD)" />
                 </item>
             </group>
         </group>
